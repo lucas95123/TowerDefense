@@ -5,6 +5,7 @@
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
+using namespace ui;
 
 Scene* MenuScene::createScene()
 {
@@ -33,7 +34,16 @@ bool MenuScene::init()
 
 	auto rootNode = CSLoader::createNode("MenuScene//MenuScene.csb");
 
+	//Add button_stage1selected
+	Button *buttonStage1 = static_cast<Button*>(rootNode->getChildByName("PageView_2")->getChildByName("Panel_1")->getChildByName("button_stage1selected"));
+	buttonStage1->addClickEventListener(CC_CALLBACK_1(MenuScene::buttonStage1ClickCallBack, this));
+
 	addChild(rootNode);
 
 	return true;
+}
+
+void MenuScene::buttonStage1ClickCallBack(cocos2d::Ref* pSender)
+{
+	log("MenuScene Stage Button 1 Clicked");
 }

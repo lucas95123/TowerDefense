@@ -71,5 +71,6 @@ void StartScene::buttonStartClickCallBack(cocos2d::Ref* pSender)
 	log("StartScene Start Button Clicked");
 	auto menuScene = MenuScene::createScene();
 	auto transition = TransitionFade::create(1.0f, menuScene);
+	Director::getInstance()->pushScene(Director::getInstance()->getRunningScene());
 	Director::getInstance()->replaceScene(transition);
 }
