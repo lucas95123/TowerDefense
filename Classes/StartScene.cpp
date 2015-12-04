@@ -1,10 +1,12 @@
 #include "StartScene.h"
+#include "MenuScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
 USING_NS_CC;
 
-using namespace cocostudio::timeline;
+using namespace cocostudio::timeline; 
+using namespace ui;
 
 Scene* StartScene::createScene()
 {
@@ -35,12 +37,23 @@ bool StartScene::init()
 
     addChild(rootNode);
 
+	//Add button_Start listener
+	Button *buttonStart = static_cast<Button*>(rootNode->getChildByName("Button_start"));
+	buttonStart->addClickEventListener(CC_CALLBACK_1(StartScene::buttonStartClickCallBack, this));
+
+	//Add touch listener
+	auto listenerTouch = EventListenerTouchOneByOne::create();
+	listenerTouch->setSwallowTouches(true);
+	listenerTouch->onTouchBegan = CC_CALLBACK_2(StartScene::onTouchBegan, this);
+	listenerTouch->onTouchEnded = CC_CALLBACK_2(StartScene::onTouchEnded, this);
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerTouch, this);
+
     return true;
 }
 
 bool StartScene::onTouchBegan(Touch *touch, Event *unused_event)
 {
-	log("StartScene touched");
+	log("StartScene Touched");
 	/*create Vector<Sprite*>*/
 	auto sp = Sprite::create("StartScene//Tony.png");
 	sp->setPosition(Point(touch->getLocation().x, touch->getLocation().y));
@@ -50,5 +63,13 @@ bool StartScene::onTouchBegan(Touch *touch, Event *unused_event)
 
 void StartScene::onTouchEnded(Touch *touch, Event *unused_event)
 {
+	log("StartScene Ended");
+}
 
+void StartScene::buttonStartClickCallBack(cocos2d::Ref* pSender)
+{
+	log("StartScene Start Button Clicked");
+	auto menuScene = MenuScene::createScene();
+	auto transition = TransitionFade::create(1.0f, menuScene);
+	Director::getInstance()->replaceScene(transition);
 }

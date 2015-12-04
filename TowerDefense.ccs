@@ -8,6 +8,7 @@
           <Image Name="btnStart.png" />
           <Image Name="btnStartPressed.png" />
           <Project Name="StartScene.csd" Type="Scene" />
+          <Image Name="Tony.png" />
         </Folder>
         <Folder Name="MenuScene">
           <Project Name="MenuScene.csd" Type="Scene" />
