@@ -37,3 +37,18 @@ bool StartScene::init()
 
     return true;
 }
+
+bool StartScene::onTouchBegan(Touch *touch, Event *unused_event)
+{
+	log("StartScene touched");
+	/*create Vector<Sprite*>*/
+	auto sp = Sprite::create("StartScene//Tony.png");
+	sp->setPosition(Point(touch->getLocation().x, touch->getLocation().y));
+	this->addChild(sp);
+	return true;
+}
+
+void StartScene::onTouchEnded(Touch *touch, Event *unused_event)
+{
+
+}
