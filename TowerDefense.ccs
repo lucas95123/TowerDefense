@@ -1,0 +1,28 @@
+<Solution>
+  <PropertyGroup Name="TowerDefense" Version="2.3.3.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="StartScene">
+          <Image Name="backgroundStart.png" />
+          <Image Name="btnStart.png" />
+          <Image Name="btnStartPressed.png" />
+          <Project Name="StartScene.csd" Type="Scene" />
+        </Folder>
+        <Folder Name="MenuScene">
+          <Project Name="MenuScene.csd" Type="Scene" />
+        </Folder>
+        <Folder Name="BattleScene">
+          <Project Name="BattleScene.csd" Type="Scene" />
+          <Project Name="PauseLayer.csd" Type="Layer" />
+          <Project Name="MapLayer.csd" Type="Layer" />
+          <Project Name="FunctionLayer.csd" Type="Layer" />
+          <Project Name="TuturialLayer.csd" Type="Layer" />
+        </Folder>
+        <Folder Name="EndScene">
+          <Project Name="EndScene.csd" Type="Scene" />
+        </Folder>
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
