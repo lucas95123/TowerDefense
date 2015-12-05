@@ -55,6 +55,8 @@ bool BattleScene::init()
 	buttonRight = static_cast<ui::Button *>(functionLayer->getChildByName("Button_Right"));
 	buttonRight->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonRightClickCallBack, this));
 
+	randomEnemy();
+
 	addChild(rootNode);
 
 	return true;
@@ -93,9 +95,15 @@ bool BattleScene::onTouchBegan(Touch *touch, Event *unused_event)
 void BattleScene::update(float dt)
 {
 	log("Battle Scene update");
+	mapLayer->checkCollision();
 }
 
 void BattleScene::randomEnemy()
 {
-	mapLayer
+	auto sprite1 = Sprite::create("StartScene//tony.png");
+	mapLayer->addEnemy(sprite1, DOWN);
+	auto sprite2 = Sprite::create("StartScene//tony.png");
+	mapLayer->addEnemy(sprite2, MIDDLE);
+	auto sprite3 = Sprite::create("StartScene//tony.png");
+	mapLayer->addEnemy(sprite3, UP);
 }

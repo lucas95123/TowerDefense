@@ -4,6 +4,7 @@
 #include "ui/CocosGUI.h"
 #include "Monster.h"
 #include <iostream>
+#include <cmath>
 
 USING_NS_CC;
 
@@ -14,13 +15,14 @@ public:
 	void scrollMapRight();
 	void scrollMapLeft();
 	void addMonster(Sprite *monster, int row);
+	void addEnemy(Sprite *monster, int row);//just for test
 	void checkCollision();
 
 private: 
-	ui::ScrollView *mapContainer;
-	float mapScrollPercentage = 0;
-	Vector<Sprite *> myMonsterVec[3];
-	Vector<Sprite *> enemyMonsterVec[3];
+	ui::ScrollView *mapContainer;//The Map
+	float mapScrollPercentage = 0;//Scroll map indicator
+	Vector<Sprite *> myMonsterVec[3];//Vec that stores my monster
+	Vector<Sprite *> enemyMonsterVec[3];//Vec that stores the enemy 
 };
 
 #endif //__MAP_LAYER_H__

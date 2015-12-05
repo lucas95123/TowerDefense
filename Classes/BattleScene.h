@@ -26,6 +26,8 @@ public:
 	//overriding default scheduler
 	void update(float dt) override;
 
+	//custom scheduler
+
 	//Touch began function
 	bool onTouchBegan(Touch *touch, Event *unused_event);
 
@@ -35,7 +37,7 @@ public:
 	//Pressed Button_Rigjt function
 	void buttonRightClickCallBack(cocos2d::Ref* pSender);
 
-	//
+	//Spawing random enemy, just for test
 	void randomEnemy();
 
 	// implement the "static create()" method manually
