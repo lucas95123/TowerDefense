@@ -1,4 +1,5 @@
 #include "MenuScene.h"
+#include "BattleScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
@@ -34,9 +35,16 @@ bool MenuScene::init()
 
 	auto rootNode = CSLoader::createNode("MenuScene//MenuScene.csb");
 
-	//Add button_stage1selected
-	Button *buttonStage1 = static_cast<Button*>(rootNode->getChildByName("PageView_2")->getChildByName("Panel_1")->getChildByName("button_stage1selected"));
-	buttonStage1->addClickEventListener(CC_CALLBACK_1(MenuScene::buttonStage1ClickCallBack, this));
+	//Add button_stageselected
+	Button *buttonSelectStage = static_cast<Button*>(rootNode->getChildByName("Button_StageSelected"));
+	buttonSelectStage->addClickEventListener(CC_CALLBACK_1(MenuScene::buttonStage1ClickCallBack, this));
+
+	//Add touch listener
+	auto listenerTouch = EventListenerTouchOneByOne::create();
+	listenerTouch->setSwallowTouches(false);
+	listenerTouch->onTouchBegan = CC_CALLBACK_2(MenuScene::onTouchBegan, this);
+	listenerTouch->onTouchEnded = CC_CALLBACK_2(MenuScene::onTouchEnded, this);
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerTouch, this);
 
 	addChild(rootNode);
 
@@ -45,5 +53,21 @@ bool MenuScene::init()
 
 void MenuScene::buttonStage1ClickCallBack(cocos2d::Ref* pSender)
 {
-	log("MenuScene Stage Button 1 Clicked");
+	log("MenuScene Stage Select Button Clicked");
+	auto battleScene = BattleScene::createScene();
+	auto transition = TransitionFade::create(1.0f, battleScene);
+	Director::getInstance()->pushScene(Director::getInstance()->getRunningScene());
+	Director::getInstance()->replaceScene(transition);
+}
+
+//Touch began function
+bool MenuScene::onTouchBegan(Touch *touch, Event *unused_event)
+{
+	return true;
+}
+
+//Touch end function
+void MenuScene::onTouchEnded(Touch *touch, Event *unused_event)
+{
+
 }

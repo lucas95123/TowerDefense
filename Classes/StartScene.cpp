@@ -38,12 +38,12 @@ bool StartScene::init()
     addChild(rootNode);
 
 	//Add button_Start listener
-	Button *buttonStart = static_cast<Button*>(rootNode->getChildByName("Button_start"));
+	Button *buttonStart = static_cast<Button*>(rootNode->getChildByName("Button_Start"));
 	buttonStart->addClickEventListener(CC_CALLBACK_1(StartScene::buttonStartClickCallBack, this));
 
 	//Add touch listener
 	auto listenerTouch = EventListenerTouchOneByOne::create();
-	listenerTouch->setSwallowTouches(true);
+	listenerTouch->setSwallowTouches(false);
 	listenerTouch->onTouchBegan = CC_CALLBACK_2(StartScene::onTouchBegan, this);
 	listenerTouch->onTouchEnded = CC_CALLBACK_2(StartScene::onTouchEnded, this);
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerTouch, this);
@@ -55,7 +55,7 @@ bool StartScene::onTouchBegan(Touch *touch, Event *unused_event)
 {
 	log("StartScene Touched");
 	/*create Vector<Sprite*>*/
-	auto sp = Sprite::create("StartScene//Tony.png");
+	auto sp = Sprite::create("StartScene//tony.png");
 	sp->setPosition(Point(touch->getLocation().x, touch->getLocation().y));
 	this->addChild(sp);
 	return true;
