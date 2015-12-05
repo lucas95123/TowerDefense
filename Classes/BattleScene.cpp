@@ -30,6 +30,9 @@ bool BattleScene::init()
 
 	auto rootNode = CSLoader::createNode("BattleScene//BattleScene.csb");
 
+	//Default scheduler
+	scheduleUpdate();
+
 	//Add touch listener to the scene
 	auto listenerTouch = EventListenerTouchOneByOne::create();
 	listenerTouch->setSwallowTouches(false);
@@ -37,9 +40,8 @@ bool BattleScene::init()
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerTouch, this);
 
 	//Obtain map layer from cocos studio design file
-	mapLayer = static_cast<ui::ScrollView *>(rootNode->getChildByName("Layer_Map")->getChildByName("ScrollView_3"));
-	//Map is not touch enabled
-	mapLayer->setTouchEnabled(false);
+	mapLayer = new MapLayer();
+	mapLayer->create(static_cast<ui::ScrollView *>(rootNode->getChildByName("ScrollView_1")));
 
 	//Obtain function layer from cocos studio design file
 	functionLayer = static_cast<Layer *>(rootNode->getChildByName("Layer_Funct"));
@@ -61,29 +63,39 @@ bool BattleScene::init()
 void BattleScene::buttonRightClickCallBack(cocos2d::Ref *pSender)
 {
 	log("Battle Scene Right Button Clicked");
-	if (mapScrollPercentage == 100.0f)
-		return;
-	mapScrollPercentage += 100.0f;
+	mapLayer->scrollMapRight();
 	buttonLeft->setVisible(true);
-	mapLayer->scrollToPercentHorizontal(mapScrollPercentage, 1.0f, false);
-	if (mapScrollPercentage == 100.0f)
-		buttonRight->setVisible(false);
+	buttonRight->setVisible(false);
 }
 
 void BattleScene::buttonLeftClickCallBack(cocos2d::Ref *pSender)
 {
 	log("Battle Scene Left Button Clicked");
-	if (mapScrollPercentage == 0.0f)
-		return;
-	mapScrollPercentage -= 100.0f;
+	mapLayer->scrollMapLeft();
 	buttonRight->setVisible(true);
-	mapLayer->scrollToPercentHorizontal(mapScrollPercentage, 1.0f, false);
-	if (mapScrollPercentage == 0.0f)
-		buttonLeft->setVisible(false);
+	buttonLeft->setVisible(false);
 }
 
 bool BattleScene::onTouchBegan(Touch *touch, Event *unused_event)
 {
 	log("Battle Scene Touch Began");
+	auto sprite1 = Sprite::create("StartScene//tony.png");
+	int pointY = touch->getLocation().y;
+	if (pointY>=DOWNROWY&&pointY<=MIDDLEROWY)
+		mapLayer->addMonster(sprite1,DOWN);
+	else if (pointY > MIDDLEROWY&&pointY <= UPROWY)
+		mapLayer->addMonster(sprite1, MIDDLE);
+	else if (pointY > UPROWY&&pointY <= LIMITY)
+		mapLayer->addMonster(sprite1, UP);
 	return true;
+}
+
+void BattleScene::update(float dt)
+{
+	log("Battle Scene update");
+}
+
+void BattleScene::randomEnemy()
+{
+	mapLayer
 }

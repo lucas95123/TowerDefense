@@ -1,4 +1,14 @@
 #ifndef __MONSTER_H__
 #define __MONSTER_H__
 
+#define ROWHEIGHT 120
+#define DOWNROWY 200
+#define MIDDLEROWY DOWNROWY+ROWHEIGHT
+#define UPROWY MIDDLEROWY+ROWHEIGHT
+#define LIMITY UPROWY+ROWHEIGHT
+#define STARTX 20
+#define UP 2
+#define MIDDLE 1
+#define DOWN 0
+
 #endif // __MONSTER_H__
