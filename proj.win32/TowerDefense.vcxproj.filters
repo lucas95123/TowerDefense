@@ -30,7 +30,10 @@
     <ClCompile Include="..\Classes\EndScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Monster.cpp">
+    <ClCompile Include="..\Classes\MapLayer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="GestureLayer.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -54,6 +57,12 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Monster.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapLayer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="GestureLayer.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

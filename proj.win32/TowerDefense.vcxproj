@@ -138,18 +138,21 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\BattleScene.cpp" />
     <ClCompile Include="..\Classes\EndScene.cpp" />
+    <ClCompile Include="..\Classes\MapLayer.cpp" />
     <ClCompile Include="..\Classes\MenuScene.cpp" />
-    <ClCompile Include="..\Classes\Monster.cpp" />
     <ClCompile Include="..\Classes\StartScene.cpp" />
+    <ClCompile Include="GestureLayer.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\BattleScene.h" />
     <ClInclude Include="..\Classes\EndScene.h" />
+    <ClInclude Include="..\Classes\MapLayer.h" />
     <ClInclude Include="..\Classes\MenuScene.h" />
     <ClInclude Include="..\Classes\Monster.h" />
     <ClInclude Include="..\Classes\StartScene.h" />
+    <ClInclude Include="GestureLayer.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

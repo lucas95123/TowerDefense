@@ -72,8 +72,8 @@ void MapLayer::addMonster(Sprite *monster,int row)
 		break;
 	}
 	auto cache = AnimationCache::getInstance();
-	auto animate = Animate::create(cache->getAnimation("attack"));
-	monster->runAction(RepeatForever::create(Sequence::create(animate, animate->reverse(), NULL)));
+	//auto animate = Animate::create(cache->getAnimation("attack"));
+	//monster->runAction(RepeatForever::create(Sequence::create(animate, animate->reverse(), NULL)));
 	auto moveTo = JumpBy::create(5, Point(900, 0), 20, 8);
 	auto action = Sequence::create(moveTo, NULL);
 	monster->runAction(action);

@@ -1,6 +1,6 @@
 #include "BattleScene.h"
 #include "cocostudio/CocoStudio.h"
-
+#include "Monster.h"
 using namespace cocostudio::timeline;
 
 Scene* BattleScene::createScene()
@@ -29,7 +29,7 @@ bool BattleScene::init()
 	}
 
 	auto rootNode = CSLoader::createNode("BattleScene//BattleScene.csb");
-
+	
 	//Default scheduler
 	scheduleUpdate();
 
@@ -56,7 +56,7 @@ bool BattleScene::init()
 	buttonRight->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonRightClickCallBack, this));
 
 	randomEnemy();
-
+	
 	addChild(rootNode);
 
 	return true;
@@ -81,14 +81,14 @@ void BattleScene::buttonLeftClickCallBack(cocos2d::Ref *pSender)
 bool BattleScene::onTouchBegan(Touch *touch, Event *unused_event)
 {
 	log("Battle Scene Touch Began");
-	auto sprite1 = Sprite::create("StartScene//tony.png");
+	Monster *sprite1 =new CircleMonster(100,20);
 	int pointY = touch->getLocation().y;
 	if (pointY>=DOWNROWY&&pointY<=MIDDLEROWY)
-		mapLayer->addMonster(sprite1,DOWN);
+		mapLayer->addMonster(sprite1->anim_body,DOWN);
 	else if (pointY > MIDDLEROWY&&pointY <= UPROWY)
-		mapLayer->addMonster(sprite1, MIDDLE);
+		mapLayer->addMonster(sprite1->anim_body, MIDDLE);
 	else if (pointY > UPROWY&&pointY <= LIMITY)
-		mapLayer->addMonster(sprite1, UP);
+		mapLayer->addMonster(sprite1->anim_body, UP);
 	return true;
 }
 
