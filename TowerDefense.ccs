@@ -5,20 +5,34 @@
       <RootFolder Name=".">
         <Folder Name="StartScene">
           <Image Name="backgroundStart.png" />
-          <Image Name="btnStart.png" />
-          <Image Name="btnStartPressed.png" />
           <Project Name="StartScene.csd" Type="Scene" />
-          <Image Name="Tony.png" />
+          <Image Name="tony.png" />
+          <Image Name="lblStartNormal.png" />
+          <Image Name="lblStartPressed.png" />
         </Folder>
         <Folder Name="MenuScene">
           <Project Name="MenuScene.csd" Type="Scene" />
+          <Image Name="google.png" />
+          <Image Name="tree.png" />
+          <Image Name="btnStart.png" />
+          <Image Name="btnStartPressed.png" />
         </Folder>
         <Folder Name="BattleScene">
           <Project Name="BattleScene.csd" Type="Scene" />
           <Project Name="PauseLayer.csd" Type="Layer" />
-          <Project Name="MapLayer.csd" Type="Layer" />
           <Project Name="FunctionLayer.csd" Type="Layer" />
           <Project Name="TuturialLayer.csd" Type="Layer" />
+          <Image Name="backgroundForest.png" />
+          <Image Name="scrollArrowLeft.png" />
+          <Image Name="scrollArrowLeftPressed.png" />
+          <Image Name="scrollArrowRightPressed.png" />
+          <Image Name="scrollArrowRight.png" />
+          <Image Name="tony.png" />
+          <Folder Name="Animation">
+            <Image Name="tony_01.png" />
+            <Image Name="tony_02.png" />
+            <Image Name="tony_03.png" />
+          </Folder>
         </Folder>
         <Folder Name="EndScene">
           <Project Name="EndScene.csd" Type="Scene" />
