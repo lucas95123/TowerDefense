@@ -25,7 +25,7 @@ USING_NS_CC;
 using namespace cocostudio::timeline;
 using namespace ui;
 using namespace cocostudio;
-class Monster
+class Monster:public Node
 {
 private:
 	int state=Stay_in_queue;
@@ -38,6 +38,7 @@ public:
 	~Monster(){}
 	void setState(int _state){ state = _state; }
 	int getState(){ return state; }
+	//void retain(){}
 };
 
 class RectMonster:public Monster

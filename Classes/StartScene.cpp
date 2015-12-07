@@ -33,7 +33,7 @@ bool StartScene::init()
         return false;
     }
     
-    auto rootNode = CSLoader::createNode("StartScene//StartScene.csb");
+    auto rootNode = CSLoader::createNode("StartScene/StartScene.csb");
 
     addChild(rootNode);
 
