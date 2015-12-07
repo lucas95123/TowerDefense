@@ -52,20 +52,20 @@ void MapLayer::scrollMapRight()
 	}
 }
 
-void MapLayer::addMonster(Sprite *monster,int row)
+void MapLayer::addMonster(Monster *monster,int row)
 {
 	switch (row)
 	{
 	case UP:
-		monster->setPosition(Point(STARTX,UPROWY));
+		monster->anim_body->setPosition(Point(STARTX,UPROWY));
 		myMonsterVec[UP].pushBack(monster);
 		break;
 	case MIDDLE:
-		monster->setPosition(Point(STARTX,MIDDLEROWY));
+		monster->anim_body->setPosition(Point(STARTX,MIDDLEROWY));
 		myMonsterVec[MIDDLE].pushBack(monster);
 		break;
 	case DOWN:
-		monster->setPosition(Point(STARTX, DOWNROWY));
+		monster->anim_body->setPosition(Point(STARTX, DOWNROWY));
 		myMonsterVec[DOWN].pushBack(monster);
 		break;
 	default:
@@ -76,24 +76,24 @@ void MapLayer::addMonster(Sprite *monster,int row)
 	//monster->runAction(RepeatForever::create(Sequence::create(animate, animate->reverse(), NULL)));
 	auto moveTo = JumpBy::create(5, Point(900, 0), 20, 8);
 	auto action = Sequence::create(moveTo, NULL);
-	monster->runAction(action);
-	mapContainer->addChild(monster);
+	monster->anim_body->runAction(action);
+	mapContainer->addChild(monster->anim_body);
 }
 
-void MapLayer::addEnemy(Sprite *monster, int row)
+void MapLayer::addEnemy(Monster *monster, int row)
 {
 	switch (row)
 	{
 	case UP:
-		monster->setPosition(Point(STARTX+960+940, UPROWY));
+		monster->anim_body->setPosition(Point(STARTX+960+940, UPROWY));
 		enemyMonsterVec[UP].pushBack(monster);
 		break;
 	case MIDDLE:
-		monster->setPosition(Point(STARTX + 960 + 940, MIDDLEROWY));
+		monster->anim_body->setPosition(Point(STARTX + 960 + 940, MIDDLEROWY));
 		enemyMonsterVec[MIDDLE].pushBack(monster);
 		break;
 	case DOWN:
-		monster->setPosition(Point(STARTX + 960 + 940, DOWNROWY));
+		monster->anim_body->setPosition(Point(STARTX + 960 + 940, DOWNROWY));
 		enemyMonsterVec[DOWN].pushBack(monster);
 		break;
 	default:
@@ -101,12 +101,12 @@ void MapLayer::addEnemy(Sprite *monster, int row)
 	}
 	auto cache = AnimationCache::getInstance();
 	auto animate = Animate::create(cache->getAnimation("attack"));
-	monster->runAction(RepeatForever::create(Sequence::create(animate, animate->reverse(), NULL)));
+	monster->anim_body->runAction(RepeatForever::create(Sequence::create(animate, animate->reverse(), NULL)));
 	auto moveTo = JumpBy::create(5, Point(-2000, 0), 20, 8);
 	auto flipX = FlipX::create(true);
 	auto action = Sequence::create(flipX,moveTo, NULL);
-	monster->runAction(action);
-	mapContainer->addChild(monster);
+	monster->anim_body->runAction(action);
+	mapContainer->addChild(monster->anim_body);
 }
 
 void MapLayer::checkCollision()
@@ -115,13 +115,13 @@ void MapLayer::checkCollision()
 	{
 		for (auto monster : myMonsterVec[i])
 		{
-			auto x=monster->getPosition().x;
+			auto x = monster->anim_body->getPosition().x;
 			for (auto enemy : enemyMonsterVec[i])
 			{
-				if (abs(x - enemy->getPosition().x) <= 80)
+				if (abs(x - enemy->anim_body->getPosition().x) <= 80)
 				{
-					monster->stopAllActions();
-					enemy->stopAllActions();
+					monster->anim_body->stopAllActions();
+					enemy->anim_body->stopAllActions();
 				}
 			}
 		}

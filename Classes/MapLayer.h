@@ -14,15 +14,15 @@ public:
 	void create(ui::ScrollView * map);
 	void scrollMapRight();
 	void scrollMapLeft();
-	void addMonster(Sprite *monster, int row);
-	void addEnemy(Sprite *monster, int row);//just for test
+	void addMonster(Monster *monster, int row);
+	void addEnemy(Monster *monster, int row);//just for test
 	void checkCollision();
 
 private: 
 	ui::ScrollView *mapContainer;//The Map
 	float mapScrollPercentage = 0;//Scroll map indicator
-	Vector<Sprite *> myMonsterVec[3];//Vec that stores my monster
-	Vector<Sprite *> enemyMonsterVec[3];//Vec that stores the enemy 
+	Vector<Monster *> myMonsterVec[3];//Vec that stores my monster
+	Vector<Monster *> enemyMonsterVec[3];//Vec that stores the enemy 
 };
 
 #endif //__MAP_LAYER_H__
