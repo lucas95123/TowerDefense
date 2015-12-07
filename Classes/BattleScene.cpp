@@ -84,11 +84,11 @@ bool BattleScene::onTouchBegan(Touch *touch, Event *unused_event)
 	Monster *sprite1 =new CircleMonster(100,20);
 	int pointY = touch->getLocation().y;
 	if (pointY>=DOWNROWY&&pointY<=MIDDLEROWY)
-		mapLayer->addMonster(sprite1,DOWN);
+		mapLayer->addMonster(sprite1->anim_body,DOWN);
 	else if (pointY > MIDDLEROWY&&pointY <= UPROWY)
-		mapLayer->addMonster(sprite1, MIDDLE);
+		mapLayer->addMonster(sprite1->anim_body, MIDDLE);
 	else if (pointY > UPROWY&&pointY <= LIMITY)
-		mapLayer->addMonster(sprite1, UP);
+		mapLayer->addMonster(sprite1->anim_body, UP);
 	return true;
 }
 
@@ -100,10 +100,10 @@ void BattleScene::update(float dt)
 
 void BattleScene::randomEnemy()
 {
-	Monster *sprite1 =new TriMonster(100,100);
+	auto sprite1 = Sprite::create("StartScene//tony.png");
 	mapLayer->addEnemy(sprite1, DOWN);
-	Monster *sprite2 = new CircleMonster(50,50);
+	auto sprite2 = Sprite::create("StartScene//tony.png");
 	mapLayer->addEnemy(sprite2, MIDDLE);
-	Monster *sprite3 = new RectMonster(20,20);
+	auto sprite3 = Sprite::create("StartScene//tony.png");
 	mapLayer->addEnemy(sprite3, UP);
 }

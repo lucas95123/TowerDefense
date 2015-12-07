@@ -25,7 +25,7 @@ USING_NS_CC;
 using namespace cocostudio::timeline;
 using namespace ui;
 using namespace cocostudio;
-class Monster:public Node
+class Monster
 {
 private:
 	int state=Stay_in_queue;
@@ -75,7 +75,7 @@ public:
 		anim_body->setScaleX(_max_life / origin_life);
 		anim_body->setScaleY(_max_life / origin_life);
 	}
-	~CircleMonster(){}
+	~CircleMonster();
 
 private:
 
