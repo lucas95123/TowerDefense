@@ -1,7 +1,7 @@
 #ifndef __MONSTER_H__
 #define __MONSTER_H__
 
-#define ROWHEIGHT 120
+#define ROWHEIGHT 140
 #define DOWNROWY 200
 #define MIDDLEROWY DOWNROWY+ROWHEIGHT
 #define UPROWY MIDDLEROWY+ROWHEIGHT
@@ -13,9 +13,9 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "cocos2d.h"
-#define Rec_pic "StartScene/tony.png"
-#define Tri_pic "BattleScene/test1.jpg"
-#define Cir_pic "BattleScene/test2.jpg"
+#define Rec_pic "BattleScene/Ceaser.png"
+#define Tri_pic "BattleScene/tonyGold.png"
+#define Cir_pic "MenuScene/jerry.png"
 #define Rec_Hit_back_anim "Cry"
 #define Tri_Hit_back_anim "Cry"
 #define Cir_Hit_back_anim "Cry"
@@ -31,13 +31,13 @@
 #define DEAD 4
 #define Dying 5
 #define origin_life 30.0
-#define Rect_attack 10
-#define Cir_attack 20
-#define Tri_attack 15
+#define Rect_attack 8
+#define Cir_attack 12
+#define Tri_attack 10
 #define Rect_defence 10
 #define Tri_defence 5
 #define Cir_defence 0
-#define Remove_seconds(x) isEnemy?(x)*10/1800:(1-(x)/1800.0)*10 
+#define Remove_seconds(x) isEnemy?(x)*15/1800:(1-(x)/1800.0)*15 
 #define Move_to_line (Line==(UPROW))?UPROWY:(Line==(MIDDLEROW))?MIDDLEROWY:DOWNROWY
 #define Map_width 1800
 USING_NS_CC;
@@ -93,8 +93,8 @@ public:
 		anim_body = Sprite::create(Rec_pic);
 		anim_body->setScaleX(_max_life / origin_life);
 		anim_body->setScaleY(_max_life / origin_life);//change the size of the monster
-		anim_body->setFlippedY(true);
-		if (!isEnemy) anim_body->setFlippedX(true);
+		//anim_body->setFlippedY(true);
+		if (isEnemy) anim_body->setFlippedX(true);
 	}
 	~RectMonster(){}
 	virtual void BeHitback(AnimationCache* cache,int damage)
@@ -126,7 +126,9 @@ public:
 	}
 	virtual void ChooseDeath(AnimationCache* cache)
 	{
+		this->anim_body->stopAllActions();
 		this->setState(DEAD);
+		//this->anim_body->removeFromParent();
 	}
 };
 
@@ -140,8 +142,8 @@ public:
 		anim_body = Sprite::create(Tri_pic);
 		anim_body->setScaleX(_max_life / origin_life);
 		anim_body->setScaleY(_max_life / origin_life);
-		anim_body->setFlippedY(true);
-		if (!isEnemy) anim_body->setFlippedX(true);
+		//anim_body->setFlippedY(true);
+		if (isEnemy) anim_body->setFlippedX(true);
 	}
 	~TriMonster(){}
 	virtual void BeHitback(AnimationCache* cache,int damage)
@@ -167,12 +169,13 @@ public:
 		int x = this->anim_body->getPositionX();
 		int TargetPoint;
 		TargetPoint = isEnemy ? 80 : Map_width;
-		auto action = Sequence::create(JumpTo::create(Remove_seconds(x), Point(TargetPoint, Move_to_line), 20, 8), NULL);
+		auto action = Sequence::create(MoveTo::create(Remove_seconds(x), Point(TargetPoint, Move_to_line)), NULL);
 		action->setTag(Move_foward);
 		this->anim_body->runAction(action);
 	}
 	virtual void ChooseDeath(AnimationCache* cache)
 	{
+		this->anim_body->stopAllActions();
 		this->setState(DEAD);
 	}
 };
@@ -184,8 +187,8 @@ public:
 		anim_body = Sprite::create(Cir_pic);
 		anim_body->setScaleX(_max_life / origin_life);
 		anim_body->setScaleY(_max_life / origin_life);
-		anim_body->setFlippedY(true);
-		if (!isEnemy) anim_body->setFlippedX(true);
+		//anim_body->setFlippedY(true);
+		if (isEnemy) anim_body->setFlippedX(true);
 	}
 	~CircleMonster(){}
 	virtual void BeHitback(AnimationCache* cache,int damage)
@@ -205,17 +208,19 @@ public:
 		//log("MovingForward");
 		auto animate = Animate::create(cache->getAnimation(Cir_Moving_forward_anim));
 		if (!isEnemy)this->anim_body->runAction(RepeatForever::create(Sequence::create(animate, animate->reverse(), NULL)));
-		else this->anim_body->runAction(RepeatForever::create(Sequence::create(animate, NULL)));
+		else
+		this->anim_body->runAction(RepeatForever::create(Sequence::create(animate->reverse(), NULL)));
 		this->setState(Move_foward);
 		int x = this->anim_body->getPositionX();
 		int TargetPoint;
 		TargetPoint = isEnemy ? 80 : Map_width;
-		auto action = Sequence::create(JumpTo::create(Remove_seconds(x), Point(TargetPoint, Move_to_line), 20, 8), NULL);
+		auto action = Sequence::create(MoveTo::create(Remove_seconds(x), Point(TargetPoint, Move_to_line)), NULL);
 		action->setTag(Move_foward);
 		this->anim_body->runAction(action);
 	}
 	virtual void ChooseDeath(AnimationCache* cache)
 	{
+		this->anim_body->stopAllActions();
 		this->setState(DEAD);
 	}
 private:

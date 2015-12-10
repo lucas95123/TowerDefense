@@ -17,6 +17,7 @@ public:
 	virtual bool init(MapLayer *);
 	void update(float dt) override;
 	void OneSecondUpdate(float dt);
+	void updateQueue();
 	bool onTouchBegan(Touch *touch, Event *unused_event);
 	void onTouchMoved(Touch *touch, Event *unused_event);
 	void onTouchEnded(Touch *touch, Event *unused_event);
@@ -25,6 +26,7 @@ private:
 	DollarRecognizer::GeometricRecognizer* Recog;
 	MapLayer *mapLayer;
 	Vector<Monster *> monster_queue;
+	Vector<ParticleSystemQuad *>touchTrace_queue;
 };
 
 

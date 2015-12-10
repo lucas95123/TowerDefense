@@ -16,7 +16,7 @@ void MapLayer::create(ui::ScrollView * map,int _Enemy_life_point,int _Player_lif
 		sprintf(szName, "tony_%02d.png", i);
 		animation->addSpriteFrameWithFile(szName);
 	}
-	animation->setDelayPerUnit(0.9f /18.0f);
+	animation->setDelayPerUnit(0.9f / 18.0f);
 	animation->setRestoreOriginalFrame(true);
 	cache->addAnimation(animation, Rec_Moving_forward_anim);
 	{
@@ -184,13 +184,19 @@ void MapLayer::checkCollision()
 				}
 				if (enemy->getState() == DEAD)
 				{//the monster is dead,release it from the layer
-					mapContainer->removeChild(enemy->anim_body);
-					enemyMonsterVec[i].eraseObject(enemy,false);
+					//enemy->anim_body->removeFromParentAndCleanup(true);
+					enemy->anim_body->setVisible(false);
+					mapContainer->removeChild(enemy->anim_body,true);
+					//enemy->anim_body->autorelease();
+					enemyMonsterVec[i].eraseObject(enemy,true);
 				}
 				if (monster->getState() == DEAD)
 				{
-					mapContainer->removeChild(monster->anim_body);
-					myMonsterVec[i].eraseObject(monster, false);
+					monster->anim_body->setVisible(false);
+					mapContainer->removeChild(monster->anim_body, true);
+					//monster->anim_body->removeFromParentAndCleanup(true);
+					//monster->anim_body->autorelease();
+					myMonsterVec[i].eraseObject(monster, true);
 				}
 			}
 			

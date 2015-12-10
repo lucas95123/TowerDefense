@@ -57,12 +57,6 @@ bool StartScene::init()
 	listenerTouch->onTouchEnded = CC_CALLBACK_2(StartScene::onTouchEnded, this);
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerTouch, this);
 
-	//Add some moving tony
-	//addMovingTony(200, 200);
-	//addMovingTony(300, 300);
-	//addMovingTony(400, 400);
-	//addMovingTony(500, 500);
-
     return true;
 }
 

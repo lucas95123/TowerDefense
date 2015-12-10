@@ -31,20 +31,19 @@ bool BattleScene::init()
 	}
 
 	auto rootNode = CSLoader::createNode("BattleScene/BattleScene.csb");
-
 	//Default scheduler
 	scheduleUpdate();
 	schedule(schedule_selector(BattleScene::ifwin), 2.0f);
 
 	//Add touch listener to the scene
-	auto listenerTouch = EventListenerTouchOneByOne::create();
-	listenerTouch->setSwallowTouches(false);
-	listenerTouch->onTouchBegan = CC_CALLBACK_2(BattleScene::onTouchBegan, this);
-	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerTouch, this);
+	//auto listenerTouch = EventListenerTouchOneByOne::create();
+	//listenerTouch->setSwallowTouches(false);
+	//listenerTouch->onTouchBegan = CC_CALLBACK_2(BattleScene::onTouchBegan, this);
+	//Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerTouch, this);
 
 	//Obtain map layer from cocos studio design file
 	mapLayer = new MapLayer();
-	mapLayer->create(static_cast<ui::ScrollView *>(rootNode->getChildByName("ScrollView_1")), 100, 100);
+	mapLayer->create(static_cast<ui::ScrollView *>(rootNode->getChildByName("ScrollView_1")), 1000, 100);
 
 	//Obtain pause layer from cocos studio design file and hide it
 	pauseLayer = static_cast<Layer *>(rootNode->getChildByName("Layer_Pause"));
@@ -56,7 +55,8 @@ bool BattleScene::init()
 
 	//Obtain function layer from cocos studio design file
 	functionLayer = static_cast<Layer *>(rootNode->getChildByName("Layer_Funct"));
-
+	auto deleteNode = functionLayer->getChildByName("Panel_5");
+	functionLayer->removeChild(deleteNode, true);
 	//Obtain buttons in pause layer
 	auto buttonResume = static_cast<ui::Button *>(pauseLayer->getChildByName("Panel_1")->getChildByName("Button_Resume"));
 	buttonResume->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonResumeClickCallBack, this));
@@ -80,7 +80,7 @@ bool BattleScene::init()
 	buttonRight = static_cast<ui::Button *>(functionLayer->getChildByName("Button_Right"));
 	buttonRight->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonRightClickCallBack, this));
 
-	//randomEnemy();
+	randomEnemy();
 	rootNode->addChild(gestureLayer);
 	addChild(rootNode);
 
@@ -134,20 +134,20 @@ void BattleScene::buttonLeftClickCallBack(cocos2d::Ref *pSender)
 bool BattleScene::onTouchBegan(Touch *touch, Event *unused_event)
 {
 	//log("Battle Scene Touch Began");
-	Monster *sprite1 = new RectMonster(10, 5, 45, 0);
+	/*Monster *sprite1 = new RectMonster(10, 5, 45, 0);
 	int pointY = touch->getLocation().y;
 	if (pointY >= DOWNROWY&&pointY <= MIDDLEROWY)
 		mapLayer->addMonster(sprite1, DOWNROW);
 	else if (pointY > MIDDLEROWY&&pointY <= UPROWY)
 		mapLayer->addMonster(sprite1, MIDDLEROW);
 	else if (pointY > UPROWY&&pointY <= LIMITY)
-		mapLayer->addMonster(sprite1, UPROW);
+		mapLayer->addMonster(sprite1, UPROW);*/
 	return true;
 }
 
 void BattleScene::update(float dt)
 {
-	log("Battle Scene update");
+	//log("Battle Scene update");
 	mapLayer->checkCollision();
 }
 
@@ -171,10 +171,10 @@ void BattleScene::ifwin(float dt)
 }
 void BattleScene::randomEnemy()
 {
-	Monster* sprite1 = new RectMonster(10, 5, 40, true);
+	Monster* sprite1 = new RectMonster(10, 5, 30, true);
 	mapLayer->addEnemy(sprite1, DOWNROW);
-	Monster* sprite2 = new TriMonster(20, 5, 40, true);
+	Monster* sprite2 = new TriMonster(20, 5, 30, true);
 	mapLayer->addEnemy(sprite2, MIDDLEROW);
-	Monster* sprite3 = new CircleMonster(10, 5, 50, true);
+	Monster* sprite3 = new CircleMonster(10, 5, 30, true);
 	mapLayer->addEnemy(sprite3, UPROW);
 }
