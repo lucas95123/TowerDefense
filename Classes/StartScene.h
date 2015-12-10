@@ -24,6 +24,9 @@ public:
 	//Pressed button_Start function
 	void buttonStartClickCallBack(cocos2d::Ref* pSender);
 
+	//Adding moving tony to the start scene
+	void addMovingTony(int x, int y);
+
     // implement the "static create()" method manually
     CREATE_FUNC(StartScene);
 };

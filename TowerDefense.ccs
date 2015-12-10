@@ -4,18 +4,47 @@
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Folder Name="StartScene">
-          <Image Name="backgroundStart.png" />
           <Project Name="StartScene.csd" Type="Scene" />
           <Image Name="tony.png" />
-          <Image Name="lblStartNormal.png" />
-          <Image Name="lblStartPressed.png" />
+          <Image Name="lblTitle1.png" />
+          <Image Name="lblTitle2.png" />
+          <Image Name="btnStart.png" />
+          <Image Name="btnStartPressed.png" />
+          <Image Name="backGroundStart.png" />
         </Folder>
         <Folder Name="MenuScene">
           <Project Name="MenuScene.csd" Type="Scene" />
-          <Image Name="google.png" />
           <Image Name="tree.png" />
+          <Image Name="lblSelect.png" />
           <Image Name="btnStart.png" />
           <Image Name="btnStartPressed.png" />
+          <Image Name="Cross.png" />
+          <Image Name="snow.png" />
+          <Image Name="island.png" />
+          <Image Name="jerry.png" />
+          <Image Name="jerryPressed.png" />
+          <PlistParticleFile Name="cloud.plist" />
+          <PlistParticleFile Name="snow 2.plist" />
+          <Image Name="tony.png" />
+          <Image Name="jerryBlack.png" />
+          <Image Name="tony1.png" />
+          <Image Name="tonyDisabled.png" />
+          <Image Name="tonyPressed.png" />
+          <PlistParticleFile Name="foliage.plist" />
+          <PlistParticleFile Name="water.plist" />
+          <PlistParticleFile Name="tree.plist" />
+          <Image Name="forest.png" />
+          <Image Name="jerryBlue.png" />
+          <Image Name="jerryRed.png" />
+          <Image Name="btnSound.png" />
+          <Image Name="lblForest.png" />
+          <Image Name="lblIsland.png" />
+          <Image Name="lblSnowfield.png" />
+          <Image Name="soundPressed.png" />
+          <Image Name="jerryRedPressed.png" />
+          <Image Name="jerryBluePressed.png" />
+          <Image Name="star.png" />
+          <Image Name="starBlack.png" />
         </Folder>
         <Folder Name="BattleScene">
           <Project Name="BattleScene.csd" Type="Scene" />
@@ -33,9 +62,24 @@
             <Image Name="tony_02.png" />
             <Image Name="tony_03.png" />
           </Folder>
+          <Image Name="test1.jpg" />
+          <Image Name="test2.jpg" />
+          <Image Name="black.png" />
+          <Image Name="pause2.png" />
+          <Image Name="SoundOff.png" />
+          <Image Name="SoundOn.png" />
+          <Image Name="Start.png" />
+          <Image Name="return.png" />
+          <Image Name="pause2Pressed.png" />
+          <Image Name="pause.png" />
+          <Image Name="images.png" />
+          <Image Name="Ceaser.png" />
+          <Image Name="tonyGold.png" />
         </Folder>
         <Folder Name="EndScene">
           <Project Name="EndScene.csd" Type="Scene" />
+          <Image Name="win.png" />
+          <Image Name="sword.png" />
         </Folder>
       </RootFolder>
     </Group>

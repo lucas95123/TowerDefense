@@ -31,7 +31,7 @@ bool EndScene::init()
 		return false;
 	}
 
-	auto rootNode = CSLoader::createNode("EndScene//EndScene.csb");
+	auto rootNode = CSLoader::createNode("EndScene/EndScene.csb");
 
 	addChild(rootNode);
 
