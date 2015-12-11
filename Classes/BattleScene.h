@@ -12,9 +12,10 @@ class BattleScene : public cocos2d::Layer
 {
 private: 
 	MapLayer *mapLayer;
+	GestureLayer *gestureLayer;
 	Layer *functionLayer;
 	Layer *pauseLayer;
-	GestureLayer *gestureLayer;
+	Sprite *lifeBar;
 	ui::Button *buttonPause;
 	ui::Button *buttonLeft;
 	ui::Button *buttonRight;

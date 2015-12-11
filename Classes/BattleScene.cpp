@@ -86,6 +86,10 @@ bool BattleScene::init()
 	//energy_timer->setBarChangeRate(Point(1, 0));//设置进程条的变化速率   
 	//energy_timer->setPercentage(0.0f);//设置初始值为0  
 	//Obtain pause button from cocos studio design file
+
+	//Obtain life bar from cocos studio design file
+	lifeBar = static_cast<Sprite *>(functionLayer->getChildByName("life_bar"));
+
 	buttonPause = static_cast<ui::Button*>(functionLayer->getChildByName("Button_Pause"));
 	buttonPause->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonPauseClickCallBack, this));
 
@@ -151,15 +155,7 @@ void BattleScene::buttonLeftClickCallBack(cocos2d::Ref *pSender)
 
 bool BattleScene::onTouchBegan(Touch *touch, Event *unused_event)
 {
-	//log("Battle Scene Touch Began");
-	/*Monster *sprite1 = new RectMonster(10, 5, 45, 0);
-	int pointY = touch->getLocation().y;
-	if (pointY >= DOWNROWY&&pointY <= MIDDLEROWY)
-		mapLayer->addMonster(sprite1, DOWNROW);
-	else if (pointY > MIDDLEROWY&&pointY <= UPROWY)
-		mapLayer->addMonster(sprite1, MIDDLEROW);
-	else if (pointY > UPROWY&&pointY <= LIMITY)
-		mapLayer->addMonster(sprite1, UPROW);*/
+
 	return true;
 }
 
@@ -168,6 +164,7 @@ void BattleScene::update(float dt)
 	//log("Battle Scene update");
 	mapLayer->checkCollision();
 	
+	lifeBar->setScaleX(mapLayer->Player_Castle_life_point/ 500.0*0.74);
 	//char life_char[20];
 	//sprintf(life_char, "%d", gestureLayer->energe);
 	//energy_label->setStringValue(life_char);
