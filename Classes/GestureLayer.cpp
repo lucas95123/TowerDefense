@@ -89,6 +89,12 @@ void GestureLayer::onTouchMoved(Touch *touch, Event *unused_event)
 		pot.x = point.x;
 		pot.y = -point.y;
 		path.push_back(pot);
+		/*Partical*/
+		auto particle = ParticleSystemQuad::create("touchRed.plist");
+		particle->setPosition(Point(touch->getLocation().x, touch->getLocation().y));
+		this->addChild(particle);
+		touchTrace_queue.pushBack(particle);
+
 	} else
 	if (choose_monster != NULL)
 	{//there is a monster being chosen
@@ -97,20 +103,25 @@ void GestureLayer::onTouchMoved(Touch *touch, Event *unused_event)
 	}
 }
 void GestureLayer::onTouchEnded(Touch *touch, Event *unused_event)
-{
-	if (in_gesture){
+{ 
+	for (auto part : touchTrace_queue)
+	{
+		this->removeChild(part,true);
+		touchTrace_queue.eraseObject(part, true);
+	}
+	if (in_gesture){ 
 		log("build moster");
 		DollarRecognizer::RecognitionResult result = Recog->recognize(path);
 		Monster *newMonster=NULL;
 		log(result.name.c_str());
 		if (result.name == "Rectangle")
-		{
+		{ 
 			double area = (most_right - most_left)*(up - bottom);
 			area = area / (Whole_area);
 			if (area > 1.5) area = 1.5;
 			if (area < 0.5) area = 0.5;
 			if (energe >= area*origin_life * 2)
-			{//enough energy
+			{//enough  energy
 				//smaller than bigger, bigger than smaller
 				newMonster = new RectMonster(Rect_attack, Rect_defence, area*origin_life * 2, false);
 				energe -= area * origin_life * 2;

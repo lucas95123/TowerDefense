@@ -10,6 +10,9 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
+    <Filter Include="header">
+      <UniqueIdentifier>{683fd5db-9319-4857-9732-2c2b5d9296b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -30,10 +33,19 @@
     <ClCompile Include="..\Classes\EndScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Monster.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\MapLayer.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="GestureLayer.cpp">
+    <ClCompile Include="..\Classes\CrashTestScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GeometricRecognizer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GestureLayer.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -42,28 +54,43 @@
       <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\StartScene.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MenuScene.h">
-      <Filter>src</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\BattleScene.h">
-      <Filter>src</Filter>
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CrashTestScene.h">
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\EndScene.h">
-      <Filter>src</Filter>
+      <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Monster.h">
-      <Filter>src</Filter>
+    <ClInclude Include="..\Classes\GeometricRecognizer.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GestureLayer.h">
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\MapLayer.h">
-      <Filter>src</Filter>
+      <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="GestureLayer.h">
-      <Filter>src</Filter>
+    <ClInclude Include="..\Classes\GestureTemplate.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MenuScene.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Monster.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SampleGestures.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartScene.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GeometricRecognizerTypes.h">
+      <Filter>header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

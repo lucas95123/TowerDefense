@@ -43,7 +43,9 @@ bool BattleScene::init()
 
 	//Obtain map layer from cocos studio design file
 	mapLayer = new MapLayer();
+
 	mapLayer->create(static_cast<ui::ScrollView *>(rootNode->getChildByName("ScrollView_1")), 100, 100);
+
 
 	//Obtain pause layer from cocos studio design file and hide it
 	pauseLayer = static_cast<Layer *>(rootNode->getChildByName("Layer_Pause"));
@@ -155,18 +157,22 @@ void BattleScene::ifwin(float dt)
 {
 	//log("ifwin");
 	int flag = mapLayer->Castle_damage();
-	auto battleScene = EndScene::createScene();
-	auto transition = TransitionFade::create(1.0f, battleScene);
-	switch (flag)
+	if (flag != Nothing)
 	{
-	case Win:
-		Director::getInstance()->pushScene(Director::getInstance()->getRunningScene());
-		Director::getInstance()->replaceScene(transition);
-		break;
-	case Lose:
-		Director::getInstance()->pushScene(Director::getInstance()->getRunningScene());
-		Director::getInstance()->replaceScene(transition);
-		break;
+		auto battleScene = EndScene::createScene();
+		auto transition = TransitionFade::create(1.0f, battleScene);
+
+		switch (flag)
+		{
+		case Win:
+			Director::getInstance()->pushScene(Director::getInstance()->getRunningScene());
+			Director::getInstance()->replaceScene(transition);
+			break;
+		case Lose:
+			Director::getInstance()->pushScene(Director::getInstance()->getRunningScene());
+			Director::getInstance()->replaceScene(transition);
+			break;
+		}
 	}
 }
 void BattleScene::randomEnemy()

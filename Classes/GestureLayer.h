@@ -26,6 +26,8 @@ private:
 	DollarRecognizer::GeometricRecognizer* Recog;
 	MapLayer *mapLayer;
 	Vector<Monster *> monster_queue;
+	Vector<ParticleSystemQuad *>touchTrace_queue;
+
 };
 
 

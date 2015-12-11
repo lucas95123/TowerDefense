@@ -17,26 +17,12 @@
         <AndroidVersion Value="android-19" />
         <iOS_Target Value="TowerDefense iOS" />
         <iOS_BundleID Value="" />
-        <Platform Value="None" />
+        <Platform Value="Android" />
         <RunPlatform Value="None" />
         <FrameworkVersion Value="cocos2d-x-3.6" />
         <IsDebugKeystore Value="True" />
         <EnableSourceMap Value="False" />
         <EnableHTML5Advanced Value="False" />
-      </Value>
-    </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="StartScene/StartScene.csd" />
-          <FilePathData Path="MenuScene/MenuScene.csd" />
-          <FilePathData Path="BattleScene/BattleScene.csd" />
-          <FilePathData Path="EndScene/EndScene.csd" />
-          <FilePathData Path="BattleScene/TuturialLayer.csd" />
-          <FilePathData Path="BattleScene/PauseLayer.csd" />
-          <FilePathData Path="BattleScene/FunctionLayer.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="BattleScene/BattleScene.csd" />
       </Value>
     </Item>
   </Properties>
