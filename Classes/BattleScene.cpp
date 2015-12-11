@@ -71,22 +71,29 @@ bool BattleScene::init()
 	buttonSound->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonSoundClickCallBack, this));
 	
 	//get the label and timers
-	life_label = static_cast<TextAtlas *>(functionLayer->getChildByName("AtlasLabel_1"));
-	energy_label = static_cast<TextAtlas*>(functionLayer->getChildByName("AtlasLabel_2"));
-	life_timer = static_cast<ProgressTimer *>(functionLayer->getChildByName("LoadingBar_3"));
-	energy_timer = static_cast<ProgressTimer*>(functionLayer->getChildByName("LoadingBar_4"));
-	/*char life_char[20];
-	sprintf(life_char,"%d",mapLayer->Player_Castle_life_point);
-	life_label->setStringValue(life_char);
-	char energy_char[20];
-	sprintf(energy_char, "%d", gestureLayer->energe);
-	energy_label->setStringValue(energy_char);
-	life_timer->setBarChangeRate(Point(1, 0));//设置进程条的变化速率  
-	life_timer->setPercentage(1.0f);//设置初始值为0  
-	energy_timer->setBarChangeRate(Point(1, 0));//设置进程条的变化速率   
-	energy_timer->setPercentage(0.0f);//设置初始值为0  
-	*/
+ 
+
+
+	//life_label = static_cast<TextAtlas *>(functionLayer->getChildByName("AtlasLabel_1"));
+	//energy_label = static_cast<TextAtlas*>(functionLayer->getChildByName("AtlasLabel_2"));
+	//life_timer = static_cast<ProgressTimer *>(functionLayer->getChildByName("LoadingBar_3"));
+	//energy_timer = static_cast<ProgressTimer*>(functionLayer->getChildByName("LoadingBar_4"));
+	//char life_char[20];
+	//sprintf(life_char,"%d",mapLayer->Player_Castle_life_point);
+	//life_label->setStringValue(life_char);
+	//char energy_char[20];
+	//sprintf(energy_char, "%d", gestureLayer->energe);
+	//energy_label->setStringValue(energy_char);
+	//life_timer->setBarChangeRate(Point(1, 0));//设置进程条的变化速率  
+	//life_timer->setPercentage(1.0f);//设置初始值为0  
+	//energy_timer->setBarChangeRate(Point(1, 0));//设置进程条的变化速率   
+	//energy_timer->setPercentage(0.0f);//设置初始值为0  
+
 	//Obtain pause button from cocos studio design file
+
+	//Obtain life bar from cocos studio design file
+	lifeBar = static_cast<Sprite *>(functionLayer->getChildByName("life_bar"));
+
 	buttonPause = static_cast<ui::Button*>(functionLayer->getChildByName("Button_Pause"));
 	buttonPause->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonPauseClickCallBack, this));
 
@@ -152,15 +159,7 @@ void BattleScene::buttonLeftClickCallBack(cocos2d::Ref *pSender)
 
 bool BattleScene::onTouchBegan(Touch *touch, Event *unused_event)
 {
-	//log("Battle Scene Touch Began");
-	/*Monster *sprite1 = new RectMonster(10, 5, 45, 0);
-	int pointY = touch->getLocation().y;
-	if (pointY >= DOWNROWY&&pointY <= MIDDLEROWY)
-		mapLayer->addMonster(sprite1, DOWNROW);
-	else if (pointY > MIDDLEROWY&&pointY <= UPROWY)
-		mapLayer->addMonster(sprite1, MIDDLEROW);
-	else if (pointY > UPROWY&&pointY <= LIMITY)
-		mapLayer->addMonster(sprite1, UPROW);*/
+
 	return true;
 }
 
@@ -168,11 +167,13 @@ void BattleScene::update(float dt)
 {
 	//log("Battle Scene update");
 	mapLayer->checkCollision();
-	
-	/*char life_char[20];
-	sprintf(life_char, "%d", gestureLayer->energe);
-	energy_label->setStringValue(life_char);
-	energy_timer->setPercentage(float(gestureLayer->energe)/float(max_energe));*/
+
+	lifeBar->setScaleX(mapLayer->Player_Castle_life_point/ 500.0*0.74);
+	//char life_char[20];
+	//sprintf(life_char, "%d", gestureLayer->energe);
+	//energy_label->setStringValue(life_char);
+	//energy_timer->setPercentage(float(gestureLayer->energe)/float(max_energe));
+
 }
 
 void BattleScene::ifwin(float dt)
@@ -180,11 +181,13 @@ void BattleScene::ifwin(float dt)
 	//log("ifwin");
 	int flag = mapLayer->Castle_damage();
 	//update the life point of label and timer
-	/*char life_char[20];
-	sprintf(life_char, "%d", mapLayer->Player_Castle_life_point);
-	life_label->setStringValue(life_char);
-	float per = float(mapLayer->Player_Castle_life_point) / float(player_castle_life);
-	life_timer->setPercentage(float(mapLayer->Player_Castle_life_point) / float(player_castle_life));*/
+
+	//char life_char[20];
+	//sprintf(life_char, "%d", mapLayer->Player_Castle_life_point);
+	//life_label->setStringValue(life_char);
+	//float per = float(mapLayer->Player_Castle_life_point) / float(player_castle_life);
+	//life_timer->setPercentage(float(mapLayer->Player_Castle_life_point) / float(player_castle_life));
+
 	if (flag != Nothing)
 	{
 		auto battleScene = EndScene::createScene();
