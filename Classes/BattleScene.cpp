@@ -75,7 +75,7 @@ bool BattleScene::init()
 	energy_label = static_cast<TextAtlas*>(functionLayer->getChildByName("AtlasLabel_2"));
 	life_timer = static_cast<ProgressTimer *>(functionLayer->getChildByName("LoadingBar_3"));
 	energy_timer = static_cast<ProgressTimer*>(functionLayer->getChildByName("LoadingBar_4"));
-	char life_char[20];
+	/*char life_char[20];
 	sprintf(life_char,"%d",mapLayer->Player_Castle_life_point);
 	life_label->setStringValue(life_char);
 	char energy_char[20];
@@ -85,6 +85,7 @@ bool BattleScene::init()
 	life_timer->setPercentage(1.0f);//设置初始值为0  
 	energy_timer->setBarChangeRate(Point(1, 0));//设置进程条的变化速率   
 	energy_timer->setPercentage(0.0f);//设置初始值为0  
+	*/
 	//Obtain pause button from cocos studio design file
 	buttonPause = static_cast<ui::Button*>(functionLayer->getChildByName("Button_Pause"));
 	buttonPause->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonPauseClickCallBack, this));
@@ -168,10 +169,10 @@ void BattleScene::update(float dt)
 	//log("Battle Scene update");
 	mapLayer->checkCollision();
 	
-	char life_char[20];
+	/*char life_char[20];
 	sprintf(life_char, "%d", gestureLayer->energe);
 	energy_label->setStringValue(life_char);
-	energy_timer->setPercentage(float(gestureLayer->energe)/float(max_energe));
+	energy_timer->setPercentage(float(gestureLayer->energe)/float(max_energe));*/
 }
 
 void BattleScene::ifwin(float dt)
@@ -179,11 +180,11 @@ void BattleScene::ifwin(float dt)
 	//log("ifwin");
 	int flag = mapLayer->Castle_damage();
 	//update the life point of label and timer
-	char life_char[20];
+	/*char life_char[20];
 	sprintf(life_char, "%d", mapLayer->Player_Castle_life_point);
 	life_label->setStringValue(life_char);
 	float per = float(mapLayer->Player_Castle_life_point) / float(player_castle_life);
-	life_timer->setPercentage(float(mapLayer->Player_Castle_life_point) / float(player_castle_life));
+	life_timer->setPercentage(float(mapLayer->Player_Castle_life_point) / float(player_castle_life));*/
 	if (flag != Nothing)
 	{
 		auto battleScene = EndScene::createScene();

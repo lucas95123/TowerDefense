@@ -9,22 +9,64 @@ void MapLayer::create(ui::ScrollView * map,int _Enemy_life_point,int _Player_lif
 	this->Player_Castle_life_point = _Player_life_point;
 	//Initialize animations 
 	auto cache = AnimationCache::getInstance();
-	auto animation = Animation::create();
-	for (int i = 1; i<9; i++)
 	{
-		char szName[100] = { 0 };
-		sprintf(szName, "tony_%02d.png", i);
-		animation->addSpriteFrameWithFile(szName);
+		auto animation = Animation::create();
+		for (int i = 1; i < 9; i++)
+		{
+			char szName[100] = { 0 };
+			sprintf(szName, "tony_%02d.png", i);
+			animation->addSpriteFrameWithFile(szName);
+		}
+		animation->setDelayPerUnit(0.9f / 18.0f);
+		animation->setRestoreOriginalFrame(true);//read rectangle monster
+		cache->addAnimation(animation, Rec_Moving_forward_anim);
 	}
-	animation->setDelayPerUnit(0.9f / 18.0f);
-	animation->setRestoreOriginalFrame(true);
-	cache->addAnimation(animation, Rec_Moving_forward_anim);
+	//read Jerry attack
 	{
+		auto animation = Animation::create();
+		for (int i = 0; i < 3; i++)
+		{
+			char szName[100] = { 0 };
+			sprintf(szName, "BattleScene/JerryAnim/jerry_%02d.png", i);
+			animation->addSpriteFrameWithFile(szName);
+		}
+		animation->setDelayPerUnit(0.6f);
+		animation->setRestoreOriginalFrame(true);
+		cache->addAnimation(animation, Tri_Moving_forward_anim);
+	}
+	//read Ceaser attack
+	{
+		auto animation = Animation::create();
+		for (int i = 0; i < 4; i++)
+		{
+			char szName[100] = { 0 };
+			sprintf(szName, "BattleScene/CeaserAnim/Ceaser_%02d.png", i);
+			animation->addSpriteFrameWithFile(szName);
+		}
+		animation->setDelayPerUnit(0.4f);
+		animation->setRestoreOriginalFrame(true);
+		cache->addAnimation(animation, Cir_Moving_forward_anim);
+	}
+	{//tony hit back
 		auto animation = Animation::create();
 		animation->addSpriteFrameWithFile("tony_cry.png");
 		animation->setDelayPerUnit(3.0f);
 		animation->setRestoreOriginalFrame(false);
 		cache->addAnimation(animation, Rec_Hit_back_anim);
+	}
+	{//jerry hit back
+		auto animation = Animation::create();
+		animation->addSpriteFrameWithFile("jerry_cry.png");
+		animation->setDelayPerUnit(3.0f);
+		animation->setRestoreOriginalFrame(false);
+		cache->addAnimation(animation, Tri_Hit_back_anim);
+	}
+	{//Ceaser hit back
+		auto animation = Animation::create();
+		animation->addSpriteFrameWithFile("Ceaser_cry.png");
+		animation->setDelayPerUnit(3.0f);
+		animation->setRestoreOriginalFrame(false);
+		cache->addAnimation(animation, Cir_Hit_back_anim);
 	}
 	{
 		auto animation = Animation::create();
@@ -164,8 +206,6 @@ int MapLayer::Castle_damage()
 void MapLayer::checkCollision()
 {
 	auto cache = AnimationCache::getInstance();
-	auto animate1 = Animate::create(cache->getAnimation("Cry"));
-	auto animate2 = Animate::create(cache->getAnimation("Cry"));
 	
 	for (int i = 0; i < 3; i++)
 	{

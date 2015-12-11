@@ -106,8 +106,7 @@ void GestureLayer::onTouchEnded(Touch *touch, Event *unused_event)
 { 
 	for (auto part : touchTrace_queue)
 	{
-		this->removeChild(part,true);
-		touchTrace_queue.eraseObject(part, true);
+		part->removeFromParentAndCleanup(true);
 	}
 	if (in_gesture){ 
 		log("build moster");

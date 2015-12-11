@@ -13,15 +13,15 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "cocos2d.h"
-#define Rec_pic "BattleScene/Ceaser.png"
-#define Tri_pic "BattleScene/tonyGold.png"
-#define Cir_pic "MenuScene/jerry.png"
-#define Rec_Hit_back_anim "Cry"
-#define Tri_Hit_back_anim "Cry"
-#define Cir_Hit_back_anim "Cry"
-#define Rec_Moving_forward_anim "attack"
-#define Tri_Moving_forward_anim "attack"
-#define Cir_Moving_forward_anim "attack"
+#define Rec_pic "BattleScene/tonyGold.png"
+#define Tri_pic "BattleScene/jerry.png"
+#define Cir_pic "BattleScene/Ceaser.png"
+#define Rec_Hit_back_anim "Rec_Cry"
+#define Tri_Hit_back_anim "Tri_Cry"
+#define Cir_Hit_back_anim "Cir_Cry"
+#define Rec_Moving_forward_anim "Rec_attack"
+#define Tri_Moving_forward_anim "Tri_attack"
+#define Cir_Moving_forward_anim "Cir_attack"
 #define Rec_Hit_back_pic ""
 #define Cir_Hit_back_pic ""
 #define Tri_Hit_back_pic ""
@@ -120,7 +120,7 @@ public:
 		int x = this->anim_body->getPositionX();
 		int TargetPoint;
 		TargetPoint = isEnemy ? 80 : Map_width;
-		auto action = Sequence::create(JumpTo::create(Remove_seconds(x), Point(TargetPoint, Move_to_line),20,8), NULL);
+		auto action = Sequence::create(JumpTo::create(Remove_seconds(x), Point(TargetPoint, Move_to_line),20,2*Remove_seconds(x)), NULL);
 		action->setTag(Move_foward);
 		this->anim_body->runAction(action);
 	}
