@@ -33,10 +33,11 @@ bool MenuScene::init()
 		return false;
 	}
 
-	auto rootNode = CSLoader::createNode("MenuScene//MenuScene.csb");
+	auto rootNode = CSLoader::createNode("MenuScene/MenuScene.csb");
 
+	ui::PageView *pageView = static_cast<ui::PageView *>(rootNode->getChildByName("PageView_1"));
 	//Add button_stageselected
-	Button *buttonSelectStage = static_cast<Button*>(rootNode->getChildByName("Button_StageSelected"));
+	Button *buttonSelectStage = static_cast<Button*>(pageView->getChildByName("Panel_1")->getChildByName("Button_1"));
 	buttonSelectStage->addClickEventListener(CC_CALLBACK_1(MenuScene::buttonStage1ClickCallBack, this));
 
 	//Add touch listener

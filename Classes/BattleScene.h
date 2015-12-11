@@ -3,7 +3,7 @@
 #include "ui/CocosGUI.h"
 #include "MapLayer.h"
 #include "Monster.h"
-
+#include "GestureLayer.h"
 USING_NS_CC;
 
 #include "cocos2d.h"
@@ -13,7 +13,9 @@ class BattleScene : public cocos2d::Layer
 private: 
 	MapLayer *mapLayer;
 	Layer *functionLayer;
-	Layer *gestureLayer;
+	Layer *pauseLayer;
+	GestureLayer *gestureLayer;
+	ui::Button *buttonPause;
 	ui::Button *buttonLeft;
 	ui::Button *buttonRight;
 public:
@@ -28,8 +30,22 @@ public:
 
 	//custom scheduler
 
+	//Wining condition
+	void ifwin(float dt);
 	//Touch began function
 	bool onTouchBegan(Touch *touch, Event *unused_event);
+
+	//Pressed Button_Resume function
+	void buttonResumeClickCallBack(cocos2d::Ref* pSender);
+
+	//Pressed Button_Back function
+	void buttonBackClickCallBack(cocos2d::Ref* pSender);
+
+	//Pressed Button_Sound function
+	void buttonSoundClickCallBack(cocos2d::Ref* pSender);
+
+	//Pressed Button_Pause function
+	void buttonPauseClickCallBack(cocos2d::Ref* pSender);
 
 	//Pressed Button_Left function
 	void buttonLeftClickCallBack(cocos2d::Ref* pSender);

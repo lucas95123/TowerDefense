@@ -1,4 +1,4 @@
-#include "EndScene.h"
+#include "CrashTestScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
@@ -6,13 +6,13 @@ USING_NS_CC;
 
 using namespace cocostudio::timeline;
 
-Scene* EndScene::createScene()
+Scene* CrashTestScene::createScene()
 {
 	// 'scene' is an autorelease object
 	auto scene = Scene::create();
 
 	// 'layer' is an autorelease object
-	auto layer = EndScene::create();
+	auto layer = CrashTestScene::create();
 
 	// add layer as a child to scene
 	scene->addChild(layer);
@@ -22,7 +22,7 @@ Scene* EndScene::createScene()
 }
 
 // on "init" you need to initialize your instance
-bool EndScene::init()
+bool CrashTestScene::init()
 {
 	//////////////////////////////
 	// 1. super init first
@@ -31,7 +31,7 @@ bool EndScene::init()
 		return false;
 	}
 
-	auto rootNode = CSLoader::createNode("EndScene/EndScene.csb");
+	auto rootNode = CSLoader::createNode("CrashTestScene.csb");
 
 	addChild(rootNode);
 
