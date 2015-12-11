@@ -16,6 +16,7 @@ private:
 	Layer *functionLayer;
 	Layer *pauseLayer;
 	Sprite *lifeBar;
+	Sprite *magicBar;
 	ui::Button *buttonPause;
 	ui::Button *buttonLeft;
 	ui::Button *buttonRight;
