@@ -11,10 +11,10 @@ USING_NS_CC;
 class BattleScene : public cocos2d::Layer
 {
 private: 
-	MapLayer *mapLayer;
-	GestureLayer *gestureLayer;
-	Layer *functionLayer;
-	Layer *pauseLayer;
+	MapLayer *mapLayer;//ZOrder 0
+	GestureLayer *gestureLayer;//ZOrder
+	Layer *functionLayer;//ZOrder
+	Layer *pauseLayer;//ZOrder
 	Sprite *lifeBar;
 	Sprite *magicBar;
 	ui::Button *buttonPause;

@@ -70,17 +70,19 @@ void MapLayer::create(ui::ScrollView * map,int _Enemy_life_point,int _Player_lif
 	}
 	{
 		auto animation = Animation::create();
-		animation->addSpriteFrameWithFile("castle_enemy.png");
-		animation->addSpriteFrameWithFile("castle_enemy_damaged.png");
+		animation->addSpriteFrameWithFile("Trees.png");
+		animation->addSpriteFrameWithFile("tree2Color.png");
 		animation->setDelayPerUnit(1.0f);
 		animation->setRestoreOriginalFrame(true);
 		cache->addAnimation(animation, "castle_enemy_damaged.png");
 	}
-	Enemy_Castle = Sprite::create("castle_enemy.png");
-	Enemy_Castle->setPositionX(1800);
-	Enemy_Castle->setPositionY(0);
-	Enemy_Castle->setScaleY(3);
+	Enemy_Castle = Sprite::create("tree2Color.png");
+	Enemy_Castle->setPositionX(1750);
+	Enemy_Castle->setPositionY(370);
+	Enemy_Castle->setScaleX(0.6);
+	Enemy_Castle->setScaleY(0.6);
 	mapContainer->addChild(Enemy_Castle);
+	mapContainer->setZOrder(0);
 }
 
 void MapLayer::scrollMapLeft()

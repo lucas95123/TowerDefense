@@ -29,10 +29,7 @@ bool GestureLayer::init(MapLayer * map)
 	listenerTouch->onTouchMoved = CC_CALLBACK_2(GestureLayer::onTouchMoved, this);
 	listenerTouch->onTouchEnded = CC_CALLBACK_2(GestureLayer::onTouchEnded, this);
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithFixedPriority(listenerTouch, 1);
-	auto monster_queue_sprite = Sprite::create("BattleScene/monster_queue.png");
-	//monster_queue_sprite->setScaleX(2.5);
-	monster_queue_sprite->setPosition(Point(queue_width,queue_Height));
-	this->addChild(monster_queue_sprite);
+
 	scheduleUpdate();
 	schedule(schedule_selector(GestureLayer::OneSecondUpdate), 1.0f);
 	return true;
@@ -90,7 +87,7 @@ void GestureLayer::onTouchMoved(Touch *touch, Event *unused_event)
 		pot.y = -point.y;
 		path.push_back(pot);
 		/*Partical*/
-		auto particle = ParticleSystemQuad::create("touchRed.plist");
+		auto particle = ParticleSystemQuad::create("touchBlue.plist");
 		particle->setPosition(Point(touch->getLocation().x, touch->getLocation().y));
 		this->addChild(particle);
 		touchTrace_queue.pushBack(particle);

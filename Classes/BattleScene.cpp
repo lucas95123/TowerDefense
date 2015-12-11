@@ -36,31 +36,24 @@ bool BattleScene::init()
 	scheduleUpdate();
 	schedule(schedule_selector(BattleScene::ifwin), 2.0f);
 
-	//Add touch listener to the scene
-	//auto listenerTouch = EventListenerTouchOneByOne::create();
-	//listenerTouch->setSwallowTouches(false);
-	//listenerTouch->onTouchBegan = CC_CALLBACK_2(BattleScene::onTouchBegan, this);
-	//Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerTouch, this);
-
 	//Obtain map layer from cocos studio design file
 	mapLayer = new MapLayer();
-
 	mapLayer->create(static_cast<ui::ScrollView *>(rootNode->getChildByName("ScrollView_1")), player_castle_life, enemy_castle_life);
-
 
 	//Obtain pause layer from cocos studio design file and hide it
 	pauseLayer = static_cast<Layer *>(rootNode->getChildByName("Layer_Pause"));
 	pauseLayer->setVisible(false);
-	pauseLayer->setZOrder(3);
+	pauseLayer->setZOrder(5);
 
 	//create the gesture Layer
 	gestureLayer = new GestureLayer();
 	gestureLayer->init(mapLayer);
+	gestureLayer->setZOrder(3);
 
 	//Obtain function layer from cocos studio design file
 	functionLayer = static_cast<Layer *>(rootNode->getChildByName("Layer_Funct"));
-	auto deleteNode = functionLayer->getChildByName("Panel_5");
-	functionLayer->removeChild(deleteNode, true);
+	functionLayer->setZOrder(1);
+
 	//Obtain buttons in pause layer
 	auto buttonResume = static_cast<ui::Button *>(pauseLayer->getChildByName("Panel_1")->getChildByName("Button_Resume"));
 	buttonResume->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonResumeClickCallBack, this));
@@ -71,23 +64,6 @@ bool BattleScene::init()
 	auto buttonSound = static_cast<ui::Button *>(pauseLayer->getChildByName("Panel_1")->getChildByName("Button_Sound"));
 	buttonSound->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonSoundClickCallBack, this));
 	
-	//get the label and timers
-	//life_label = static_cast<TextAtlas *>(functionLayer->getChildByName("AtlasLabel_1"));
-	//energy_label = static_cast<TextAtlas*>(functionLayer->getChildByName("AtlasLabel_2"));
-	//life_timer = static_cast<ProgressTimer *>(functionLayer->getChildByName("LoadingBar_3"));
-	//energy_timer = static_cast<ProgressTimer*>(functionLayer->getChildByName("LoadingBar_4"));
-	//char life_char[20];
-	//sprintf(life_char,"%d",mapLayer->Player_Castle_life_point);
-	//life_label->setStringValue(life_char);
-	//char energy_char[20];
-	//sprintf(energy_char, "%d", gestureLayer->energe);
-	//energy_label->setStringValue(energy_char);
-	//life_timer->setBarChangeRate(Point(1, 0));//设置进程条的变化速率  
-	//life_timer->setPercentage(1.0f);//设置初始值为0  
-	//energy_timer->setBarChangeRate(Point(1, 0));//设置进程条的变化速率   
-	//energy_timer->setPercentage(0.0f);//设置初始值为0  
-	//Obtain pause button from cocos studio design file
-
 	//Obtain life bar from cocos studio design file
 	lifeBar = static_cast<Sprite *>(functionLayer->getChildByName("life_bar"));
 	magicBar = static_cast<Sprite *>(functionLayer->getChildByName("magic_bar"));
@@ -170,22 +146,12 @@ void BattleScene::update(float dt)
 
 	lifeBar->setScaleX(mapLayer->Player_Castle_life_point/500.0*0.74);
 	magicBar->setScaleX(gestureLayer->energe / 1000.0*1.09);
-	//char life_char[20];
-	//sprintf(life_char, "%d", gestureLayer->energe);
-	//energy_label->setStringValue(life_char);
-	//energy_timer->setPercentage(float(gestureLayer->energe)/float(max_energe));
 }
 
 void BattleScene::ifwin(float dt)
 {
 	//log("ifwin");
 	int flag = mapLayer->Castle_damage();
-	//update the life point of label and timer
-	//char life_char[20];
-	//sprintf(life_char, "%d", mapLayer->Player_Castle_life_point);
-	//life_label->setStringValue(life_char);
-	//float per = float(mapLayer->Player_Castle_life_point) / float(player_castle_life);
-	//life_timer->setPercentage(float(mapLayer->Player_Castle_life_point) / float(player_castle_life));
 	if (flag != Nothing)
 	{
 		auto battleScene = EndScene::createScene();
