@@ -4,7 +4,8 @@
 #include "cocostudio/CocoStudio.h"
 #include "Monster.h"
 using namespace cocostudio::timeline;
-
+TextAtlas *life_label, *energy_label;
+ProgressTimer *life_timer, *energy_timer;
 Scene* BattleScene::createScene()
 {
 	// 'scene' is an autorelease object
@@ -44,7 +45,7 @@ bool BattleScene::init()
 	//Obtain map layer from cocos studio design file
 	mapLayer = new MapLayer();
 
-	mapLayer->create(static_cast<ui::ScrollView *>(rootNode->getChildByName("ScrollView_1")), 100, 100);
+	mapLayer->create(static_cast<ui::ScrollView *>(rootNode->getChildByName("ScrollView_1")), player_castle_life, enemy_castle_life);
 
 
 	//Obtain pause layer from cocos studio design file and hide it
@@ -68,7 +69,22 @@ bool BattleScene::init()
 
 	auto buttonSound = static_cast<ui::Button *>(pauseLayer->getChildByName("Panel_1")->getChildByName("Button_Sound"));
 	buttonSound->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonSoundClickCallBack, this));
-
+	
+	//get the label and timers
+	life_label = static_cast<TextAtlas *>(functionLayer->getChildByName("AtlasLabel_1"));
+	energy_label = static_cast<TextAtlas*>(functionLayer->getChildByName("AtlasLabel_2"));
+	life_timer = static_cast<ProgressTimer *>(functionLayer->getChildByName("LoadingBar_3"));
+	energy_timer = static_cast<ProgressTimer*>(functionLayer->getChildByName("LoadingBar_4"));
+	char life_char[20];
+	sprintf(life_char,"%d",mapLayer->Player_Castle_life_point);
+	life_label->setStringValue(life_char);
+	char energy_char[20];
+	sprintf(energy_char, "%d", gestureLayer->energe);
+	energy_label->setStringValue(energy_char);
+	life_timer->setBarChangeRate(Point(1, 0));//设置进程条的变化速率  
+	life_timer->setPercentage(1.0f);//设置初始值为0  
+	energy_timer->setBarChangeRate(Point(1, 0));//设置进程条的变化速率   
+	energy_timer->setPercentage(0.0f);//设置初始值为0  
 	//Obtain pause button from cocos studio design file
 	buttonPause = static_cast<ui::Button*>(functionLayer->getChildByName("Button_Pause"));
 	buttonPause->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonPauseClickCallBack, this));
@@ -151,12 +167,23 @@ void BattleScene::update(float dt)
 {
 	//log("Battle Scene update");
 	mapLayer->checkCollision();
+	
+	char life_char[20];
+	sprintf(life_char, "%d", gestureLayer->energe);
+	energy_label->setStringValue(life_char);
+	energy_timer->setPercentage(float(gestureLayer->energe)/float(max_energe));
 }
 
 void BattleScene::ifwin(float dt)
 {
 	//log("ifwin");
 	int flag = mapLayer->Castle_damage();
+	//update the life point of label and timer
+	char life_char[20];
+	sprintf(life_char, "%d", mapLayer->Player_Castle_life_point);
+	life_label->setStringValue(life_char);
+	float per = float(mapLayer->Player_Castle_life_point) / float(player_castle_life);
+	life_timer->setPercentage(float(mapLayer->Player_Castle_life_point) / float(player_castle_life));
 	if (flag != Nothing)
 	{
 		auto battleScene = EndScene::createScene();

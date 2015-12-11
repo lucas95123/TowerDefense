@@ -9,6 +9,8 @@ USING_NS_CC;
 #define Win 1
 #define Lose 2
 #define Nothing 0
+#define enemy_castle_life 500
+#define player_castle_life 500
 class MapLayer
 {
 public:

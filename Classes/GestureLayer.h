@@ -8,6 +8,7 @@
 #include "Monster.h"
 #include <iostream>
 #include <cmath>
+#define max_energe 200
 USING_NS_CC;
 using namespace cocostudio::timeline;
 using namespace cocos2d::ui;
@@ -21,8 +22,9 @@ public:
 	bool onTouchBegan(Touch *touch, Event *unused_event);
 	void onTouchMoved(Touch *touch, Event *unused_event);
 	void onTouchEnded(Touch *touch, Event *unused_event);
+	int energe = max_energe;
 private:
-	int energe=200;
+	
 	DollarRecognizer::GeometricRecognizer* Recog;
 	MapLayer *mapLayer;
 	Vector<Monster *> monster_queue;
