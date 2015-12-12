@@ -3,8 +3,8 @@
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
 #include "Monster.h"
-#include <iostream>
 #include <cmath>
+
 USING_NS_CC;
 #define Win 1
 #define Lose 2

@@ -87,7 +87,7 @@ void GestureLayer::onTouchMoved(Touch *touch, Event *unused_event)
 		pot.y = -point.y;
 		path.push_back(pot);
 		/*Partical*/
-		auto particle = ParticleSystemQuad::create("touchBlue.plist");
+		auto particle = Sprite::create("touchParticle.png");
 		particle->setPosition(Point(touch->getLocation().x, touch->getLocation().y));
 		this->addChild(particle);
 		touchTrace_queue.pushBack(particle);

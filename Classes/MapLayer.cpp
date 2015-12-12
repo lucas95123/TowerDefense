@@ -89,8 +89,6 @@ void MapLayer::scrollMapLeft()
 {
 	if (mapContainer == NULL)
 	{
-		std::exception ex("map Containner not initialized, please use create() first");
-		throw ex;
 	}
 	else
 	{
@@ -105,8 +103,6 @@ void MapLayer::scrollMapRight()
 {
 	if (mapContainer == NULL)
 	{
-		std::exception ex("map Containner not initialized, please use create() first");
-		throw ex;
 	}
 	else
 	{

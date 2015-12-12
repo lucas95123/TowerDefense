@@ -1,3 +1,4 @@
+
 #ifndef _GeometricRecognizerIncluded_
 #define _GeometricRecognizerIncluded_
 
@@ -25,7 +26,7 @@ namespace DollarRecognizer
 		int numPointsInGesture;
 		//---- Square we resize the shapes to
 		int squareSize;
-		
+
 		bool shouldIgnoreRotation;
 
 		//--- What we match the input shape against
