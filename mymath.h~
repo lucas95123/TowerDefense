@@ -35,7 +35,6 @@ double mysqrt(double n)
 			low = mid;
 		}
 	}
-	//return mid;
 }
 double mysin(double x)
 {

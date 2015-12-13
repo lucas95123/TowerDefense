@@ -34,7 +34,7 @@ bool MenuScene::init()
 		return false;
 	}
 	log("MenuScene Read CSB");
-	auto rootNode = CSLoader::createNode("MenuScene\\MenuScene.csb");
+	auto rootNode = CSLoader::createNode("MenuScene/MenuScene.csb");
 	log("MenuScene Read Complete");
 	ui::PageView *pageView = static_cast<ui::PageView *>(rootNode->getChildByName("PageView_1"));
 	//Add button_stageselected
