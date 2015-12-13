@@ -1,6 +1,6 @@
 #include "BattleScene.h"
-#include "LoseScene.h"
 #include "WinScene.h"
+#include "LoseScene.h"
 #include "GestureLayer.h"
 #include "cocostudio/CocoStudio.h"
 #include "Monster.h"
@@ -155,20 +155,21 @@ void BattleScene::ifwin(float dt)
 	int flag = mapLayer->Castle_damage();
 	if (flag != Nothing)
 	{
-
 		auto winScene = WinScene::createScene();
-		auto transitionWin = TransitionFade::create(1.0f, winScene);
+		auto winTransition = TransitionFade::create(1.0f, winScene);
+
 		auto loseScene = LoseScene::createScene();
-		auto transitionLose = TransitionFade::create(1.0f, loseScene);
+		auto loseTransition = TransitionFade::create(1.0f, loseScene);
+
 		switch (flag)
 		{
 		case Win:
 			Director::getInstance()->pushScene(Director::getInstance()->getRunningScene());
-			Director::getInstance()->replaceScene(transitionWin);
+			Director::getInstance()->replaceScene(winTransition);
 			break;
 		case Lose:
 			Director::getInstance()->pushScene(Director::getInstance()->getRunningScene());
-			Director::getInstance()->replaceScene(transitionLose);
+			Director::getInstance()->replaceScene(loseTransition);
 			break;
 		}
 	}

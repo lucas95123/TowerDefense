@@ -11,11 +11,12 @@ using namespace ui;
 Scene* MenuScene::createScene()
 {
 	// 'scene' is an autorelease object
+	log("SCENE CREATE");
 	auto scene = Scene::create();
-
+	log("SCENE CREATE");
 	// 'layer' is an autorelease object
 	auto layer = MenuScene::create();
-
+	log("SCENE CREATE");
 	// add layer as a child to scene
 	scene->addChild(layer);
 
@@ -32,9 +33,9 @@ bool MenuScene::init()
 	{
 		return false;
 	}
-
+	log("MenuScene Read CSB");
 	auto rootNode = CSLoader::createNode("MenuScene/MenuScene.csb");
-
+	log("MenuScene Read Complete");
 	ui::PageView *pageView = static_cast<ui::PageView *>(rootNode->getChildByName("PageView_1"));
 	//Add button_stageselected
 	Button *buttonSelectStage = static_cast<Button*>(pageView->getChildByName("Panel_1")->getChildByName("Button_1"));

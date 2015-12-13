@@ -1,6 +1,6 @@
 #include "GeometricRecognizer.h"
-
-#define MAX_DOUBLE std::numeric_limits<double>::max();
+#include "mymath.h"
+#define MAX_DOUBLE 100000000;
 double min(double a, double b){ if (a < b) return a; else return b; }
 namespace DollarRecognizer
 {
@@ -19,7 +19,7 @@ namespace DollarRecognizer
 		squareSize = 250;
 		//--- 1/2 max distance across a square, which is the maximum distance
 		//---  a point can be from the center of the gesture
-		halfDiagonal = 0.5 * sqrt((250.0 * 250.0) + (250.0 * 250.0));
+		halfDiagonal = 0.5 * mysqrt((250.0 * 250.0) + (250.0 * 250.0));
 		//--- Before matching, we rotate the symbol the user drew so that the 
 		//---  start point is at degree 0 (right side of symbol). That's how 
 		//---  the templates are rotated so it makes matching easier
@@ -29,7 +29,7 @@ namespace DollarRecognizer
 		setRotationInvariance(false);
 		anglePrecision = 2.0;
 		//--- A magic number used in pre-processing the symbols
-		goldenRatio    = 0.5 * (-1.0 + sqrt(5.0));
+		goldenRatio    = 0.5 * (-1.0 + mysqrt(5.0));
 	}
 
 	void GeometricRecognizer::loadTemplates()
@@ -119,7 +119,7 @@ namespace DollarRecognizer
 	{
 		double dx = p2.x - p1.x;
 		double dy = p2.y - p1.y;
-		double distance = sqrt((dx * dx) + (dy * dy));
+		double distance = mysqrt((dx * dx) + (dy * dy));
 		return distance;
 	}
 
@@ -139,7 +139,7 @@ namespace DollarRecognizer
 		double f1 = distanceAtAngle(points, aTemplate, x1);
 		double x2 = (1.0 - goldenRatio) * startRange + goldenRatio * endRange;
 		double f2 = distanceAtAngle(points, aTemplate, x2);
-		while (abs(endRange - startRange) > anglePrecision)
+		while (myabs(endRange - startRange) > anglePrecision)
 		{
 			if (f1 < f2)
 			{
@@ -214,7 +214,7 @@ namespace DollarRecognizer
 		//---  or else recognition will be impossible
 		if (templates.empty())
 		{
-			std::cout << "No templates loaded so no symbols to match." << std::endl;
+			//std::cout << "No templates loaded so no symbols to match." << std::endl;
 			return RecognitionResult("Unknown", NULL);
 		}
 
@@ -297,10 +297,10 @@ namespace DollarRecognizer
 	Path2D GeometricRecognizer::rotateBy(Path2D points, double rotation) 
 	{
 		Point2D c     = centroid(points);
-		//--- can't name cos; creates compiler error since VC++ can't
+		//--- can't name mycos; creates compiler error since VC++ can't
 		//---  tell the difference between the variable and function
-		double cosine = cos(rotation);	
-		double sine   = sin(rotation);
+		double cosine = mycos(rotation);	
+		double sine   = mysin(rotation);
 		
 		Path2D newPoints;
 		for (Path2DIterator i = points.begin(); i != points.end(); i++)
@@ -316,7 +316,7 @@ namespace DollarRecognizer
 	Path2D GeometricRecognizer::rotateToZero(Path2D points)
 	{
 		Point2D c = centroid(points);
-		double rotation = atan2(c.y - points[0].y, c.x - points[0].x);
+		double rotation = myatan2(c.y - points[0].y, c.x - points[0].x);
 		return rotateBy(points, -rotation);
 	}
 
