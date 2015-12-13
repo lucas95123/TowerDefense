@@ -47,6 +47,42 @@ void MapLayer::create(ui::ScrollView * map,int _Enemy_life_point,int _Player_lif
 		animation->setRestoreOriginalFrame(true);
 		cache->addAnimation(animation, Cir_Moving_forward_anim);
 	}
+	{//read tony dead
+		auto animation = Animation::create();
+		for (int i = 0; i < 4; i++)
+		{
+			char szName[100] = { 0 };
+			sprintf(szName, "tony_die_%02d.png", i);
+			animation->addSpriteFrameWithFile(szName);
+		}
+		animation->setDelayPerUnit(0.2f);
+		animation->setRestoreOriginalFrame(true);
+		cache->addAnimation(animation, Rec_Die_anim);
+	}//read Jerry dead
+	{
+		auto animation = Animation::create();
+		for (int i = 0; i < 4; i++)
+		{
+			char szName[100] = { 0 };
+			sprintf(szName, "BattleScene/JerryAnim/jerry_die_%02d.png", i);
+			animation->addSpriteFrameWithFile(szName);
+		}
+		animation->setDelayPerUnit(0.2f);
+		animation->setRestoreOriginalFrame(true);
+		cache->addAnimation(animation, Tri_Die_anim);
+	}
+	{//read Ceaser dead
+		auto animation = Animation::create();
+		for (int i = 0; i < 4; i++)
+		{
+			char szName[100] = { 0 };
+			sprintf(szName, "BattleScene/CeaserAnim/Ceaser_die_%02d.png", i);
+			animation->addSpriteFrameWithFile(szName);
+		}
+		animation->setDelayPerUnit(0.2f);
+		animation->setRestoreOriginalFrame(true);
+		cache->addAnimation(animation, Cir_Die_anim);
+	}
 	{//tony hit back
 		auto animation = Animation::create();
 		animation->addSpriteFrameWithFile("tony_cry.png");

@@ -22,6 +22,9 @@
 #define Rec_Moving_forward_anim "Rec_attack"
 #define Tri_Moving_forward_anim "Tri_attack"
 #define Cir_Moving_forward_anim "Cir_attack"
+#define Rec_Die_anim "Rec_Die"
+#define Cir_Die_anim "Cir_Die"
+#define Tri_Die_anim "Tri_Die"
 #define Rec_Hit_back_pic ""
 #define Cir_Hit_back_pic ""
 #define Tri_Hit_back_pic ""
@@ -128,8 +131,10 @@ public:
 	virtual void ChooseDeath(AnimationCache* cache)
 	{
 		this->anim_body->stopAllActions();
-		this->setState(DEAD);
+		auto animate = Animate::create(cache->getAnimation(Rec_Die_anim));
+		auto action=Sequence::create(animate,CCCallFunc::create(CC_CALLBACK_0(Monster::setState,this,DEAD)),NULL);
 		//this->anim_body->removeFromParent();
+		this->anim_body->runAction(action);
 	}
 };
 
@@ -178,7 +183,9 @@ public:
 	virtual void ChooseDeath(AnimationCache* cache)
 	{
 		this->anim_body->stopAllActions();
-		this->setState(DEAD);
+		auto animate = Animate::create(cache->getAnimation(Tri_Die_anim));
+		auto action = Sequence::create(animate, CCCallFunc::create(CC_CALLBACK_0(Monster::setState, this, DEAD)), NULL);
+		this->anim_body->runAction(action);
 	}
 };
 
@@ -224,7 +231,9 @@ public:
 	virtual void ChooseDeath(AnimationCache* cache)
 	{
 		this->anim_body->stopAllActions();
-		this->setState(DEAD);
+		auto animate = Animate::create(cache->getAnimation(Cir_Die_anim));
+		auto action = Sequence::create(animate, CCCallFunc::create(CC_CALLBACK_0(Monster::setState, this, DEAD)), NULL);
+		this->anim_body->runAction(action);
 	}
 private:
 
