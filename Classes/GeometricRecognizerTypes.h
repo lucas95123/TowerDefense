@@ -25,7 +25,8 @@
 *		Seattle, WA 98195-2840
 * 		yangli@cs.washington.edu
 */
-#include <math.h>
+//#include <math.h>
+
 #include <string>
 #include <list>
 #include <vector>

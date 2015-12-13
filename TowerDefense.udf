@@ -2,8 +2,8 @@
   <Properties>
     <Item Key="CocosRecentOperation">
       <Value ctype="CocosRecentOperation">
-        <LastPublishType Value="Resource" />
-        <IsLastPublish Value="True" />
+        <LastPublishType Value="VS" />
+        <IsLastPublish Value="False" />
         <LastRunType Value="Windows" />
       </Value>
     </Item>
@@ -18,9 +18,12 @@
         <iOS_Target Value="TowerDefense iOS" />
         <iOS_BundleID Value="" />
         <Platform Value="Android" />
-        <RunPlatform Value="None" />
-        <FrameworkVersion Value="cocos2d-x-3.6" />
+        <RunPlatform Value="Windows" />
+        <FrameworkVersion Value="cocos2d-x-3.8" />
         <IsDebugKeystore Value="True" />
+        <KeystorePassword Value="" />
+        <KeystoreAliasName Value="" />
+        <KeystoreAliasPassword Value="" />
         <EnableSourceMap Value="False" />
         <EnableHTML5Advanced Value="False" />
       </Value>

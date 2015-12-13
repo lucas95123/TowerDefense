@@ -14,11 +14,16 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/EndScene.cpp\
 				   ../../Classes/MapLayer.cpp\
 				   ../../Classes/CrashTestScene.cpp\
-				   ../../Classes/Monster.cpp
+				   ../../Classes/Monster.cpp\
+				   ../../Classes/GeometricRecognizer.cpp\
+				   ../../Classes/GestureLayer.cpp
+				   
+				   
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 
-LOCAL_STATIC_LIBRARIES := cocos2dx_static
+LOCAL_STATIC_LIBRARIES := cocos2dx_static 
+
 
 include $(BUILD_SHARED_LIBRARY)
 

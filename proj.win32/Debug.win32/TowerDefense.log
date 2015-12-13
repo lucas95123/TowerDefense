@@ -1,0 +1,58 @@
+﻿生成启动时间为 2015/12/13 15:07:49。
+     1>项目“D:\TowerDefense\TowerDefense\proj.win32\TowerDefense.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\visual studio\VC\bin\CL.exe /c /I"C:\Cocos\frameworks\cocos2d-x-3.8\cocos\audio\include" /I"C:\Cocos\frameworks\cocos2d-x-3.8\external" /I"C:\Cocos\frameworks\cocos2d-x-3.8\external\chipmunk\include\chipmunk" /I"C:\Cocos\frameworks\cocos2d-x-3.8\extensions" /I..\Classes /I.. /I"C:\Cocos\frameworks\cocos2d-x-3.8\cocos\2d\..\..\cocos\editor-support" /I"C:\Cocos\frameworks\cocos2d-x-3.8\cocos\2d\..\..\cocos" /I"C:\Cocos\frameworks\cocos2d-x-3.8\cocos\2d\..\..\cocos\platform" /I"C:\Cocos\frameworks\cocos2d-x-3.8\cocos\2d\..\..\cocos\platform\desktop" /I"C:\Cocos\frameworks\cocos2d-x-3.8\cocos\2d\..\..\external\glfw3\include\win32" /I"C:\Cocos\frameworks\cocos2d-x-3.8\cocos\2d\..\..\external\win32-specific\gles\include\OGLES" /I"C:\Cocos\frameworks\cocos2d-x-3.8\cocos\2d\..\..\external\freetype2\include\win32\freetype2" /I"C:\Cocos\frameworks\cocos2d-x-3.8\cocos\2d\..\..\external\freetype2\include\win32\\" /I"C:\Cocos\frameworks\cocos2d-x-3.8\cocos\2d\..\..\external" /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _WINDOWS /D _USE_MATH_DEFINES /D GL_GLEXT_PROTOTYPES /D CC_ENABLE_CHIPMUNK_INTEGRATION=1 /D COCOS2D_DEBUG=1 /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS /D _VARIADIC_MAX=10 /D GLUT_BUILDING_LIB /D _UNICODE /D UNICODE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc120.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\GeometricRecognizer.cpp
+         GeometricRecognizer.cpp
+     1>d:\towerdefense\towerdefense\classes\mymath.h(69): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\towerdefense\towerdefense\classes\mymath.h(38): warning C4715: “mysqrt”: 不是所有的控件路径都返回值
+       PreLinkEvent:
+         if not exist "D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\" mkdir "D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\"
+         xcopy /Y /Q "C:\Cocos\frameworks\cocos2d-x-3.8\prebuilt\win32\*.*" "D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\"
+         xcopy "D:\TowerDefense\TowerDefense\proj.win32\..\Resources" "D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\" /D /E /I /F /Y
+         
+         :VCEnd
+         复制了 60 个文件
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\BattleScene.csb -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\BattleScene\BattleScene.csb
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\black.png -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\BattleScene\black.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\FunctionLayer.csb -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\BattleScene\FunctionLayer.csb
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\images.png -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\BattleScene\images.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\PauseLayer.csb -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\BattleScene\PauseLayer.csb
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\test1.jpg -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\BattleScene\test1.jpg
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\test2.jpg -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\BattleScene\test2.jpg
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\TuturialLayer.csb -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\BattleScene\TuturialLayer.csb
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\Animation\tony_01.png -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\BattleScene\Animation\tony_01.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\Animation\tony_02.png -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\BattleScene\Animation\tony_02.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\Animation\tony_03.png -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\BattleScene\Animation\tony_03.png
+         D:\TowerDefense\TowerDefense\Resources\res\EndScene\EndScene.csb -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\EndScene\EndScene.csb
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\btnStart.png -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\MenuScene\btnStart.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\btnStartPressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\MenuScene\btnStartPressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\foliage.plist -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\MenuScene\foliage.plist
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\MenuScene.csb -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\MenuScene\MenuScene.csb
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\tony.png -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\MenuScene\tony.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\tony1.png -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\MenuScene\tony1.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\tonyDisabled.png -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\MenuScene\tonyDisabled.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\tonyPressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\MenuScene\tonyPressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\tree.png -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\MenuScene\tree.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\water.plist -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\MenuScene\water.plist
+         D:\TowerDefense\TowerDefense\Resources\res\StartScene\StartScene.csb -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\StartScene\StartScene.csb
+         D:\TowerDefense\TowerDefense\Resources\res\StartScene\Tony.png -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\res\StartScene\Tony.png
+         复制了 24 个文件
+       Link:
+         D:\visual studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\TowerDefense.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\ /LIBPATH:D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\ /LIBPATH:"D:\Computer Graphics\lib" opengl32.lib glew32.lib libzlib.lib libwebp.lib libiconv.lib freetype.lib winmm.lib ws2_32.lib OPENGL32.LIB opengl.lib GLUT32.LIB glut.lib glui32.lib GLU32.LIB glu.lib GLAUX.LIB kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\TowerDefense.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\TowerDefense.lib" /MACHINE:X86 /SAFESEH Debug.win32\game.res
+         Debug.win32\AppDelegate.obj
+         Debug.win32\BattleScene.obj
+         Debug.win32\CrashTestScene.obj
+         Debug.win32\EndScene.obj
+         Debug.win32\GeometricRecognizer.obj
+         Debug.win32\GestureLayer.obj
+         Debug.win32\MapLayer.obj
+         Debug.win32\MenuScene.obj
+         Debug.win32\Monster.obj
+         Debug.win32\StartScene.obj
+         Debug.win32\main.obj
+         TowerDefense.vcxproj -> D:\TowerDefense\TowerDefense\proj.win32\Debug.win32\TowerDefense.exe
+     1>已完成生成项目“D:\TowerDefense\TowerDefense\proj.win32\TowerDefense.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:13.34

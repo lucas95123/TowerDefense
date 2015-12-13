@@ -30,7 +30,7 @@ void MapLayer::create(ui::ScrollView * map,int _Enemy_life_point,int _Player_lif
 			sprintf(szName, "BattleScene/JerryAnim/jerry_%02d.png", i);
 			animation->addSpriteFrameWithFile(szName);
 		}
-		animation->setDelayPerUnit(0.6f);
+		animation->setDelayPerUnit(0.3f);
 		animation->setRestoreOriginalFrame(true);
 		cache->addAnimation(animation, Tri_Moving_forward_anim);
 	}
@@ -89,8 +89,8 @@ void MapLayer::scrollMapLeft()
 {
 	if (mapContainer == NULL)
 	{
-		std::exception ex("map Containner not initialized, please use create() first");
-		throw ex;
+		//std::exception ex("map Containner not initialized, please use create() first");
+		//throw ex;
 	}
 	else
 	{
@@ -105,8 +105,8 @@ void MapLayer::scrollMapRight()
 {
 	if (mapContainer == NULL)
 	{
-		std::exception ex("map Containner not initialized, please use create() first");
-		throw ex;
+		//std::exception ex("map Containner not initialized, please use create() first");
+		//throw ex;
 	}
 	else
 	{

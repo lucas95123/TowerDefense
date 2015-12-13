@@ -1,0 +1,222 @@
+﻿生成启动时间为 2015/12/12 14:07:35。
+     1>项目“D:\TowerDefense\TowerDefense\proj.win32\TowerDefense.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\visual studio\VC\bin\CL.exe /c /I"C:\Cocos\frameworks\cocos2d-x-3.6\cocos\audio\include" /I"C:\Cocos\frameworks\cocos2d-x-3.6\external" /I"C:\Cocos\frameworks\cocos2d-x-3.6\external\chipmunk\include\chipmunk" /I"C:\Cocos\frameworks\cocos2d-x-3.6\extensions" /I..\Classes /I.. /I"C:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\cocos\editor-support" /I"C:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\cocos" /I"C:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\cocos\platform" /I"C:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\cocos\platform\desktop" /I"C:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\external\glfw3\include\win32" /I"C:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\external\win32-specific\gles\include\OGLES" /I"C:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\external\freetype2\include\win32\freetype2" /I"C:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\external\freetype2\include\win32\\" /Zi /nologo /W3 /WX- /MP /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USE_MATH_DEFINES /D GL_GLEXT_PROTOTYPES /D CC_ENABLE_CHIPMUNK_INTEGRATION=1 /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS /D _VARIADIC_MAX=10 /D GLUT_BUILDING_LIB /D _UNICODE /D UNICODE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc120.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\AppDelegate.cpp ..\Classes\BattleScene.cpp ..\Classes\CrashTestScene.cpp ..\Classes\EndScene.cpp ..\Classes\GeometricRecognizer.cpp ..\Classes\GestureLayer.cpp ..\Classes\MapLayer.cpp ..\Classes\MenuScene.cpp ..\Classes\Monster.cpp ..\Classes\StartScene.cpp main.cpp
+         AppDelegate.cpp
+         BattleScene.cpp
+         CrashTestScene.cpp
+         EndScene.cpp
+     1>d:\towerdefense\towerdefense\classes\Monster.h(108): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\BattleScene.cpp)
+     1>d:\towerdefense\towerdefense\classes\Monster.h(157): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\BattleScene.cpp)
+     1>d:\towerdefense\towerdefense\classes\Monster.h(201): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\BattleScene.cpp)
+     1>..\Classes\BattleScene.cpp(46): warning C4996: 'cocos2d::Node::setZOrder': 被声明为已否决
+                 C:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+                 C:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+     1>..\Classes\BattleScene.cpp(51): warning C4996: 'cocos2d::Node::setZOrder': 被声明为已否决
+                 C:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+                 C:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+     1>..\Classes\BattleScene.cpp(55): warning C4996: 'cocos2d::Node::setZOrder': 被声明为已否决
+                 C:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+                 C:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+         GeometricRecognizer.cpp
+         GestureLayer.cpp
+         MapLayer.cpp
+         MenuScene.cpp
+         Monster.cpp
+     1>d:\towerdefense\towerdefense\classes\Monster.h(108): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\GestureLayer.cpp)
+     1>d:\towerdefense\towerdefense\classes\Monster.h(157): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\GestureLayer.cpp)
+     1>d:\towerdefense\towerdefense\classes\Monster.h(201): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\GestureLayer.cpp)
+     1>..\Classes\GestureLayer.cpp(24): warning C4996: 'cocos2d::Layer::setTouchEnabled': 被声明为已否决
+                 c:\cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCLayer.h(179) : 参见“cocos2d::Layer::setTouchEnabled”的声明
+     1>d:\towerdefense\towerdefense\classes\Monster.h(108): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\MapLayer.cpp)
+     1>d:\towerdefense\towerdefense\classes\Monster.h(157): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\MapLayer.cpp)
+     1>d:\towerdefense\towerdefense\classes\Monster.h(201): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\MapLayer.cpp)
+     1>d:\towerdefense\towerdefense\classes\Monster.h(108): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\MenuScene.cpp)
+     1>..\Classes\MapLayer.cpp(82): warning C4305: “参数”: 从“double”到“float”截断
+     1>..\Classes\MapLayer.cpp(83): warning C4305: “参数”: 从“double”到“float”截断
+     1>..\Classes\MapLayer.cpp(85): warning C4996: 'cocos2d::Node::setZOrder': 被声明为已否决
+                 c:\cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+                 c:\cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+     1>d:\towerdefense\towerdefense\classes\Monster.h(157): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\MenuScene.cpp)
+     1>d:\towerdefense\towerdefense\classes\Monster.h(201): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\MenuScene.cpp)
+     1>d:\towerdefense\towerdefense\classes\Monster.h(108): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\Monster.cpp)
+     1>d:\towerdefense\towerdefense\classes\Monster.h(157): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\Monster.cpp)
+     1>d:\towerdefense\towerdefense\classes\Monster.h(201): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\Monster.cpp)
+         StartScene.cpp
+         main.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Release.win32\game.res" game.rc 
+       PreLinkEvent:
+         if not exist "D:\TowerDefense\TowerDefense\proj.win32\Release.win32\" mkdir "D:\TowerDefense\TowerDefense\proj.win32\Release.win32\"
+         xcopy /Y /Q "C:\Cocos\frameworks\cocos2d-x-3.6\prebuilt\win32\*.*" "D:\TowerDefense\TowerDefense\proj.win32\Release.win32\"
+         xcopy "D:\TowerDefense\TowerDefense\proj.win32\..\Resources" "D:\TowerDefense\TowerDefense\proj.win32\Release.win32\" /D /E /I /F /Y
+         
+         :VCEnd
+         复制了 53 个文件
+         D:\TowerDefense\TowerDefense\Resources\res\castle_enemy.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\castle_enemy.png
+         D:\TowerDefense\TowerDefense\Resources\res\castle_enemy_damaged.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\castle_enemy_damaged.png
+         D:\TowerDefense\TowerDefense\Resources\res\Ceaser_cry.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\Ceaser_cry.png
+         D:\TowerDefense\TowerDefense\Resources\res\CrashTestScene.csb -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\CrashTestScene.csb
+         D:\TowerDefense\TowerDefense\Resources\res\jerry_cry.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\jerry_cry.png
+         D:\TowerDefense\TowerDefense\Resources\res\test1.jpg -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\test1.jpg
+         D:\TowerDefense\TowerDefense\Resources\res\tony.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\tony.png
+         D:\TowerDefense\TowerDefense\Resources\res\tony_01.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\tony_01.png
+         D:\TowerDefense\TowerDefense\Resources\res\tony_02.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\tony_02.png
+         D:\TowerDefense\TowerDefense\Resources\res\tony_03.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\tony_03.png
+         D:\TowerDefense\TowerDefense\Resources\res\tony_04.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\tony_04.png
+         D:\TowerDefense\TowerDefense\Resources\res\tony_05.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\tony_05.png
+         D:\TowerDefense\TowerDefense\Resources\res\tony_06.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\tony_06.png
+         D:\TowerDefense\TowerDefense\Resources\res\tony_07.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\tony_07.png
+         D:\TowerDefense\TowerDefense\Resources\res\tony_08.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\tony_08.png
+         D:\TowerDefense\TowerDefense\Resources\res\tony_cry.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\tony_cry.png
+         D:\TowerDefense\TowerDefense\Resources\res\touchBlue.plist -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\touchBlue.plist
+         D:\TowerDefense\TowerDefense\Resources\res\touchGreen.plist -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\touchGreen.plist
+         D:\TowerDefense\TowerDefense\Resources\res\touchRed.plist -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\touchRed.plist
+         D:\TowerDefense\TowerDefense\Resources\res\tree2Color.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\tree2Color.png
+         D:\TowerDefense\TowerDefense\Resources\res\Trees.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\Trees.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\backgroundForest.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\backgroundForest.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\BattleScene.csb -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\BattleScene.csb
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\buffer.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\buffer.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\bufferTrans.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\bufferTrans.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\Ceaser.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\Ceaser.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\CeaserMini.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\CeaserMini.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\Energy_finger.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\Energy_finger.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\finger.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\finger.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\Fire.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\Fire.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\FirePressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\FirePressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\Freeze.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\Freeze.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\FreezePressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\FreezePressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\FunctionLayer.csb -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\FunctionLayer.csb
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\health.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\health.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\jerry.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\jerry.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\JerryMini.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\JerryMini.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\left.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\left.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\leftTrans.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\leftTrans.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\life.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\life.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\lifeBar.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\lifeBar.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\lifeEmpty.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\lifeEmpty.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\magic.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\magic.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\magicBar.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\magicBar.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\magicEmpty.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\magicEmpty.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\mapForest.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\mapForest.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\MapLayer.csb -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\MapLayer.csb
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\monster_queue.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\monster_queue.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\pause.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\pause.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\pause2.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\pause2.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\pause2Pressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\pause2Pressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\PauseLayer.csb -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\PauseLayer.csb
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\pauseMenu.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\pauseMenu.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\pauseMenuTrans.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\pauseMenuTrans.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\pausePressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\pausePressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\return.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\return.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\returnTrans.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\returnTrans.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\right.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\right.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\rightTrans.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\rightTrans.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\scrollArrowLeft.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\scrollArrowLeft.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\scrollArrowLeftPressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\scrollArrowLeftPressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\scrollArrowRight.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\scrollArrowRight.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\scrollArrowRightPressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\scrollArrowRightPressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\seek.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\seek.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\SeekPressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\SeekPressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\skillBuffer.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\skillBuffer.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\SoundOff.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\SoundOff.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\SoundOn.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\SoundOn.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\SoundOnTrans.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\SoundOnTrans.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\Start.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\Start.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\StartTrans.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\StartTrans.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\test1.jpg -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\test1.jpg
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\test2.jpg -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\test2.jpg
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\tony.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\tony.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\tonyGold.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\tonyGold.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\TonyMini.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\TonyMini.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\tree.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\tree.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\tree2.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\tree2.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\tree2Color.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\tree2Color.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\Trees.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\Trees.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\TuturialLayer.csb -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\TuturialLayer.csb
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\wall.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\wall.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\Animation\tony_01.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\Animation\tony_01.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\Animation\tony_02.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\Animation\tony_02.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\Animation\tony_03.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\Animation\tony_03.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\CeaserAnim\Ceaser_00.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\CeaserAnim\Ceaser_00.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\CeaserAnim\Ceaser_01.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\CeaserAnim\Ceaser_01.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\CeaserAnim\Ceaser_02.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\CeaserAnim\Ceaser_02.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\CeaserAnim\Ceaser_03.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\CeaserAnim\Ceaser_03.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\JerryAnim\jerry_00.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\JerryAnim\jerry_00.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\JerryAnim\jerry_01.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\JerryAnim\jerry_01.png
+         D:\TowerDefense\TowerDefense\Resources\res\BattleScene\JerryAnim\jerry_02.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\BattleScene\JerryAnim\jerry_02.png
+         D:\TowerDefense\TowerDefense\Resources\res\Default\Button_Disable.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\Default\Button_Disable.png
+         D:\TowerDefense\TowerDefense\Resources\res\Default\Button_Normal.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\Default\Button_Normal.png
+         D:\TowerDefense\TowerDefense\Resources\res\Default\Button_Press.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\Default\Button_Press.png
+         D:\TowerDefense\TowerDefense\Resources\res\Default\CheckBox_Disable.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\Default\CheckBox_Disable.png
+         D:\TowerDefense\TowerDefense\Resources\res\Default\CheckBox_Press.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\Default\CheckBox_Press.png
+         D:\TowerDefense\TowerDefense\Resources\res\Default\Sprite.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\Default\Sprite.png
+         D:\TowerDefense\TowerDefense\Resources\res\EndScene\EndScene.csb -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\EndScene\EndScene.csb
+         D:\TowerDefense\TowerDefense\Resources\res\EndScene\sword.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\EndScene\sword.png
+         D:\TowerDefense\TowerDefense\Resources\res\EndScene\win.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\EndScene\win.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\backgroundForest.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\backgroundForest.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\btnSound.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\btnSound.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\btnStart.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\btnStart.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\btnStartPressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\btnStartPressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\cloud.plist -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\cloud.plist
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\Cross.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\Cross.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\forest.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\forest.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\google.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\google.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\island.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\island.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\jerry.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\jerry.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\jerryBlack.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\jerryBlack.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\jerryBlue.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\jerryBlue.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\jerryBluePressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\jerryBluePressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\jerryPressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\jerryPressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\jerryRed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\jerryRed.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\jerryRedPressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\jerryRedPressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\lblForest.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\lblForest.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\lblIsland.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\lblIsland.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\lblSelect.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\lblSelect.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\lblSnowfield.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\lblSnowfield.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\lblSound.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\lblSound.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\MenuScene.csb -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\MenuScene.csb
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\snow 2.plist -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\snow 2.plist
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\snow.plist -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\snow.plist
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\snow.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\snow.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\soundPressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\soundPressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\star.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\star.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\starBlack.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\starBlack.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\tony1.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\tony1.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\tonyDisabled.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\tonyDisabled.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\tonyPressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\tonyPressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\tree.plist -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\tree.plist
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\tree.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\tree.png
+         D:\TowerDefense\TowerDefense\Resources\res\MenuScene\tree1.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\MenuScene\tree1.png
+         D:\TowerDefense\TowerDefense\Resources\res\StartScene\backgroundStart.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\StartScene\backgroundStart.png
+         D:\TowerDefense\TowerDefense\Resources\res\StartScene\btnStart.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\StartScene\btnStart.png
+         D:\TowerDefense\TowerDefense\Resources\res\StartScene\btnStartPressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\StartScene\btnStartPressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\StartScene\lblStartNormal.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\StartScene\lblStartNormal.png
+         D:\TowerDefense\TowerDefense\Resources\res\StartScene\lblStartPressed.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\StartScene\lblStartPressed.png
+         D:\TowerDefense\TowerDefense\Resources\res\StartScene\lblTitle1.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\StartScene\lblTitle1.png
+         D:\TowerDefense\TowerDefense\Resources\res\StartScene\lblTitle2.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\StartScene\lblTitle2.png
+         D:\TowerDefense\TowerDefense\Resources\res\StartScene\StartScene.csb -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\StartScene\StartScene.csb
+         D:\TowerDefense\TowerDefense\Resources\res\StartScene\Tony.png -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\res\StartScene\Tony.png
+         复制了 144 个文件
+       Link:
+         D:\visual studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\TowerDefense\TowerDefense\proj.win32\Release.win32\TowerDefense.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:D:\TowerDefense\TowerDefense\proj.win32\Release.win32\ /LIBPATH:D:\TowerDefense\TowerDefense\proj.win32\Release.win32\ /LIBPATH:"D:\Computer Graphics\lib" libcurl_imp.lib websockets.lib opengl32.lib glew32.lib libzlib.lib libpng.lib libjpeg.lib libtiff.lib libwebp.lib libiconv.lib glfw3.lib freetype250.lib winmm.lib ws2_32.lib libchipmunk.lib OPENGL32.LIB opengl.lib GLUT32.LIB glut.lib glui32.lib GLU32.LIB glu.lib GLAUX.LIB kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\TowerDefense\TowerDefense\proj.win32\Release.win32\TowerDefense.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\TowerDefense\TowerDefense\proj.win32\Release.win32\TowerDefense.lib" /MACHINE:X86 /SAFESEH Release.win32\game.res
+         Release.win32\AppDelegate.obj
+         Release.win32\BattleScene.obj
+         Release.win32\CrashTestScene.obj
+         Release.win32\EndScene.obj
+         Release.win32\GeometricRecognizer.obj
+         Release.win32\GestureLayer.obj
+         Release.win32\MapLayer.obj
+         Release.win32\MenuScene.obj
+         Release.win32\Monster.obj
+         Release.win32\StartScene.obj
+         Release.win32\main.obj
+            正在创建库 D:\TowerDefense\TowerDefense\proj.win32\Release.win32\TowerDefense.lib 和对象 D:\TowerDefense\TowerDefense\proj.win32\Release.win32\TowerDefense.exp
+         正在生成代码
+         已完成代码的生成
+         TowerDefense.vcxproj -> D:\TowerDefense\TowerDefense\proj.win32\Release.win32\TowerDefense.exe
+     1>已完成生成项目“D:\TowerDefense\TowerDefense\proj.win32\TowerDefense.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:36.51

@@ -98,7 +98,7 @@ void BattleScene::buttonBackClickCallBack(cocos2d::Ref *pSender)
 {
 	log("Battle Scene Back Button Clicked");
 	Director::getInstance()->resume();
-	Director::getInstance()->popSceneWithTransition<TransitionFade>(1.0f);
+	//Director::getInstance()->popSceneWithTransition<TransitionFade>(1.0f);
 }
 
 void BattleScene::buttonSoundClickCallBack(cocos2d::Ref *pSender)

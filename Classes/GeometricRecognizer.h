@@ -1,14 +1,13 @@
 #ifndef _GeometricRecognizerIncluded_
 #define _GeometricRecognizerIncluded_
 
-#include <limits>
+//#include <limits>
 #include <iostream>
 #include "GeometricRecognizerTypes.h"
 #include "GestureTemplate.h"
 #include "SampleGestures.h"
 
 using namespace std;
-
 namespace DollarRecognizer
 {
 	class GeometricRecognizer

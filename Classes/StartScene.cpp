@@ -32,6 +32,7 @@ bool StartScene::init()
     {
         return false;
     }
+	log("begin!");
 	log("StartScene Load csb Revised");
     auto rootNode = CSLoader::createNode("StartScene/StartScene.csb");
 	log("StartScene Loaded csb Revised");
@@ -80,7 +81,9 @@ void StartScene::onTouchEnded(Touch *touch, Event *unused_event)
 void StartScene::buttonStartClickCallBack(cocos2d::Ref* pSender)
 {
 	log("StartScene Start Button Clicked");
+	log("create scene");
 	auto menuScene = MenuScene::createScene();
+	log("create transition");
 	auto transition = TransitionFade::create(1.0f, menuScene);
 	Director::getInstance()->pushScene(Director::getInstance()->getRunningScene());
 	Director::getInstance()->replaceScene(transition);

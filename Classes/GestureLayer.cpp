@@ -109,7 +109,7 @@ void GestureLayer::onTouchEnded(Touch *touch, Event *unused_event)
 		log("build moster");
 		DollarRecognizer::RecognitionResult result = Recog->recognize(path);
 		Monster *newMonster=NULL;
-		log(result.name.c_str());
+		//log(result.name.c_str());
 		if (result.name == "Rectangle")
 		{ 
 			double area = (most_right - most_left)*(up - bottom);

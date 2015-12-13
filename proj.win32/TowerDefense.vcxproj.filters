@@ -92,6 +92,9 @@
     <ClInclude Include="..\Classes\GeometricRecognizerTypes.h">
       <Filter>header</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\mymath.h">
+      <Filter>header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
