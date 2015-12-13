@@ -113,6 +113,7 @@ public:
 	virtual void MovingForward(AnimationCache* cache)
 	{
 		//log("MovingForward");
+		this->anim_body->stopAllActions();
 		auto animate = Animate::create(cache->getAnimation(Rec_Moving_forward_anim));
 		if (!isEnemy)this->anim_body->runAction(RepeatForever::create(Sequence::create(animate, animate->reverse(), NULL)));
 		else this->anim_body->runAction(RepeatForever::create(Sequence::create(animate, NULL)));
@@ -162,6 +163,7 @@ public:
 	virtual void MovingForward(AnimationCache* cache)
 	{
 		//log("MovingForward");
+		this->anim_body->stopAllActions();
 		auto animate = Animate::create(cache->getAnimation(Tri_Moving_forward_anim));
 		if (!isEnemy)this->anim_body->runAction(RepeatForever::create(Sequence::create(animate, animate->reverse(), NULL)));
 		else this->anim_body->runAction(RepeatForever::create(Sequence::create(animate, NULL)));
@@ -206,6 +208,7 @@ public:
 	virtual void MovingForward(AnimationCache* cache)
 	{
 		//log("MovingForward");
+		this->anim_body->stopAllActions();
 		auto animate = Animate::create(cache->getAnimation(Cir_Moving_forward_anim));
 		if (!isEnemy)this->anim_body->runAction(RepeatForever::create(Sequence::create(animate, animate->reverse(), NULL)));
 		else
