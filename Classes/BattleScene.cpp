@@ -34,8 +34,8 @@ bool BattleScene::init()
 	scheduleUpdate();
 	schedule(schedule_selector(BattleScene::ifwin), 2.0f);
 	schedule(schedule_selector(BattleScene::triangleAI), 5.0f);
-	schedule(schedule_selector(BattleScene::circleAI), 10.0f);
-	schedule(schedule_selector(BattleScene::rectAI), 20.0f);
+	schedule(schedule_selector(BattleScene::circleAI), 20.0f);
+	schedule(schedule_selector(BattleScene::rectAI), 10.0f);
 
 	//Obtain map layer from cocos studio design file
 	mapLayer = new MapLayer();
@@ -159,22 +159,22 @@ void BattleScene::triangleAI(float dt)
 	int row = random<int>(0, 6);
 	if (row < 3)
 	{
-		int delayDist = random<int>(0, 80);
-		Monster* sprite1 = new TriMonster(10, 5, jerryHealth, true);
+		int delayDist = random<int>(20, 100);
+		Monster* sprite1 = new TriMonster(5, 3, jerryHealth, true);
 		mapLayer->addEnemy(sprite1, row, delayDist);
 	}
 	row = random<int>(0, 6);
 	if (row < 3)
 	{
-		int delayDist = random<int>(0, 80);
-		Monster* sprite2 = new TriMonster(10, 5, jerryHealth, true);
+		int delayDist = random<int>(20, 100);
+		Monster* sprite2 = new TriMonster(5, 3, jerryHealth, true);
 		mapLayer->addEnemy(sprite2, row, delayDist);
 	}
 	row = random<int>(0, 6);
 	if (row < 3)
 	{
-		int delayDist = random<int>(0, 80);
-		Monster* sprite3 = new TriMonster(10, 5, jerryHealth, true);
+		int delayDist = random<int>(20, 80);
+		Monster* sprite3 = new TriMonster(5, 3, jerryHealth, true);
 		mapLayer->addEnemy(sprite3, row,delayDist);
 	}
 }
@@ -182,11 +182,53 @@ void BattleScene::triangleAI(float dt)
 void BattleScene::rectAI(float dt)
 {
 	log("RectAI");
+	int row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(20, 160);
+		Monster* sprite1 = new RectMonster(10, 5, tonyHealth, true);
+		mapLayer->addEnemy(sprite1, row, delayDist);
+	}
+	row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(20, 160);
+		Monster* sprite2 = new RectMonster(10, 5, tonyHealth, true);
+		mapLayer->addEnemy(sprite2, row, delayDist);
+	}
+	row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(2, 160);
+		Monster* sprite3 = new RectMonster(10, 5, tonyHealth, true);
+		mapLayer->addEnemy(sprite3, row, delayDist);
+	}
 }
 
 void BattleScene::circleAI(float dt)
 {
-	log("CircleAI");
+	log("CircAI");
+	int row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(20, 160);
+		Monster* sprite1 = new CircleMonster(20, 10, ceaserHealth, true);
+		mapLayer->addEnemy(sprite1, row, delayDist);
+	}
+	row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(20, 160);
+		Monster* sprite2 = new CircleMonster(20, 10, ceaserHealth, true);
+		mapLayer->addEnemy(sprite2, row, delayDist);
+	}
+	row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(2, 160);
+		Monster* sprite3 = new CircleMonster(20, 10, ceaserHealth, true);
+		mapLayer->addEnemy(sprite3, row, delayDist);
+	}
 }
 
 void BattleScene::ifwin(float dt)

@@ -33,7 +33,17 @@ bool LoseScene::init()
 
 	auto rootNode = CSLoader::createNode("EndScene/LoseScene.csb");
 
+	//Listener of btn continue
+	auto btnContinue = static_cast<ui::Button *>(rootNode->getChildByName("LoseLayer")->getChildByName("Button_Continue"));
+	btnContinue->addClickEventListener(CC_CALLBACK_1(LoseScene::buttonContClickCallBack, this));
 	addChild(rootNode);
 
 	return true;
+}
+
+void LoseScene::buttonContClickCallBack(cocos2d::Ref* pSender)
+{
+	log("Lose Scene Button Continue clicked");
+	Director::getInstance()->popScene();
+	Director::getInstance()->popSceneWithTransition<TransitionFade>(1.0f);
 }

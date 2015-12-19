@@ -91,8 +91,8 @@ private:
 public:
 	RectMonster(int _attack,int _defense,int _max_life,int _isEnemy):Monster(_attack,_defense,_max_life,_isEnemy){
 		anim_body = Sprite::create(Rec_pic);
-		anim_body->setScaleX(_max_life / origin_life);
-		anim_body->setScaleY(_max_life / origin_life);//change the size of the monster
+		anim_body->setScaleX(_max_life / origin_life/2);
+		anim_body->setScaleY(_max_life / origin_life/2);//change the size of the monster
 		//anim_body->setFlippedY(true);
 		if (isEnemy) anim_body->setFlippedX(true);
 	}
@@ -185,8 +185,8 @@ class CircleMonster:public Monster
 public:
 	CircleMonster(int _attack,int _defense,int _max_life,int _isEnemy) :Monster(_attack,_defense,_max_life,_isEnemy){
 		anim_body = Sprite::create(Cir_pic);
-		anim_body->setScaleX(_max_life / origin_life);
-		anim_body->setScaleY(_max_life / origin_life);
+		anim_body->setScaleX(_max_life / origin_life/2);
+		anim_body->setScaleY(_max_life / origin_life/2);
 		//anim_body->setFlippedY(true);
 		if (isEnemy) anim_body->setFlippedX(true);
 	}
