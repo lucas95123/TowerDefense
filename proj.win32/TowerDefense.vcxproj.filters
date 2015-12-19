@@ -30,9 +30,6 @@
     <ClCompile Include="..\Classes\BattleScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\EndScene.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Monster.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -48,6 +45,12 @@
     <ClCompile Include="..\Classes\GestureLayer.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\LoseScene.cpp">
+      <Filter>header</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WinScene.cpp">
+      <Filter>header</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -60,9 +63,6 @@
       <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\CrashTestScene.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\EndScene.h">
       <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GeometricRecognizer.h">
@@ -90,6 +90,15 @@
       <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GeometricRecognizerTypes.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LoseScene.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WinScene.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\mymath.h">
       <Filter>header</Filter>
     </ClInclude>
   </ItemGroup>

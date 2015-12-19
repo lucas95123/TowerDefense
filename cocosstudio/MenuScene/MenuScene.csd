@@ -314,10 +314,10 @@
                     <FileData Type="Normal" Path="MenuScene/starBlack.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="star_5_2" ActionTag="-1561151048" Tag="50" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="564.9999" RightMargin="-10.9999" TopMargin="194.0000" BottomMargin="66.0000" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="star_5_2" ActionTag="-1561151048" Tag="50" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="565.0000" RightMargin="-11.0000" TopMargin="194.0000" BottomMargin="66.0000" ctype="SpriteObjectData">
                     <Size X="406.0000" Y="380.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="767.9999" Y="256.0000" />
+                    <Position X="768.0000" Y="256.0000" />
                     <Scale ScaleX="0.1000" ScaleY="0.1000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.8000" Y="0.4000" />
@@ -396,10 +396,10 @@
               <AbstractNodeData Name="Panel_3" ActionTag="-1241972623" Tag="43" IconVisible="False" LeftMargin="1920.0000" RightMargin="-1920.0000" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="960.0000" Y="640.0000" />
                 <Children>
-                  <AbstractNodeData Name="island_3" ActionTag="579941564" Tag="18" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="0.0013" RightMargin="-0.0012" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="island_3" ActionTag="579941564" Tag="18" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" ctype="SpriteObjectData">
                     <Size X="960.0000" Y="640.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="480.0013" Y="320.0000" />
+                    <Position X="480.0000" Y="320.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
@@ -517,10 +517,10 @@
                     <FileData Type="Normal" Path="MenuScene/starBlack.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="star_2_2_0" ActionTag="2016914530" Tag="59" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="564.9999" RightMargin="-10.9999" TopMargin="194.0000" BottomMargin="66.0000" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="star_2_2_0" ActionTag="2016914530" Tag="59" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="565.0000" RightMargin="-11.0000" TopMargin="194.0000" BottomMargin="66.0000" ctype="SpriteObjectData">
                     <Size X="406.0000" Y="380.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="767.9999" Y="256.0000" />
+                    <Position X="768.0000" Y="256.0000" />
                     <Scale ScaleX="0.1000" ScaleY="0.1000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.8000" Y="0.4000" />

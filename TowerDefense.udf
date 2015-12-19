@@ -3,8 +3,8 @@
     <Item Key="CocosRecentOperation">
       <Value ctype="CocosRecentOperation">
         <LastPublishType Value="Resource" />
-        <IsLastPublish Value="True" />
-        <LastRunType Value="Windows" />
+        <IsLastPublish Value="False" />
+        <LastRunType Value="Android" />
       </Value>
     </Item>
     <Item Key="PackageParamsKey">
@@ -23,6 +23,21 @@
         <IsDebugKeystore Value="True" />
         <EnableSourceMap Value="False" />
         <EnableHTML5Advanced Value="False" />
+      </Value>
+    </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="BattleScene/FunctionLayer.csd" />
+          <FilePathData Path="BattleScene/BattleScene.csd" />
+          <FilePathData Path="EndScene/LoseLayer.csd" />
+          <FilePathData Path="EndScene/WinLayer.csd" />
+          <FilePathData Path="BattleScene/PauseLayer.csd" />
+          <FilePathData Path="EndScene/WinScene.csd" />
+          <FilePathData Path="EndScene/LoseScene.csd" />
+          <FilePathData Path="StartScene/StartScene.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="EndScene/LoseLayer.csd" />
       </Value>
     </Item>
   </Properties>

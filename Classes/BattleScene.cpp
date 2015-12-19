@@ -36,6 +36,7 @@ bool BattleScene::init()
 	//Default scheduler
 	scheduleUpdate();
 	schedule(schedule_selector(BattleScene::ifwin), 2.0f);
+	schedule(schedule_selector(BattleScene::ifwin), 5.0f);
 
 	//Obtain map layer from cocos studio design file
 	mapLayer = new MapLayer();

@@ -19,7 +19,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="StartScene/backGroundStart.png" Plist="" />
+            <FileData Type="Normal" Path="StartScene/backgroundStart.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="jerry_6" ActionTag="1785587648" Tag="28" RotationSkewX="82.4539" RotationSkewY="82.4539" IconVisible="False" LeftMargin="62.9059" RightMargin="537.0941" TopMargin="230.1914" BottomMargin="3.8086" ctype="SpriteObjectData">
@@ -33,15 +33,48 @@
             <FileData Type="Normal" Path="MenuScene/jerryBlue.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_1" ActionTag="111632684" Tag="34" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentWidthEnabled="True" LeftMargin="315.1680" RightMargin="284.8320" TopMargin="218.5040" BottomMargin="15.4960" Scale9Width="360" Scale9Height="406" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_1" ActionTag="111632684" Tag="34" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentWidthEnabled="True" LeftMargin="319.2000" RightMargin="280.8000" TopMargin="218.5040" BottomMargin="15.4960" Scale9Width="360" Scale9Height="406" ctype="ImageViewObjectData">
             <Size X="360.0000" Y="406.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="495.1680" Y="218.4960" />
+            <Position X="499.2000" Y="218.4960" />
             <Scale ScaleX="0.4000" ScaleY="0.4000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5158" Y="0.3414" />
+            <PrePosition X="0.5200" Y="0.3414" />
             <PreSize X="0.3750" Y="0.6344" />
             <FileData Type="Normal" Path="MenuScene/jerry.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Particle_1" ActionTag="1781278172" Tag="12" IconVisible="True" LeftMargin="69.0000" RightMargin="891.0000" TopMargin="196.0000" BottomMargin="444.0000" ctype="ParticleObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="69.0000" Y="444.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0719" Y="0.6938" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="touchRed.plist" Plist="" />
+            <BlendFunc Src="770" Dst="1" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Particle_6" ActionTag="-1372688340" Tag="80" IconVisible="True" LeftMargin="367.0000" RightMargin="593.0000" TopMargin="423.0000" BottomMargin="217.0000" ctype="ParticleObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="367.0000" Y="217.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.3823" Y="0.3391" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="touchBlue.plist" Plist="" />
+            <BlendFunc Src="770" Dst="1" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Particle_7" ActionTag="-2048343451" Tag="81" IconVisible="True" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="858.0480" RightMargin="101.9520" TopMargin="185.0240" BottomMargin="454.9760" ctype="ParticleObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="858.0480" Y="454.9760" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.8938" Y="0.7109" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="touchGreen.plist" Plist="" />
+            <BlendFunc Src="770" Dst="1" />
           </AbstractNodeData>
           <AbstractNodeData Name="lblTitle_1" ActionTag="-720556459" Tag="19" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="BothEdge" LeftMargin="73.2000" RightMargin="418.8000" TopMargin="58.5000" BottomMargin="442.5000" ctype="SpriteObjectData">
             <Size X="468.0000" Y="139.0000" />
@@ -99,6 +132,17 @@
             <PrePosition X="0.6782" Y="0.7886" />
             <PreSize X="0.2250" Y="0.2922" />
             <FileData Type="Normal" Path="BattleScene/Ceaser.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="dragon_1" ActionTag="1995098605" Tag="44" IconVisible="False" LeftMargin="28.4995" RightMargin="696.5005" TopMargin="184.2496" BottomMargin="241.7504" FlipX="True" ctype="SpriteObjectData">
+            <Size X="235.0000" Y="214.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="145.9995" Y="348.7504" />
+            <Scale ScaleX="0.8000" ScaleY="0.8000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.1521" Y="0.5449" />
+            <PreSize X="0.2448" Y="0.3344" />
+            <FileData Type="Normal" Path="StartScene/dragon.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
         </Children>
