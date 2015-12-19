@@ -33,7 +33,17 @@ bool WinScene::init()
 
 	auto rootNode = CSLoader::createNode("EndScene/WinScene.csb");
 
+	auto btnContinue = static_cast<ui::Button *>(rootNode->getChildByName("Button_Continue"));
+	btnContinue->addClickEventListener(CC_CALLBACK_1(WinScene::buttonStartClickCallBack, this));
+
 	addChild(rootNode);
 
 	return true;
+}
+
+void WinScene::buttonStartClickCallBack(cocos2d::Ref* pSender)
+{
+	log("WinScene button continue clicked");
+	Director::getInstance()->popScene();
+	Director::getInstance()->popSceneWithTransition<TransitionFade>(1.0f);
 }
