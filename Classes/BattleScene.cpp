@@ -1,12 +1,9 @@
 #include "BattleScene.h"
-#include "WinScene.h"
-#include "LoseScene.h"
-#include "GestureLayer.h"
-#include "cocostudio/CocoStudio.h"
-#include "Monster.h"
-using namespace cocostudio::timeline;
-TextAtlas *life_label, *energy_label;
-ProgressTimer *life_timer, *energy_timer;
+
+int jerryHealth = 20;
+int tonyHealth = 40;
+int ceaserHealth = 60;
+
 Scene* BattleScene::createScene()
 {
 	// 'scene' is an autorelease object
@@ -36,7 +33,9 @@ bool BattleScene::init()
 	//Default scheduler
 	scheduleUpdate();
 	schedule(schedule_selector(BattleScene::ifwin), 2.0f);
-	schedule(schedule_selector(BattleScene::ifwin), 5.0f);
+	schedule(schedule_selector(BattleScene::triangleAI), 5.0f);
+	schedule(schedule_selector(BattleScene::circleAI), 10.0f);
+	schedule(schedule_selector(BattleScene::rectAI), 20.0f);
 
 	//Obtain map layer from cocos studio design file
 	mapLayer = new MapLayer();
@@ -82,7 +81,9 @@ bool BattleScene::init()
 	buttonRight = static_cast<ui::Button *>(functionLayer->getChildByName("Button_Right"));
 	buttonRight->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonRightClickCallBack, this));
 
-	randomEnemy();
+	//Initial Monsters
+	triangleAI(0);
+
 	rootNode->addChild(gestureLayer);
 	addChild(rootNode);
 
@@ -135,7 +136,6 @@ void BattleScene::buttonLeftClickCallBack(cocos2d::Ref *pSender)
 
 bool BattleScene::onTouchBegan(Touch *touch, Event *unused_event)
 {
-
 	return true;
 }
 
@@ -143,11 +143,50 @@ void BattleScene::update(float dt)
 {
 	//log("Battle Scene update");
 	mapLayer->checkCollision();
-	if (gestureLayer->energe > 1000)
-		gestureLayer->energe = 1000;
+	if (gestureLayer->energe > 200)
+		gestureLayer->energe = 200;
+
+	if (mapLayer->Enemy_Castle_life_point < 200)
+		jerryHealth = 40;
 
 	lifeBar->setScaleX(mapLayer->Player_Castle_life_point/500.0*0.74);
-	magicBar->setScaleX(gestureLayer->energe / 1000.0*1.09);
+	magicBar->setScaleX(gestureLayer->energe / 200.0*1.09);
+}
+
+void BattleScene::triangleAI(float dt)
+{
+	log("Triangle AI");
+	int row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(0, 80);
+		Monster* sprite1 = new TriMonster(10, 5, jerryHealth, true);
+		mapLayer->addEnemy(sprite1, row, delayDist);
+	}
+	row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(0, 80);
+		Monster* sprite2 = new TriMonster(10, 5, jerryHealth, true);
+		mapLayer->addEnemy(sprite2, row, delayDist);
+	}
+	row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(0, 80);
+		Monster* sprite3 = new TriMonster(10, 5, jerryHealth, true);
+		mapLayer->addEnemy(sprite3, row,delayDist);
+	}
+}
+
+void BattleScene::rectAI(float dt)
+{
+	log("RectAI");
+}
+
+void BattleScene::circleAI(float dt)
+{
+	log("CircleAI");
 }
 
 void BattleScene::ifwin(float dt)
@@ -174,13 +213,4 @@ void BattleScene::ifwin(float dt)
 			break;
 		}
 	}
-}
-void BattleScene::randomEnemy()
-{
-	Monster* sprite1 = new RectMonster(10, 5, 30, true);
-	mapLayer->addEnemy(sprite1, DOWNROW);
-	Monster* sprite2 = new TriMonster(20, 5, 30, true);
-	mapLayer->addEnemy(sprite2, MIDDLEROW);
-	Monster* sprite3 = new CircleMonster(10, 5, 30, true);
-	mapLayer->addEnemy(sprite3, UPROW);
 }

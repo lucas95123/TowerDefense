@@ -4,6 +4,11 @@
 #include "MapLayer.h"
 #include "Monster.h"
 #include "GestureLayer.h"
+#include "WinScene.h"
+#include "LoseScene.h"
+#include "GestureLayer.h"
+#include "cocostudio/CocoStudio.h"
+using namespace cocostudio::timeline;
 USING_NS_CC;
 
 #include "cocos2d.h"
@@ -30,7 +35,14 @@ public:
 	//overriding default scheduler
 	void update(float dt) override;
 
-	//custom scheduler
+	//custom AI scheduler of triangle
+	void triangleAI(float dt);
+
+	//custom AI scheduler of circle
+	void circleAI(float dt);
+
+	//custom AI scheduler of rec
+	void rectAI(float dt);
 
 	//Wining condition
 	void ifwin(float dt);
@@ -54,9 +66,6 @@ public:
 
 	//Pressed Button_Rigjt function
 	void buttonRightClickCallBack(cocos2d::Ref* pSender);
-
-	//Spawing random enemy, just for test
-	void randomEnemy();
 
 	// implement the "static create()" method manually
 	CREATE_FUNC(BattleScene);

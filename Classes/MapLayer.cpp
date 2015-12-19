@@ -143,21 +143,21 @@ void MapLayer::addMonster(Monster *monster,int row)
 }
 
 
-void MapLayer::addEnemy(Monster *monster, int row)
+void MapLayer::addEnemy(Monster *monster, int row, int delayDist)
 {
 	monster->Line = row;
 	switch (row)
 	{
 	case UPROW:
-		monster->anim_body->setPosition(Point(STARTX + 960 + 940, UPROWY));
+		monster->anim_body->setPosition(Point(STARTX + 960 + 940 + delayDist , UPROWY));
 		enemyMonsterVec[UPROW].pushBack(monster);
 		break;
 	case MIDDLEROW:
-		monster->anim_body->setPosition(Point(STARTX + 960 + 940, MIDDLEROWY));
+		monster->anim_body->setPosition(Point(STARTX + 960 + 940 + delayDist, MIDDLEROWY));
 		enemyMonsterVec[MIDDLEROW].pushBack(monster);
 		break;
 	case DOWNROW:
-		monster->anim_body->setPosition(Point(STARTX + 960 + 940, DOWNROWY));
+		monster->anim_body->setPosition(Point(STARTX + 960 + 940 + delayDist, DOWNROWY));
 		enemyMonsterVec[DOWNROW].pushBack(monster);
 		break;
 	default:
