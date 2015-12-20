@@ -1,5 +1,5 @@
 #include "GeometricRecognizer.h"
-#include <mymath.h>
+#include "mymath.h"
 #define MAX_DOUBLE 100000000;
 double min(double a, double b){ if (a < b) return a; else return b; }
 namespace DollarRecognizer

@@ -8,9 +8,9 @@
 #define Gesture_up 900
 #define Gesture_bottom 160
 #define Whole_area (Gesture_up-Gesture_bottom)*(Gesture_right-Gesture_left)
-#define queue_width 160
+#define queue_width 55
 #define queue_Height 60
-#define monster_width 80
+#define monster_width 120
 #define monster_height 100
 int most_left = 0, most_right = 0, bottom = 0, up = 0;
 bool in_gesture = 0;
@@ -113,7 +113,8 @@ void GestureLayer::onTouchEnded(Touch *touch, Event *unused_event)
 		if (result.name == "Rectangle")
 		{ 
 			double area = (most_right - most_left)*(up - bottom);
-			area = area / (Whole_area);
+			if (area<0) area = -area;
+			area = area*2 / (Whole_area);
 			if (area > 1.5) area = 1.5;
 			if (area < 0.5) area = 0.5;
 			if (energe >= area*origin_life * 2)
@@ -133,8 +134,9 @@ void GestureLayer::onTouchEnded(Touch *touch, Event *unused_event)
 		} else
 		if (result.name == "Triangle")
 		{
-			double area = (most_right - most_left)*(up - bottom)/2;
-			area = area / (Whole_area);
+			double area = (most_right - most_left)*(up - bottom);
+			if (area<0) area = -area;
+			area = area*2 / (Whole_area);
 			if (area > 1.5) area = 1.5;
 			if (area < 0.5) area = 0.5;
 			//smaller than bigger, bigger than smaller
@@ -156,7 +158,8 @@ void GestureLayer::onTouchEnded(Touch *touch, Event *unused_event)
 		if (result.name=="Circle")
 		{
 			double area = (most_right - most_left)*(up - bottom)*0.9;
-			area = area / (Whole_area);
+			if (area<0) area = -area;
+			area = area*2 / (Whole_area);
 			if (area > 1.5) area = 1.5;
 			if (area < 0.5) area = 0.5;
 			//smaller than bigger, bigger than smaller

@@ -4,10 +4,17 @@
 #include "MapLayer.h"
 #include "Monster.h"
 #include "GestureLayer.h"
+#include "WinScene.h"
+#include "LoseScene.h"
+#include "GestureLayer.h"
+#include "cocostudio/CocoStudio.h"
+using namespace cocostudio::timeline;
 USING_NS_CC;
 
 #include "cocos2d.h"
-
+#define SKILL_CD1 3
+#define SKILL_CD2 15
+#define SKILL_CD3 15
 class BattleScene : public cocos2d::Layer
 {
 private: 
@@ -30,7 +37,14 @@ public:
 	//overriding default scheduler
 	void update(float dt) override;
 
-	//custom scheduler
+	//custom AI scheduler of triangle
+	void triangleAI(float dt);
+
+	//custom AI scheduler of circle
+	void circleAI(float dt);
+
+	//custom AI scheduler of rec
+	void rectAI(float dt);
 
 	//Wining condition
 	void ifwin(float dt);
@@ -54,10 +68,12 @@ public:
 
 	//Pressed Button_Rigjt function
 	void buttonRightClickCallBack(cocos2d::Ref* pSender);
-
-	//Spawing random enemy, just for test
-	void randomEnemy();
-
+	//skill buttons
+	void skill1();
+	void skill2();
+	void skill3();
+	bool use_skill1 = 0, use_skill2 = 0, use_skill3 = 0;
+	int cd_skill1=0, cd_skill2=0, cd_skill3=0;
 	// implement the "static create()" method manually
 	CREATE_FUNC(BattleScene);
 };

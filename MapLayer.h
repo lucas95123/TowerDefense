@@ -18,11 +18,14 @@ public:
 	void scrollMapRight();
 	void scrollMapLeft();
 	void addMonster(Monster *monster, int row);
-	void addEnemy(Monster *monster, int row);//just for test
+	void addEnemy(Monster *monster, int row, int delayDist);//just for test
 	void checkCollision();
 	int Castle_damage();
 	int Enemy_Castle_life_point;
 	int Player_Castle_life_point;
+	void HolyWrath();
+	void EvilFurious();
+	void JudgementMeteorolite();
 private: 
 	Sprite* Enemy_Castle, Player_Castle;
 	ui::ScrollView *mapContainer;//The Map

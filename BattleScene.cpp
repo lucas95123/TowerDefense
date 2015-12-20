@@ -1,11 +1,9 @@
 #include "BattleScene.h"
-#include "EndScene.h"
-#include "GestureLayer.h"
-#include "cocostudio/CocoStudio.h"
-#include "Monster.h"
-using namespace cocostudio::timeline;
-TextAtlas *life_label, *energy_label;
-ProgressTimer *life_timer, *energy_timer;
+
+int jerryHealth = 20;
+int tonyHealth = 40;
+int ceaserHealth = 60;
+
 Scene* BattleScene::createScene()
 {
 	// 'scene' is an autorelease object
@@ -35,11 +33,13 @@ bool BattleScene::init()
 	//Default scheduler
 	scheduleUpdate();
 	schedule(schedule_selector(BattleScene::ifwin), 2.0f);
+	schedule(schedule_selector(BattleScene::triangleAI), 5.0f);
+	schedule(schedule_selector(BattleScene::circleAI), 20.0f);
+	schedule(schedule_selector(BattleScene::rectAI), 10.0f);
 
 	//Obtain map layer from cocos studio design file
 	mapLayer = new MapLayer();
 	mapLayer->create(static_cast<ui::ScrollView *>(rootNode->getChildByName("ScrollView_1")), player_castle_life, enemy_castle_life);
-
 	//Obtain pause layer from cocos studio design file and hide it
 	pauseLayer = static_cast<Layer *>(rootNode->getChildByName("Layer_Pause"));
 	pauseLayer->setVisible(false);
@@ -70,6 +70,13 @@ bool BattleScene::init()
 
 	buttonPause = static_cast<ui::Button*>(functionLayer->getChildByName("Button_Pause"));
 	buttonPause->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonPauseClickCallBack, this));
+	//skill buttons
+	auto button_SKILL1 = static_cast<ui::Button*>(functionLayer->getChildByName("Button_114"));
+	button_SKILL1->addClickEventListener(CC_CALLBACK_0(BattleScene::skill1, this));
+	auto button_SKILL2 = static_cast<ui::Button*>(functionLayer->getChildByName("Button_115"));
+	button_SKILL2->addClickEventListener(CC_CALLBACK_0(BattleScene::skill2, this));
+	auto button_SKILL3 = static_cast<ui::Button*>(functionLayer->getChildByName("Button_116"));
+	button_SKILL3->addClickEventListener(CC_CALLBACK_0(BattleScene::skill3, this));
 
 	//Obtain left scroll button in function layer
 	buttonLeft = static_cast<ui::Button *>(functionLayer->getChildByName("Button_Left"));
@@ -80,13 +87,48 @@ bool BattleScene::init()
 	buttonRight = static_cast<ui::Button *>(functionLayer->getChildByName("Button_Right"));
 	buttonRight->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonRightClickCallBack, this));
 
-	randomEnemy();
+	//Initial Monsters
+	triangleAI(0);
+
 	rootNode->addChild(gestureLayer);
 	addChild(rootNode);
 
 	return true;
 }
-
+void BattleScene::skill1()
+{
+	log("skill 1");
+	if (cd_skill1 == 0){
+		this->use_skill1 = 1;
+		cd_skill1 = SKILL_CD1;
+		auto button_SKILL1 = static_cast<ui::Button*>(functionLayer->getChildByName("Button_114"));
+		auto ban = Sprite::create("BattleScene/Banpng.png");
+		ban->setPosition(Point(64,64));
+		button_SKILL1->addChild(ban);
+	}
+}
+void BattleScene::skill2()
+{
+	log("skill 2");
+	if (cd_skill2 == 0){ this->use_skill2 = 1; 
+	cd_skill2 = SKILL_CD2;
+	auto button_SKILL2 = static_cast<ui::Button*>(functionLayer->getChildByName("Button_115"));
+	auto ban = Sprite::create("BattleScene/Banpng.png");
+	ban->setPosition(Point(64, 64));
+	button_SKILL2->addChild(ban);
+	}
+}
+void BattleScene::skill3()
+{
+	log("skill 3");
+	if (cd_skill3 == 0)  { this->use_skill3 = 1; 
+	cd_skill3 = SKILL_CD3;
+	auto button_SKILL3 = static_cast<ui::Button*>(functionLayer->getChildByName("Button_116"));
+	auto ban = Sprite::create("BattleScene/Banpng.png");
+	ban->setPosition(Point(64, 64));
+	button_SKILL3->addChild(ban);
+	}
+}
 void BattleScene::buttonResumeClickCallBack(cocos2d::Ref *pSender)
 {
 	log("Battle Scene Resume Button Clicked");
@@ -133,49 +175,145 @@ void BattleScene::buttonLeftClickCallBack(cocos2d::Ref *pSender)
 
 bool BattleScene::onTouchBegan(Touch *touch, Event *unused_event)
 {
-
 	return true;
 }
 
 void BattleScene::update(float dt)
 {
-	//log("Battle Scene update");
+//log("Battle Scene update");
+	if (use_skill1)
+	{
+		mapLayer->JudgementMeteorolite();
+		 use_skill1= 0;
+	}
+	if (use_skill2)
+	{
+		mapLayer->HolyWrath(); use_skill2 = 0;
+	}
+	if (use_skill3)
+	{
+		mapLayer->EvilFurious(); use_skill3 = 0;
+	}
 	mapLayer->checkCollision();
-	if (gestureLayer->energe > 1000)
-		gestureLayer->energe = 1000;
+	if (gestureLayer->energe > 200)
+		gestureLayer->energe = 200;
+
+	if (mapLayer->Enemy_Castle_life_point < 200)
+		jerryHealth = 40;
 
 	lifeBar->setScaleX(mapLayer->Player_Castle_life_point/500.0*0.74);
-	magicBar->setScaleX(gestureLayer->energe / 1000.0*1.09);
+	magicBar->setScaleX(gestureLayer->energe / 200.0*1.09);
+}
+
+void BattleScene::triangleAI(float dt)
+{
+	log("Triangle AI");
+	int row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(20, 100);
+		Monster* sprite1 = new TriMonster(5, 3, jerryHealth, true);
+		mapLayer->addEnemy(sprite1, row, delayDist);
+	}
+	row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(20, 100);
+		Monster* sprite2 = new TriMonster(5, 3, jerryHealth, true);
+		mapLayer->addEnemy(sprite2, row, delayDist);
+	}
+	row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(20, 80);
+		Monster* sprite3 = new TriMonster(5, 3, jerryHealth, true);
+		mapLayer->addEnemy(sprite3, row,delayDist);
+	}
+}
+
+void BattleScene::rectAI(float dt)
+{
+	log("RectAI");
+	int row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(20, 160);
+		Monster* sprite1 = new RectMonster(10, 5, tonyHealth, true);
+		mapLayer->addEnemy(sprite1, row, delayDist);
+	}
+	row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(20, 160);
+		Monster* sprite2 = new RectMonster(10, 5, tonyHealth, true);
+		mapLayer->addEnemy(sprite2, row, delayDist);
+	}
+	row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(2, 160);
+		Monster* sprite3 = new RectMonster(10, 5, tonyHealth, true);
+		mapLayer->addEnemy(sprite3, row, delayDist);
+	}
+}
+
+void BattleScene::circleAI(float dt)
+{
+	log("CircAI");
+	int row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(20, 160);
+		Monster* sprite1 = new CircleMonster(20, 10, ceaserHealth, true);
+		mapLayer->addEnemy(sprite1, row, delayDist);
+	}
+	row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(20, 160);
+		Monster* sprite2 = new CircleMonster(20, 10, ceaserHealth, true);
+		mapLayer->addEnemy(sprite2, row, delayDist);
+	}
+	row = random<int>(0, 6);
+	if (row < 3)
+	{
+		int delayDist = random<int>(2, 160);
+		Monster* sprite3 = new CircleMonster(20, 10, ceaserHealth, true);
+		mapLayer->addEnemy(sprite3, row, delayDist);
+	}
 }
 
 void BattleScene::ifwin(float dt)
 {
 	//log("ifwin");
+	if (cd_skill1 > 0){ cd_skill1--; 
+	if (cd_skill1 == 0) static_cast<ui::Button*>(functionLayer->getChildByName("Button_114"))->removeAllChildren();
+	}
+	if (cd_skill2 > 0) { cd_skill2--; 
+	if (cd_skill2 == 0) static_cast<ui::Button*>(functionLayer->getChildByName("Button_115"))->removeAllChildren();
+	}
+	if (cd_skill3 > 0){ cd_skill3--; 
+	if (cd_skill3 == 0) static_cast<ui::Button*>(functionLayer->getChildByName("Button_116"))->removeAllChildren();
+	}
 	int flag = mapLayer->Castle_damage();
 	if (flag != Nothing)
 	{
-		auto battleScene = EndScene::createScene();
-		auto transition = TransitionFade::create(1.0f, battleScene);
+		auto winScene = WinScene::createScene();
+		auto winTransition = TransitionFade::create(1.0f, winScene);
+
+		auto loseScene = LoseScene::createScene();
+		auto loseTransition = TransitionFade::create(1.0f, loseScene);
 
 		switch (flag)
 		{
 		case Win:
 			Director::getInstance()->pushScene(Director::getInstance()->getRunningScene());
-			Director::getInstance()->replaceScene(transition);
+			Director::getInstance()->replaceScene(winTransition);
 			break;
 		case Lose:
 			Director::getInstance()->pushScene(Director::getInstance()->getRunningScene());
-			Director::getInstance()->replaceScene(transition);
+			Director::getInstance()->replaceScene(loseTransition);
 			break;
 		}
 	}
-}
-void BattleScene::randomEnemy()
-{
-	Monster* sprite1 = new RectMonster(10, 5, 30, true);
-	mapLayer->addEnemy(sprite1, DOWNROW);
-	Monster* sprite2 = new TriMonster(20, 5, 30, true);
-	mapLayer->addEnemy(sprite2, MIDDLEROW);
-	Monster* sprite3 = new CircleMonster(10, 5, 30, true);
-	mapLayer->addEnemy(sprite3, UPROW);
 }

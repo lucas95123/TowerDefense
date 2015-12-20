@@ -22,12 +22,12 @@
 #define Rec_Moving_forward_anim "Rec_attack"
 #define Tri_Moving_forward_anim "Tri_attack"
 #define Cir_Moving_forward_anim "Cir_attack"
-#define Rec_Die_anim "Rec_Die"
-#define Cir_Die_anim "Cir_Die"
-#define Tri_Die_anim "Tri_Die"
 #define Rec_Hit_back_pic ""
 #define Cir_Hit_back_pic ""
 #define Tri_Hit_back_pic ""
+#define Rec_Die_anim "Rec_Die"
+#define Cir_Die_anim "Cir_Die"
+#define Tri_Die_anim "Tri_Die"
 #define Stay_in_queue 1
 #define Hit_back 2
 #define Move_foward 3
@@ -65,9 +65,10 @@ public:
 	void setState(int _state){ state = _state; }
 	int getState(){ return state; }
 	//void retain(){}
-	static void BattleEach(AnimationCache* cache,Monster *a, Monster *b)
+	static void BattleEach(AnimationCache* cache,Monster *a, Monster *b,bool over=0)
 	{
-		if (a->getState() != Move_foward || b->getState() != Move_foward) return;
+		if (a->getState() == DEAD || b->getState() == DEAD) return;
+		if (!over&&a->getState() != Move_foward || !over&&b->getState() != Move_foward) return;
 		//log("Hit Back");
 		a->anim_body->stopAllActions();
 		b->anim_body->stopAllActions();
@@ -94,10 +95,11 @@ private:
 public:
 	RectMonster(int _attack,int _defense,int _max_life,int _isEnemy):Monster(_attack,_defense,_max_life,_isEnemy){
 		anim_body = Sprite::create(Rec_pic);
-		anim_body->setScaleX(_max_life / origin_life);
-		anim_body->setScaleY(_max_life / origin_life);//change the size of the monster
+		anim_body->setScaleX(_max_life / origin_life/2);
+		anim_body->setScaleY(_max_life / origin_life/2);//change the size of the monster
 		//anim_body->setFlippedY(true);
 		if (isEnemy) anim_body->setFlippedX(true);
+		anim_body->setZOrder(2);
 	}
 	~RectMonster(){}
 	virtual void BeHitback(AnimationCache* cache,int damage)
@@ -132,7 +134,7 @@ public:
 	{
 		this->anim_body->stopAllActions();
 		auto animate = Animate::create(cache->getAnimation(Rec_Die_anim));
-		auto action=Sequence::create(animate,CCCallFunc::create(CC_CALLBACK_0(Monster::setState,this,DEAD)),NULL);
+		auto action = Sequence::create(animate,CCCallFunc::create(CC_CALLBACK_0(Sprite::setVisible,this->anim_body,false)), CCCallFunc::create(CC_CALLBACK_0(Monster::setState, this, DEAD)), NULL);
 		//this->anim_body->removeFromParent();
 		this->anim_body->runAction(action);
 	}
@@ -146,10 +148,11 @@ public:
 	TriMonster(int _attack,int _defense, int _max_life,int _isEnemy) :Monster(_attack,_defense, _max_life,_isEnemy)
 	{
 		anim_body = Sprite::create(Tri_pic);
-		anim_body->setScaleX(_max_life / origin_life);
-		anim_body->setScaleY(_max_life / origin_life);
+		anim_body->setScaleX(_max_life / origin_life/2);
+		anim_body->setScaleY(_max_life / origin_life/2);
 		//anim_body->setFlippedY(true);
 		if (isEnemy) anim_body->setFlippedX(true);
+		anim_body->setZOrder(2);
 	}
 	~TriMonster(){}
 	virtual void BeHitback(AnimationCache* cache,int damage)
@@ -184,7 +187,7 @@ public:
 	{
 		this->anim_body->stopAllActions();
 		auto animate = Animate::create(cache->getAnimation(Tri_Die_anim));
-		auto action = Sequence::create(animate, CCCallFunc::create(CC_CALLBACK_0(Monster::setState, this, DEAD)), NULL);
+		auto action = Sequence::create(animate, CCCallFunc::create(CC_CALLBACK_0(Sprite::setVisible, this->anim_body, false)), CCCallFunc::create(CC_CALLBACK_0(Monster::setState, this, DEAD)), NULL);
 		this->anim_body->runAction(action);
 	}
 };
@@ -194,10 +197,11 @@ class CircleMonster:public Monster
 public:
 	CircleMonster(int _attack,int _defense,int _max_life,int _isEnemy) :Monster(_attack,_defense,_max_life,_isEnemy){
 		anim_body = Sprite::create(Cir_pic);
-		anim_body->setScaleX(_max_life / origin_life);
-		anim_body->setScaleY(_max_life / origin_life);
+		anim_body->setScaleX(_max_life / origin_life/2.0);
+		anim_body->setScaleY(_max_life / origin_life/2.0);
 		//anim_body->setFlippedY(true);
 		if (isEnemy) anim_body->setFlippedX(true);
+		anim_body->setZOrder(2);
 	}
 	~CircleMonster(){}
 	virtual void BeHitback(AnimationCache* cache,int damage)
@@ -232,7 +236,7 @@ public:
 	{
 		this->anim_body->stopAllActions();
 		auto animate = Animate::create(cache->getAnimation(Cir_Die_anim));
-		auto action = Sequence::create(animate, CCCallFunc::create(CC_CALLBACK_0(Monster::setState, this, DEAD)), NULL);
+		auto action = Sequence::create(animate, CCCallFunc::create(CC_CALLBACK_0(Sprite::setVisible, this->anim_body, false)), CCCallFunc::create(CC_CALLBACK_0(Monster::setState, this, DEAD)), NULL);
 		this->anim_body->runAction(action);
 	}
 private:
