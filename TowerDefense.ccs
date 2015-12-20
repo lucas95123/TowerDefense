@@ -1,0 +1,130 @@
+<Solution>
+  <PropertyGroup Name="TowerDefense" Version="2.3.3.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="StartScene">
+          <Project Name="StartScene.csd" Type="Scene" />
+          <Image Name="tony.png" />
+          <Image Name="lblTitle1.png" />
+          <Image Name="lblTitle2.png" />
+          <Image Name="btnStart.png" />
+          <Image Name="btnStartPressed.png" />
+          <Image Name="backgroundStart.png" />
+          <PlistParticleFile Name="touch.plist" />
+          <Image Name="dragon.png" />
+        </Folder>
+        <Folder Name="MenuScene">
+          <Project Name="MenuScene.csd" Type="Scene" />
+          <Image Name="tree.png" />
+          <Image Name="lblSelect.png" />
+          <Image Name="btnStart.png" />
+          <Image Name="btnStartPressed.png" />
+          <Image Name="Cross.png" />
+          <Image Name="snow.png" />
+          <Image Name="island.png" />
+          <Image Name="jerry.png" />
+          <Image Name="jerryPressed.png" />
+          <PlistParticleFile Name="cloud.plist" />
+          <PlistParticleFile Name="snow 2.plist" />
+          <Image Name="tony.png" />
+          <Image Name="jerryBlack.png" />
+          <Image Name="tony1.png" />
+          <Image Name="tonyDisabled.png" />
+          <Image Name="tonyPressed.png" />
+          <PlistParticleFile Name="foliage.plist" />
+          <PlistParticleFile Name="water.plist" />
+          <PlistParticleFile Name="tree.plist" />
+          <Image Name="forest.png" />
+          <Image Name="jerryBlue.png" />
+          <Image Name="jerryRed.png" />
+          <Image Name="btnSound.png" />
+          <Image Name="lblForest.png" />
+          <Image Name="lblIsland.png" />
+          <Image Name="lblSnowfield.png" />
+          <Image Name="soundPressed.png" />
+          <Image Name="jerryRedPressed.png" />
+          <Image Name="jerryBluePressed.png" />
+          <Image Name="star.png" />
+          <Image Name="starBlack.png" />
+        </Folder>
+        <Folder Name="BattleScene">
+          <Project Name="BattleScene.csd" Type="Scene" />
+          <Project Name="PauseLayer.csd" Type="Layer" />
+          <Project Name="FunctionLayer.csd" Type="Layer" />
+          <Project Name="TuturialLayer.csd" Type="Layer" />
+          <Image Name="scrollArrowLeft.png" />
+          <Image Name="scrollArrowLeftPressed.png" />
+          <Image Name="scrollArrowRightPressed.png" />
+          <Image Name="scrollArrowRight.png" />
+          <Image Name="tony.png" />
+          <Image Name="test1.jpg" />
+          <Image Name="test2.jpg" />
+          <Image Name="black.png" />
+          <Image Name="SoundOff.png" />
+          <Image Name="SoundOn.png" />
+          <Image Name="Start.png" />
+          <Image Name="return.png" />
+          <Image Name="pauseMenu.png" />
+          <Image Name="images.png" />
+          <Image Name="Ceaser.png" />
+          <Image Name="tonyGold.png" />
+          <Image Name="life.png" />
+          <Image Name="magic.png" />
+          <Image Name="left.png" />
+          <Image Name="right.png" />
+          <Image Name="leftTrans.png" />
+          <Image Name="rightTrans.png" />
+          <Image Name="pause.png" />
+          <Image Name="pausePressed.png" />
+          <Image Name="pauseMenuTrans.png" />
+          <Image Name="StartTrans.png" />
+          <Image Name="returnTrans.png" />
+          <Image Name="SoundOnTrans.png" />
+          <Image Name="Energy_finger.png" />
+          <Image Name="lifeEmpty.png" />
+          <Image Name="lifeBar.png" />
+          <Image Name="magicEmpty.png" />
+          <Image Name="magicBar.png" />
+          <Image Name="bufferTrans.png" />
+          <Image Name="mapForest.png" />
+          <Image Name="buffer.png" />
+          <Image Name="health.png" />
+          <Image Name="finger.png" />
+          <Image Name="skillBuffer.png" />
+          <Image Name="tree2.png" />
+          <Image Name="tree.png" />
+          <Image Name="Trees.png" />
+          <Image Name="tree2Color.png" />
+          <Image Name="seek.png" />
+          <Image Name="Fire.png" />
+          <Image Name="FirePressed.png" />
+          <Image Name="SeekPressed.png" />
+          <Image Name="Freeze.png" />
+          <Image Name="FreezePressed.png" />
+          <Image Name="JerryMini.png" />
+          <Image Name="TonyMini.png" />
+          <Image Name="CeaserMini.png" />
+        </Folder>
+        <Folder Name="EndScene">
+          <Image Name="win.png" />
+          <Image Name="sword.png" />
+          <Project Name="LoseLayer.csd" Type="Layer" />
+          <Image Name="LOSE.png" />
+          <Project Name="WinLayer.csd" Type="Layer" />
+          <Image Name="jerryGreenCry.png" />
+          <Image Name="jerryOrangeCry.png" />
+          <Project Name="WinScene.csd" Type="Scene" />
+          <Project Name="LoseScene.csd" Type="Scene" />
+          <Image Name="damagedCastle.png" />
+          <Image Name="dragon.png" />
+          <Image Name="dragonOrange.png" />
+          <PlistParticleFile Name="FireBall.plist" />
+        </Folder>
+        <PlistParticleFile Name="touchGreen.plist" />
+        <PlistParticleFile Name="touchRed.plist" />
+        <PlistParticleFile Name="touchBlue.plist" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

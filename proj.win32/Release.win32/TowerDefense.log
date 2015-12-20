@@ -1,0 +1,99 @@
+﻿生成启动时间为 2015/12/13 17:59:31。
+     1>项目“D:\Cocos\Cocos\TowerDefense\proj.win32\TowerDefense.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         D:\Program files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\Cocos\frameworks\cocos2d-x-3.6\cocos\audio\include" /I"D:\Cocos\frameworks\cocos2d-x-3.6\external" /I"D:\Cocos\frameworks\cocos2d-x-3.6\external\chipmunk\include\chipmunk" /I"D:\Cocos\frameworks\cocos2d-x-3.6\extensions" /I..\Classes /I.. /I"D:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\cocos\editor-support" /I"D:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\cocos" /I"D:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\cocos\platform" /I"D:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\cocos\platform\desktop" /I"D:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\external\glfw3\include\win32" /I"D:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\external\win32-specific\gles\include\OGLES" /I"D:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\external\freetype2\include\win32\freetype2" /I"D:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d\..\..\external\freetype2\include\win32\\" /Zi /nologo /W3 /WX- /MP /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USE_MATH_DEFINES /D GL_GLEXT_PROTOTYPES /D CC_ENABLE_CHIPMUNK_INTEGRATION=1 /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS /D _VARIADIC_MAX=10 /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc120.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\AppDelegate.cpp ..\Classes\BattleScene.cpp ..\Classes\CrashTestScene.cpp ..\Classes\GeometricRecognizer.cpp ..\Classes\GestureLayer.cpp ..\Classes\LoseScene.cpp ..\Classes\MapLayer.cpp ..\Classes\MenuScene.cpp ..\Classes\Monster.cpp ..\Classes\StartScene.cpp ..\Classes\WinScene.cpp main.cpp
+         AppDelegate.cpp
+         BattleScene.cpp
+         CrashTestScene.cpp
+         GeometricRecognizer.cpp
+         GestureLayer.cpp
+         LoseScene.cpp
+         MapLayer.cpp
+         MenuScene.cpp
+     1>d:\cocos\cocos\towerdefense\classes\mymath.h(69): warning C4305: “初始化”: 从“double”到“float”截断 (..\Classes\GeometricRecognizer.cpp)
+         Monster.cpp
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(108): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\MapLayer.cpp)
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(157): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\MapLayer.cpp)
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(201): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\MapLayer.cpp)
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(108): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\BattleScene.cpp)
+     1>..\Classes\MapLayer.cpp(82): warning C4305: “参数”: 从“double”到“float”截断
+     1>..\Classes\MapLayer.cpp(83): warning C4305: “参数”: 从“double”到“float”截断
+     1>..\Classes\MapLayer.cpp(85): warning C4996: 'cocos2d::Node::setZOrder': 被声明为已否决
+                 d:\cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+                 d:\cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(157): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\BattleScene.cpp)
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(201): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\BattleScene.cpp)
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(108): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\GestureLayer.cpp)
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(157): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\GestureLayer.cpp)
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(201): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\GestureLayer.cpp)
+     1>..\Classes\GestureLayer.cpp(24): warning C4996: 'cocos2d::Layer::setTouchEnabled': 被声明为已否决
+                 d:\cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCLayer.h(179) : 参见“cocos2d::Layer::setTouchEnabled”的声明
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(108): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\MenuScene.cpp)
+     1>..\Classes\BattleScene.cpp(47): warning C4996: 'cocos2d::Node::setZOrder': 被声明为已否决
+                 D:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+                 D:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+     1>..\Classes\BattleScene.cpp(52): warning C4996: 'cocos2d::Node::setZOrder': 被声明为已否决
+                 D:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+                 D:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+     1>..\Classes\BattleScene.cpp(56): warning C4996: 'cocos2d::Node::setZOrder': 被声明为已否决
+                 D:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+                 D:\Cocos\frameworks\cocos2d-x-3.6\cocos\2d/CCNode.h(158) : 参见“cocos2d::Node::setZOrder”的声明
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(157): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\MenuScene.cpp)
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(201): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\MenuScene.cpp)
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(108): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\Monster.cpp)
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(157): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\Monster.cpp)
+     1>d:\cocos\cocos\towerdefense\classes\Monster.h(201): warning C4305: “参数”: 从“double”到“float”截断 (..\Classes\Monster.cpp)
+         StartScene.cpp
+         WinScene.cpp
+         main.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Release.win32\game.res" game.rc 
+       PreLinkEvent:
+         if not exist "D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\" mkdir "D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\"
+         xcopy /Y /Q "D:\Cocos\frameworks\cocos2d-x-3.6\prebuilt\win32\*.*" "D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\"
+         xcopy "D:\Cocos\Cocos\TowerDefense\proj.win32\..\Resources" "D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\" /D /E /I /F /Y
+         
+         :VCEnd
+         复制了 53 个文件
+         D:\Cocos\Cocos\TowerDefense\Resources\res\BattleScene\BattleScene.csb -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\BattleScene\BattleScene.csb
+         D:\Cocos\Cocos\TowerDefense\Resources\res\BattleScene\FunctionLayer.csb -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\BattleScene\FunctionLayer.csb
+         D:\Cocos\Cocos\TowerDefense\Resources\res\BattleScene\PauseLayer.csb -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\BattleScene\PauseLayer.csb
+         D:\Cocos\Cocos\TowerDefense\Resources\res\BattleScene\TuturialLayer.csb -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\BattleScene\TuturialLayer.csb
+         D:\Cocos\Cocos\TowerDefense\Resources\res\EndScene\damagedCastle.png -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\EndScene\damagedCastle.png
+         D:\Cocos\Cocos\TowerDefense\Resources\res\EndScene\dragon.png -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\EndScene\dragon.png
+         D:\Cocos\Cocos\TowerDefense\Resources\res\EndScene\dragonOrange.png -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\EndScene\dragonOrange.png
+         D:\Cocos\Cocos\TowerDefense\Resources\res\EndScene\FireBall.plist -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\EndScene\FireBall.plist
+         D:\Cocos\Cocos\TowerDefense\Resources\res\EndScene\LOSE.png -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\EndScene\LOSE.png
+         D:\Cocos\Cocos\TowerDefense\Resources\res\EndScene\LoseLayer.csb -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\EndScene\LoseLayer.csb
+         D:\Cocos\Cocos\TowerDefense\Resources\res\EndScene\LoseScene.csb -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\EndScene\LoseScene.csb
+         D:\Cocos\Cocos\TowerDefense\Resources\res\EndScene\win.png -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\EndScene\win.png
+         D:\Cocos\Cocos\TowerDefense\Resources\res\EndScene\WinLayer.csb -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\EndScene\WinLayer.csb
+         D:\Cocos\Cocos\TowerDefense\Resources\res\EndScene\WinScene.csb -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\EndScene\WinScene.csb
+         D:\Cocos\Cocos\TowerDefense\Resources\res\MenuScene\MenuScene.csb -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\MenuScene\MenuScene.csb
+         D:\Cocos\Cocos\TowerDefense\Resources\res\StartScene\dragon.png -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\StartScene\dragon.png
+         D:\Cocos\Cocos\TowerDefense\Resources\res\StartScene\StartScene.csb -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\res\StartScene\StartScene.csb
+         复制了 17 个文件
+       Link:
+         D:\Program files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\TowerDefense.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\ /LIBPATH:D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\ libcurl_imp.lib websockets.lib opengl32.lib glew32.lib libzlib.lib libpng.lib libjpeg.lib libtiff.lib libwebp.lib libiconv.lib glfw3.lib freetype250.lib winmm.lib ws2_32.lib libchipmunk.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\TowerDefense.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\TowerDefense.lib" /MACHINE:X86 /SAFESEH Release.win32\game.res
+         Release.win32\AppDelegate.obj
+         Release.win32\BattleScene.obj
+         Release.win32\CrashTestScene.obj
+         Release.win32\GeometricRecognizer.obj
+         Release.win32\GestureLayer.obj
+         Release.win32\LoseScene.obj
+         Release.win32\MapLayer.obj
+         Release.win32\MenuScene.obj
+         Release.win32\Monster.obj
+         Release.win32\StartScene.obj
+         Release.win32\WinScene.obj
+         Release.win32\main.obj
+            正在创建库 D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\TowerDefense.lib 和对象 D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\TowerDefense.exp
+         正在生成代码
+     1>d:\cocos\cocos\towerdefense\classes\mymath.h(38): warning C4715: “mysqrt”: 不是所有的控件路径都返回值
+         已完成代码的生成
+         TowerDefense.vcxproj -> D:\Cocos\Cocos\TowerDefense\proj.win32\Release.win32\TowerDefense.exe
+     1>已完成生成项目“D:\Cocos\Cocos\TowerDefense\proj.win32\TowerDefense.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:32.60
