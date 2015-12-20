@@ -5,6 +5,7 @@ void MapLayer::create(ui::ScrollView * map,int _Enemy_life_point,int _Player_lif
 {
 	mapContainer = map;
 	mapContainer->setTouchEnabled(false);
+	mapContainer->setZOrder(2);
 	this->Enemy_Castle_life_point = _Enemy_life_point;
 	this->Player_Castle_life_point = _Player_life_point;
 	//Initialize animations 
@@ -47,6 +48,42 @@ void MapLayer::create(ui::ScrollView * map,int _Enemy_life_point,int _Player_lif
 		animation->setRestoreOriginalFrame(true);
 		cache->addAnimation(animation, Cir_Moving_forward_anim);
 	}
+	{//read tony dead
+		auto animation = Animation::create();
+		for (int i = 0; i < 4; i++)
+		{
+			char szName[100] = { 0 };
+			sprintf(szName, "tony_die_%02d.png", i);
+			animation->addSpriteFrameWithFile(szName);
+		}
+		animation->setDelayPerUnit(0.2f);
+		animation->setRestoreOriginalFrame(true);
+		cache->addAnimation(animation, Rec_Die_anim);
+	}//read Jerry dead
+	{
+		auto animation = Animation::create();
+		for (int i = 0; i < 4; i++)
+		{
+			char szName[100] = { 0 };
+			sprintf(szName, "BattleScene/JerryAnim/jerry_die_%02d.png", i);
+			animation->addSpriteFrameWithFile(szName);
+		}
+		animation->setDelayPerUnit(0.2f);
+		animation->setRestoreOriginalFrame(true);
+		cache->addAnimation(animation, Tri_Die_anim);
+	}
+	{//read Ceaser dead
+		auto animation = Animation::create();
+		for (int i = 0; i < 4; i++)
+		{
+			char szName[100] = { 0 };
+			sprintf(szName, "BattleScene/CeaserAnim/Ceaser_die_%02d.png", i);
+			animation->addSpriteFrameWithFile(szName);
+		}
+		animation->setDelayPerUnit(0.2f);
+		animation->setRestoreOriginalFrame(true);
+		cache->addAnimation(animation, Cir_Die_anim);
+	}
 	{//tony hit back
 		auto animation = Animation::create();
 		animation->addSpriteFrameWithFile("tony_cry.png");
@@ -84,7 +121,41 @@ void MapLayer::create(ui::ScrollView * map,int _Enemy_life_point,int _Player_lif
 	mapContainer->addChild(Enemy_Castle);
 	mapContainer->setZOrder(0);
 }
-
+void MapLayer::HolyWrath()
+{
+	for (int i = 0; i < 3; i++){
+		for (auto monster : myMonsterVec[i])
+		{
+			monster->defense += 4;
+			auto DefenseUp = Sprite::create("BattleScene/DefenseUp.png");
+			DefenseUp->setPosition(Point(80, 230));
+			monster->anim_body->addChild(DefenseUp);
+		}
+	}
+}
+void MapLayer::EvilFurious()
+{
+	for (int i = 0; i < 3; i++){
+		for (auto monster : myMonsterVec[i])
+		{
+			monster->attack += 4;
+			auto AttUp = Sprite::create("BattleScene/AttackUp.png");
+			AttUp->setPosition(Point(100, 230));
+			monster->anim_body->addChild(AttUp);
+		}
+	}
+}
+void MapLayer::JudgementMeteorolite()
+{
+	auto cache = AnimationCache::getInstance();
+	auto God = new CircleMonster(15,30,10000,0);
+	for (int i = 0; i < 3; i++){
+		for (auto monster : enemyMonsterVec[i])
+		{
+			if (monster->getState()!=DEAD)Monster::BattleEach(cache, God, monster,1);
+		}
+	}
+}
 void MapLayer::scrollMapLeft()
 {
 	if (mapContainer == NULL)
@@ -169,6 +240,7 @@ void MapLayer::addEnemy(Monster *monster, int row, int delayDist)
 }
 int MapLayer::Castle_damage()
 {
+	int flag = 0;
 	auto cache = AnimationCache::getInstance();
 	for (int i = 0; i < 3; i++)
 	{
@@ -178,6 +250,7 @@ int MapLayer::Castle_damage()
 			{//test if attack the castle
 				if (monster->anim_body->getPositionX() >= Map_width)
 				{
+					flag = 1;
 					Enemy_Castle_life_point -= monster->attack;
 					log("enemycastle damaged");
 					auto animate = Animate::create(cache->getAnimation("castle_enemy_damaged.png"));
@@ -203,6 +276,7 @@ int MapLayer::Castle_damage()
 			}
 		}
 	}
+	if (!flag) Enemy_Castle->stopAllActions();
 	return Nothing;
 }
 void MapLayer::checkCollision()
@@ -226,18 +300,16 @@ void MapLayer::checkCollision()
 				}
 				if (enemy->getState() == DEAD)
 				{//the monster is dead,release it from the layer
-					//enemy->anim_body->removeFromParentAndCleanup(true);
-					enemy->anim_body->setVisible(false);
+					enemy->anim_body->removeAllChildren();
+					//enemy->anim_body->setVisible(false);
 					mapContainer->removeChild(enemy->anim_body,true);
-					//enemy->anim_body->autorelease();
 					enemyMonsterVec[i].eraseObject(enemy,true);
 				}
 				if (monster->getState() == DEAD)
 				{
-					monster->anim_body->setVisible(false);
+					monster->anim_body->removeAllChildren();
+					//monster->anim_body->setVisible(false);
 					mapContainer->removeChild(monster->anim_body, true);
-					//monster->anim_body->removeFromParentAndCleanup(true);
-					//monster->anim_body->autorelease();
 					myMonsterVec[i].eraseObject(monster, true);
 				}
 			}

@@ -56,7 +56,6 @@ bool MenuScene::init()
 void MenuScene::buttonStage1ClickCallBack(cocos2d::Ref* pSender)
 {
 	log("MenuScene Stage Select Button Clicked");
-
 	auto battleScene = BattleScene::createScene();
 	auto transition = TransitionFade::create(1.0f, battleScene);
 	Director::getInstance()->pushScene(Director::getInstance()->getRunningScene());

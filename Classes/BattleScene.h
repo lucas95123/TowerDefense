@@ -8,13 +8,13 @@
 #include "LoseScene.h"
 #include "GestureLayer.h"
 #include "cocostudio/CocoStudio.h"
-
 using namespace cocostudio::timeline;
 USING_NS_CC;
 
 #include "cocos2d.h"
-#include "SimpleAudioEngine.h"
-
+#define SKILL_CD1 3
+#define SKILL_CD2 15
+#define SKILL_CD3 15
 class BattleScene : public cocos2d::Layer
 {
 private: 
@@ -68,7 +68,12 @@ public:
 
 	//Pressed Button_Rigjt function
 	void buttonRightClickCallBack(cocos2d::Ref* pSender);
-
+	//skill buttons
+	void skill1();
+	void skill2();
+	void skill3();
+	bool use_skill1 = 0, use_skill2 = 0, use_skill3 = 0;
+	int cd_skill1=0, cd_skill2=0, cd_skill3=0;
 	// implement the "static create()" method manually
 	CREATE_FUNC(BattleScene);
 };

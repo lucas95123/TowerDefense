@@ -45,5 +45,5 @@ void LoseScene::buttonContClickCallBack(cocos2d::Ref* pSender)
 {
 	log("Lose Scene Button Continue clicked");
 	Director::getInstance()->popScene();
-	Director::getInstance()->popSceneWithTransition<TransitionFade>(1.0f);
+	//Director::getInstance()->popSceneWithTransition<TransitionFade>(1.0f);
 }

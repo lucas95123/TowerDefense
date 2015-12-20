@@ -2,7 +2,6 @@
 #include "MenuScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
-#include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 
@@ -40,9 +39,6 @@ bool StartScene::init()
 
     addChild(rootNode);
 
-	//Preloads Musics
-	CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("battleBGM.mp3");
-
 	//Add button_Start listener
 	Button *buttonStart = static_cast<Button *>(rootNode->getChildByName("Button_Start"));
 	buttonStart->addClickEventListener(CC_CALLBACK_1(StartScene::buttonStartClickCallBack, this));
@@ -64,7 +60,7 @@ bool StartScene::init()
 
 	//Add some moving tony
 	//addMovingTony(200, 200);
-	//addMovingTony(300, 500);
+	//addMovingTony(300, 300);
 	//addMovingTony(400, 400);
 	//addMovingTony(500, 500);
 
