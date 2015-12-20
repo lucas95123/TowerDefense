@@ -65,8 +65,8 @@ bool BattleScene::init()
 	auto buttonBack = static_cast<ui::Button *>(pauseLayer->getChildByName("Panel_1")->getChildByName("Button_Back"));
 	buttonBack->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonBackClickCallBack, this));
 
-	auto buttonSound = static_cast<ui::Button *>(pauseLayer->getChildByName("Panel_1")->getChildByName("Button_Sound"));
-	buttonSound->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonSoundClickCallBack, this));
+	auto checkBoxSound = static_cast<ui::CheckBox *>(pauseLayer->getChildByName("Panel_1")->getChildByName("CheckBox_Sound"));
+	checkBoxSound->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonSoundClickCallBack, this));
 	
 	//Obtain life bar from cocos studio design file
 	lifeBar = static_cast<Sprite *>(functionLayer->getChildByName("life_bar"));
@@ -96,6 +96,11 @@ bool BattleScene::init()
 void BattleScene::buttonResumeClickCallBack(cocos2d::Ref *pSender)
 {
 	log("Battle Scene Resume Button Clicked");
+	auto checkBoxSound = static_cast<ui::CheckBox *>(pauseLayer->getChildByName("Panel_1")->getChildByName("CheckBox_Sound"));
+	if (checkBoxSound->isSelected())
+		CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+	else
+		CocosDenshion::SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 	Director::getInstance()->resume();
 	pauseLayer->setVisible(false);
 }
@@ -110,13 +115,13 @@ void BattleScene::buttonBackClickCallBack(cocos2d::Ref *pSender)
 void BattleScene::buttonSoundClickCallBack(cocos2d::Ref *pSender)
 {
 	log("Battle Scene Sound Button Clicked");
-	auto buttonSound = static_cast<ui::Button *>(pauseLayer->getChildByName("Panel_1")->getChildByName("Button_Sound"));
-	pauseLayer->setVisible(false);
 }
 
 void BattleScene::buttonPauseClickCallBack(cocos2d::Ref *pSender)
 {
 	log("Battle Scene Pause Button Clicked");
+	//Pause back ground music
+	CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 	Director::getInstance()->pause();
 	pauseLayer->setVisible(true);
 }
