@@ -29,13 +29,16 @@ bool BattleScene::init()
 		return false;
 	}
 
+	//Play battle background music
+	CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("battleBGM.mp3", true);
+
 	auto rootNode = CSLoader::createNode("BattleScene/BattleScene.csb");
 	//Default scheduler
 	scheduleUpdate();
 	schedule(schedule_selector(BattleScene::ifwin), 2.0f);
-	schedule(schedule_selector(BattleScene::triangleAI), 5.0f);
-	schedule(schedule_selector(BattleScene::circleAI), 20.0f);
-	schedule(schedule_selector(BattleScene::rectAI), 10.0f);
+	schedule(schedule_selector(BattleScene::triangleAI), 6.0f);
+	schedule(schedule_selector(BattleScene::circleAI), 23.0f);
+	schedule(schedule_selector(BattleScene::rectAI), 14.0f);
 
 	//Obtain map layer from cocos studio design file
 	mapLayer = new MapLayer();
@@ -44,16 +47,16 @@ bool BattleScene::init()
 	//Obtain pause layer from cocos studio design file and hide it
 	pauseLayer = static_cast<Layer *>(rootNode->getChildByName("Layer_Pause"));
 	pauseLayer->setVisible(false);
-	pauseLayer->setZOrder(5);
+	pauseLayer->setGlobalZOrder(5);
 
 	//create the gesture Layer
 	gestureLayer = new GestureLayer();
 	gestureLayer->init(mapLayer);
-	gestureLayer->setZOrder(3);
+	gestureLayer->setGlobalZOrder(3);
 
 	//Obtain function layer from cocos studio design file
 	functionLayer = static_cast<Layer *>(rootNode->getChildByName("Layer_Funct"));
-	functionLayer->setZOrder(1);
+	functionLayer->setGlobalZOrder(1);
 
 	//Obtain buttons in pause layer
 	auto buttonResume = static_cast<ui::Button *>(pauseLayer->getChildByName("Panel_1")->getChildByName("Button_Resume"));
@@ -242,6 +245,8 @@ void BattleScene::ifwin(float dt)
 
 		auto loseScene = LoseScene::createScene();
 		auto loseTransition = TransitionFade::create(1.0f, loseScene);
+
+		CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic();
 
 		switch (flag)
 		{

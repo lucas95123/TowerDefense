@@ -8,10 +8,12 @@
 #include "LoseScene.h"
 #include "GestureLayer.h"
 #include "cocostudio/CocoStudio.h"
+
 using namespace cocostudio::timeline;
 USING_NS_CC;
 
 #include "cocos2d.h"
+#include "SimpleAudioEngine.h"
 
 class BattleScene : public cocos2d::Layer
 {
