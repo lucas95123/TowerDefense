@@ -128,7 +128,8 @@ void MapLayer::HolyWrath()
 		{
 			monster->defense += 4;
 			auto DefenseUp = Sprite::create("BattleScene/DefenseUp.png");
-			DefenseUp->setPosition(Point(80, 230));
+			DefenseUp->setAnchorPoint(Point(0.5, 0.5));
+			DefenseUp->setPosition(Point(60, 230));
 			monster->anim_body->addChild(DefenseUp);
 		}
 	}
@@ -140,7 +141,8 @@ void MapLayer::EvilFurious()
 		{
 			monster->attack += 4;
 			auto AttUp = Sprite::create("BattleScene/AttackUp.png");
-			AttUp->setPosition(Point(100, 230));
+			AttUp->setAnchorPoint(Point(0.5, 0.5));
+			AttUp->setPosition(Point(80,230));
 			monster->anim_body->addChild(AttUp);
 		}
 	}

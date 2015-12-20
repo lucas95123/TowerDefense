@@ -226,5 +226,5 @@ void GestureLayer::updateQueue()
 }
 void GestureLayer::OneSecondUpdate(float dt)
 {
-	energe += 10;
+	energe += 5;
 }

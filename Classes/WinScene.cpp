@@ -45,5 +45,5 @@ void WinScene::buttonStartClickCallBack(cocos2d::Ref* pSender)
 {
 	log("WinScene button continue clicked");
 	Director::getInstance()->popScene();
-	//Director::getInstance()->popSceneWithTransition<TransitionFade>(1.0f);
+	Director::getInstance()->popSceneWithTransition<TransitionFade>(1.0f);
 }

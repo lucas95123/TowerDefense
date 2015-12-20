@@ -78,6 +78,7 @@ public:
 		if (damage_B <= 0) damage_B = 1;
 		a->life_point -= damage_A;
 		b->life_point -= damage_B;
+
 		if (a->life_point <= 0) a->setState(Dying);
 		if (b->life_point <= 0) b->setState(Dying);
 		if (a->life_point > 0)a->BeHitback(cache, damage_A); else a->ChooseDeath(cache);
@@ -99,6 +100,7 @@ public:
 		anim_body->setScaleY(_max_life / origin_life/2);//change the size of the monster
 		//anim_body->setFlippedY(true);
 		if (isEnemy) anim_body->setFlippedX(true);
+		anim_body->setAnchorPoint(Point(0.5, 0.5));
 		anim_body->setZOrder(2);
 	}
 	~RectMonster(){}
@@ -148,10 +150,11 @@ public:
 	TriMonster(int _attack,int _defense, int _max_life,int _isEnemy) :Monster(_attack,_defense, _max_life,_isEnemy)
 	{
 		anim_body = Sprite::create(Tri_pic);
-		anim_body->setScaleX(_max_life / origin_life/2);
-		anim_body->setScaleY(_max_life / origin_life/2);
+		anim_body->setScaleX(_max_life / origin_life);
+		anim_body->setScaleY(_max_life / origin_life);
 		//anim_body->setFlippedY(true);
 		if (isEnemy) anim_body->setFlippedX(true);
+		anim_body->setAnchorPoint(Point(0.5, 0.5));
 		anim_body->setZOrder(2);
 	}
 	~TriMonster(){}
@@ -201,6 +204,7 @@ public:
 		anim_body->setScaleY(_max_life / origin_life/2.0);
 		//anim_body->setFlippedY(true);
 		if (isEnemy) anim_body->setFlippedX(true);
+		anim_body->setAnchorPoint(Point(0.5, 0.5));
 		anim_body->setZOrder(2);
 	}
 	~CircleMonster(){}
