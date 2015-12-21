@@ -64,8 +64,8 @@ bool BattleScene::init()
 
 	auto buttonBack = static_cast<ui::Button *>(pauseLayer->getChildByName("Panel_1")->getChildByName("Button_Back"));
 	buttonBack->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonBackClickCallBack, this));
-
 	auto checkBoxSound = static_cast<ui::CheckBox *>(pauseLayer->getChildByName("Panel_1")->getChildByName("CheckBox_Sound"));
+
 	checkBoxSound->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonSoundClickCallBack, this));
 	
 	//Obtain life bar from cocos studio design file
@@ -90,6 +90,10 @@ bool BattleScene::init()
 	//Obtain right scroll button in function layer
 	buttonRight = static_cast<ui::Button *>(functionLayer->getChildByName("Button_Right"));
 	buttonRight->addClickEventListener(CC_CALLBACK_1(BattleScene::buttonRightClickCallBack, this));
+
+	jerryHealth = 20;
+	tonyHealth = 40;
+	ceaserHealth = 60;
 
 	//Initial Monsters
 	triangleAI(0);

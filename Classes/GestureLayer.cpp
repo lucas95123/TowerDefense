@@ -25,11 +25,11 @@ bool GestureLayer::init(MapLayer * map)
 	this->setTouchEnabled(true);
 	log("geture init");
 	auto listenerTouch = EventListenerTouchOneByOne::create();
-	listenerTouch->setSwallowTouches(true);
+	listenerTouch->setSwallowTouches(false);
 	listenerTouch->onTouchBegan = CC_CALLBACK_2(GestureLayer::onTouchBegan, this);
 	listenerTouch->onTouchMoved = CC_CALLBACK_2(GestureLayer::onTouchMoved, this);
 	listenerTouch->onTouchEnded = CC_CALLBACK_2(GestureLayer::onTouchEnded, this);
-	Director::getInstance()->getEventDispatcher()->addEventListenerWithFixedPriority(listenerTouch, 1);
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listenerTouch, this);
 
 	scheduleUpdate();
 	schedule(schedule_selector(GestureLayer::OneSecondUpdate), 1.0f);
@@ -123,6 +123,7 @@ void GestureLayer::onTouchEnded(Touch *touch, Event *unused_event)
 				//smaller than bigger, bigger than smaller
 				newMonster = new RectMonster(Rect_attack, Rect_defence, area*origin_life * 2, false);
 				energe -= area * origin_life * 2;
+				newMonster->type = Rect;
 			}
 			else
 			{//not enough, test if can draw a 0.5 scales monster
@@ -130,6 +131,7 @@ void GestureLayer::onTouchEnded(Touch *touch, Event *unused_event)
 				{
 					newMonster = new RectMonster(Rect_attack, Rect_defence, 0.5*origin_life * 2, false);
 					energe -= 0.5*origin_life * 2;
+					newMonster->type = Rect;
 				}
 			}
 		} else
@@ -146,6 +148,7 @@ void GestureLayer::onTouchEnded(Touch *touch, Event *unused_event)
 				//smaller than bigger, bigger than smaller
 				newMonster = new TriMonster(Tri_attack, Tri_defence, area*origin_life * 1, false);
 				energe -= area * origin_life * 2.5;
+				newMonster->type = Tri;
 			}
 			else
 			{//not enough, test if can draw a 0.5 scales monster
@@ -153,6 +156,7 @@ void GestureLayer::onTouchEnded(Touch *touch, Event *unused_event)
 				{
 					newMonster = new TriMonster(Tri_attack, Tri_defence, 0.5*origin_life * 1, false);
 					energe -= 0.5*origin_life * 2.5;
+					newMonster->type = Tri;
 				}
 			}
 		} else 
@@ -169,6 +173,7 @@ void GestureLayer::onTouchEnded(Touch *touch, Event *unused_event)
 				//smaller than bigger, bigger than smaller
 				newMonster = new CircleMonster(Cir_attack, Cir_defence, area*origin_life * 1.5, false);
 				energe -= area * origin_life * 2.6;
+				newMonster->type = Cir;
 			}
 			else
 			{//not enough, test if can draw a 0.5 scales monster
@@ -176,6 +181,7 @@ void GestureLayer::onTouchEnded(Touch *touch, Event *unused_event)
 				{
 					newMonster = new CircleMonster(Cir_attack, Cir_defence, 0.5*origin_life * 1.5, false);
 					energe -= 0.5*origin_life * 2.6;
+					newMonster->type = Cir;
 				}
 			}
 		} 
@@ -190,18 +196,31 @@ void GestureLayer::onTouchEnded(Touch *touch, Event *unused_event)
 	}else
 	if (choose_monster)
 	{
+		Monster *tmp;
+		switch (choose_monster->type){
+		case Cir: 
+			tmp = new CircleMonster(choose_monster->attack, choose_monster->defense, choose_monster->max_life, false);
+			break;
+			case Tri:
+				tmp = new TriMonster(choose_monster->attack, choose_monster->defense, choose_monster->max_life, false);
+				break;
+			case Rect:
+				tmp = new RectMonster(choose_monster->attack, choose_monster->defense, choose_monster->max_life, false);
+				break;
+
+		}
 		auto drop_position = touch->getLocation();
 		if (drop_position.y >= DOWNROWY&&drop_position.y <= LIMITY){
 			//this->removeChild(choose_monster->anim_body);
 			int pointY = drop_position.y;
 			if (pointY >= DOWNROWY&&pointY <= MIDDLEROWY)
-				mapLayer->addMonster(choose_monster, DOWNROW);
+				mapLayer->addMonster(tmp, DOWNROW);
 			else if (pointY > MIDDLEROWY&&pointY <= UPROWY)
-				mapLayer->addMonster(choose_monster, MIDDLEROW);
+				mapLayer->addMonster(tmp, MIDDLEROW);
 			else if (pointY > UPROWY&&pointY <= LIMITY)
-				mapLayer->addMonster(choose_monster, UPROW);
+				mapLayer->addMonster(tmp, UPROW);
 			//choose_monster->anim_body->removeFromParent();
-			//this->removeChild(choose_monster->anim_body);
+			this->removeChild(choose_monster->anim_body);
 			monster_queue.eraseObject(choose_monster,false);
 		}
 		updateQueue();

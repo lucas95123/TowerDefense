@@ -128,8 +128,21 @@ void MapLayer::HolyWrath()
 		{
 			monster->defense += 4;
 			auto DefenseUp = Sprite::create("BattleScene/DefenseUp.png");
-			DefenseUp->setAnchorPoint(Point(0.5, 0.5));
-			DefenseUp->setPosition(Point(60, 230));
+			if (monster->type == Rect)
+			{
+				DefenseUp->setAnchorPoint(Point(0, 0));
+				DefenseUp->setPosition(Point(240, 360));
+			}
+			else if (monster->type==Tri)
+			{
+				DefenseUp->setAnchorPoint(Point(0.5, 0.5));
+				DefenseUp->setPosition(Point(130, 290));
+			}
+			else
+			{
+				DefenseUp->setAnchorPoint(Point(0.5, 0.5));
+				DefenseUp->setPosition(Point(130, 240));
+			}
 			monster->anim_body->addChild(DefenseUp);
 		}
 	}
@@ -141,14 +154,37 @@ void MapLayer::EvilFurious()
 		{
 			monster->attack += 4;
 			auto AttUp = Sprite::create("BattleScene/AttackUp.png");
-			AttUp->setAnchorPoint(Point(0.5, 0.5));
-			AttUp->setPosition(Point(80,230));
+			if (monster->type == Rect)
+			{
+				AttUp->setAnchorPoint(Point(0, 0));
+				AttUp->setPosition(Point(250, 360));
+			}
+			else if (monster->type==Tri)
+			{
+				AttUp->setAnchorPoint(Point(0.5, 0.5));
+				AttUp->setPosition(Point(140, 290));
+			}
+			else
+			{
+				AttUp->setAnchorPoint(Point(0.5, 0.5));
+				AttUp->setPosition(Point(140, 240));
+			}
 			monster->anim_body->addChild(AttUp);
 		}
 	}
 }
 void MapLayer::JudgementMeteorolite()
 {
+	auto particle = ParticleSystemQuad::create("BattleScene/judgement.plist");
+	particle->setPosition(Point(480,320));
+	particle->setScaleX(2.0f);
+	particle->setScaleY(2.0f);
+	this->mapContainer->addChild(particle,5);
+	auto particle1 = ParticleSystemQuad::create("BattleScene/judgement.plist");
+	particle1->setScaleX(2.0f);
+	particle1->setScaleY(2.0f);
+	particle1->setPosition(Point(480+960, 320));
+	this->mapContainer->addChild(particle1, 5);
 	auto cache = AnimationCache::getInstance();
 	auto God = new CircleMonster(15,30,10000,0);
 	for (int i = 0; i < 3; i++){
@@ -309,7 +345,7 @@ void MapLayer::checkCollision()
 				}
 				if (monster->getState() == DEAD)
 				{
-					monster->anim_body->removeAllChildren();
+					//monster->anim_body->removeAllChildren();
 					//monster->anim_body->setVisible(false);
 					mapContainer->removeChild(monster->anim_body, true);
 					myMonsterVec[i].eraseObject(monster, true);

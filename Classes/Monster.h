@@ -16,6 +16,8 @@
 #define Rec_pic "BattleScene/TonyMini.png"
 #define Tri_pic "BattleScene/JerryMini.png"
 #define Cir_pic "BattleScene/CeaserMini.png"
+#define Blood_pic "BattleScene/bloodFull.png"
+#define Blood_Frame_pic "BattleScene/bloodEmpty.png"
 #define Rec_Hit_back_anim "Rec_Cry"
 #define Tri_Hit_back_anim "Tri_Cry"
 #define Cir_Hit_back_anim "Cir_Cry"
@@ -43,6 +45,9 @@
 #define Remove_seconds(x) isEnemy?(x)*15/1800:(1-(x)/1800.0)*15 
 #define Move_to_line (Line==(UPROW))?UPROWY:(Line==(MIDDLEROW))?MIDDLEROWY:DOWNROWY
 #define Map_width 1800
+#define Tri 0
+#define Rect 1
+#define Cir 2
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
@@ -54,12 +59,11 @@ private:
 	
 	int state=Stay_in_queue;
 public:
-	int Line;
+	int Line,type;
 	int attack, life_point, max_life,defense,isEnemy;
 	Sprite *anim_body;
 	Monster(int _attack,int _defense,int _max_life,int _isEnemy) :attack(_attack), max_life(_max_life),defense(_defense),isEnemy(_isEnemy){
 		life_point = max_life;
-		
 	}
 	~Monster(){}
 	void setState(int _state){ state = _state; }
@@ -102,11 +106,25 @@ public:
 		if (isEnemy) anim_body->setFlippedX(true);
 		anim_body->setAnchorPoint(Point(0.5, 0.5));
 		anim_body->setZOrder(2);
+		this->type = Rect;
+
+		auto life_bar = Sprite::create(Blood_Frame_pic);
+		auto life_value = Sprite::create(Blood_pic);
+		life_bar->setAnchorPoint(Vec2(0, 0));
+		life_value->setAnchorPoint(Vec2(0, 0));
+		life_bar->setPosition(Point(175, 340));
+		life_value->setPosition(Point(175, 340));
+		life_bar->setVisible(false);
+		life_value->setVisible(false);
+		anim_body->addChild(life_bar,5,"lifeBar");
+		anim_body->addChild(life_value,6,"lifeValue");
 	}
 	~RectMonster(){}
 	virtual void BeHitback(AnimationCache* cache,int damage)
 	{
 		//log("BeHitback");
+		this->anim_body->getChildByName("lifeValue")->setScaleX(((float)this->life_point) / this->max_life);
+
 		auto animate = Animate::create(cache->getAnimation(Rec_Hit_back_anim));
 		this->anim_body->runAction(RepeatForever::create(Sequence::create(animate, animate->reverse(), NULL)));
 		int Delta = isEnemy ? damage * 10 : -damage * 10;
@@ -120,6 +138,9 @@ public:
 	virtual void MovingForward(AnimationCache* cache)
 	{
 		//log("MovingForward");
+		this->anim_body->getChildByName("lifeBar")->setVisible(true);
+		this->anim_body->getChildByName("lifeValue")->setVisible(true);
+
 		this->anim_body->stopAllActions();
 		auto animate = Animate::create(cache->getAnimation(Rec_Moving_forward_anim));
 		if (!isEnemy)this->anim_body->runAction(RepeatForever::create(Sequence::create(animate, animate->reverse(), NULL)));
@@ -156,11 +177,25 @@ public:
 		if (isEnemy) anim_body->setFlippedX(true);
 		anim_body->setAnchorPoint(Point(0.5, 0.5));
 		anim_body->setZOrder(2);
+		this->type = Tri;
+
+		auto life_bar = Sprite::create(Blood_Frame_pic);
+		auto life_value = Sprite::create(Blood_pic);
+		life_bar->setAnchorPoint(Vec2(0, 0));
+		life_value->setAnchorPoint(Vec2(0, 0));
+		life_bar->setPosition(Point(50, 250));
+		life_value->setPosition(Point(50, 250));
+		life_bar->setVisible(false);
+		life_value->setVisible(false);
+		anim_body->addChild(life_bar, 5, "lifeBar");
+		anim_body->addChild(life_value, 6, "lifeValue");
 	}
 	~TriMonster(){}
 	virtual void BeHitback(AnimationCache* cache,int damage)
 	{
 		//log("BeHitback");
+		this->anim_body->getChildByName("lifeValue")->setScaleX(((float)this->life_point) / this->max_life);
+
 		auto animate = Animate::create(cache->getAnimation(Tri_Hit_back_anim));
 		this->anim_body->runAction(RepeatForever::create(Sequence::create(animate, animate->reverse(), NULL)));
 		int Delta = isEnemy ? damage * 10 : -damage * 10;
@@ -173,6 +208,8 @@ public:
 	}
 	virtual void MovingForward(AnimationCache* cache)
 	{
+		this->anim_body->getChildByName("lifeBar")->setVisible(true);
+		this->anim_body->getChildByName("lifeValue")->setVisible(true);
 		//log("MovingForward");
 		this->anim_body->stopAllActions();
 		auto animate = Animate::create(cache->getAnimation(Tri_Moving_forward_anim));
@@ -206,11 +243,25 @@ public:
 		if (isEnemy) anim_body->setFlippedX(true);
 		anim_body->setAnchorPoint(Point(0.5, 0.5));
 		anim_body->setZOrder(2);
+		this->type = Cir;
+
+		auto life_bar = Sprite::create(Blood_Frame_pic);
+		auto life_value = Sprite::create(Blood_pic);
+		life_bar->setAnchorPoint(Vec2(0, 0));
+		life_value->setAnchorPoint(Vec2(0, 0));
+		life_bar->setPosition(Point(50, 200));
+		life_value->setPosition(Point(50, 200));
+		life_bar->setVisible(false);
+		life_value->setVisible(false);
+		anim_body->addChild(life_bar, 5, "lifeBar");
+		anim_body->addChild(life_value, 6, "lifeValue");
 	}
 	~CircleMonster(){}
 	virtual void BeHitback(AnimationCache* cache,int damage)
 	{
 		//log("BeHitback");
+		this->anim_body->getChildByName("lifeValue")->setScaleX(((float)this->life_point) / this->max_life);
+
 		auto animate = Animate::create(cache->getAnimation(Cir_Hit_back_anim));
 		this->anim_body->runAction(RepeatForever::create(Sequence::create(animate, animate->reverse(), NULL)));
 		int Delta = isEnemy ? damage * 10 : -damage * 10;
@@ -223,6 +274,9 @@ public:
 	virtual void MovingForward(AnimationCache* cache)
 	{
 		//log("MovingForward");
+		this->anim_body->getChildByName("lifeBar")->setVisible(true);
+		this->anim_body->getChildByName("lifeValue")->setVisible(true);
+
 		this->anim_body->stopAllActions();
 		auto animate = Animate::create(cache->getAnimation(Cir_Moving_forward_anim));
 		if (!isEnemy)this->anim_body->runAction(RepeatForever::create(Sequence::create(animate, animate->reverse(), NULL)));
