@@ -46,10 +46,10 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\LoseScene.cpp">
-      <Filter>header</Filter>
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\WinScene.cpp">
-      <Filter>header</Filter>
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

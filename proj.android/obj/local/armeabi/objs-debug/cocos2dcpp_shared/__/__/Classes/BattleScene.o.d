@@ -453,7 +453,14 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/BattleScene.o: \
  D:\Cocos\frameworks/cocos2d-x-3.6/cocos/editor-support/cocostudio/prebuilt-mk/../../cocostudio/ActionTimeline/CCTimeLine.h \
  D:\Cocos\frameworks/cocos2d-x-3.6/cocos/editor-support/cocostudio/prebuilt-mk/../../cocostudio/ActionTimeline/CCActionTimelineNode.h \
  D:\Cocos\frameworks/cocos2d-x-3.6/cocos/editor-support/cocostudio/prebuilt-mk/../../cocostudio/ActionTimeline/CCActionTimeline.h \
- D:\Cocos\frameworks/cocos2d-x-3.6/cocos/editor-support/cocostudio/prebuilt-mk/../../cocostudio/ActionTimeline/CSLoader.h
+ D:\Cocos\frameworks/cocos2d-x-3.6/cocos/editor-support/cocostudio/prebuilt-mk/../../cocostudio/ActionTimeline/CSLoader.h \
+ D:/ndk/sources/cxx-stl/gnu-libstdc++/4.9/include/iostream \
+ jni/../../Classes/GestureLayer.h jni/../../Classes/GeometricRecognizer.h \
+ jni/../../Classes/GeometricRecognizerTypes.h \
+ jni/../../Classes/GestureTemplate.h jni/../../Classes/SampleGestures.h \
+ jni/../../Classes/WinScene.h jni/../../Classes/LoseScene.h \
+ D:\Cocos\frameworks/cocos2d-x-3.6/cocos/audio/android/prebuilt-mk/../../include/SimpleAudioEngine.h \
+ D:\Cocos\frameworks/cocos2d-x-3.6/cocos/audio/android/prebuilt-mk/../../include/Export.h
 
 jni/../../Classes/BattleScene.h:
 
@@ -1364,3 +1371,23 @@ D:\Cocos\frameworks/cocos2d-x-3.6/cocos/editor-support/cocostudio/prebuilt-mk/..
 D:\Cocos\frameworks/cocos2d-x-3.6/cocos/editor-support/cocostudio/prebuilt-mk/../../cocostudio/ActionTimeline/CCActionTimeline.h:
 
 D:\Cocos\frameworks/cocos2d-x-3.6/cocos/editor-support/cocostudio/prebuilt-mk/../../cocostudio/ActionTimeline/CSLoader.h:
+
+D:/ndk/sources/cxx-stl/gnu-libstdc++/4.9/include/iostream:
+
+jni/../../Classes/GestureLayer.h:
+
+jni/../../Classes/GeometricRecognizer.h:
+
+jni/../../Classes/GeometricRecognizerTypes.h:
+
+jni/../../Classes/GestureTemplate.h:
+
+jni/../../Classes/SampleGestures.h:
+
+jni/../../Classes/WinScene.h:
+
+jni/../../Classes/LoseScene.h:
+
+D:\Cocos\frameworks/cocos2d-x-3.6/cocos/audio/android/prebuilt-mk/../../include/SimpleAudioEngine.h:
+
+D:\Cocos\frameworks/cocos2d-x-3.6/cocos/audio/android/prebuilt-mk/../../include/Export.h:

@@ -457,7 +457,8 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/MenuScene.o: \
  D:/ndk/sources/cxx-stl/gnu-libstdc++/4.9/include/iostream \
  jni/../../Classes/GestureLayer.h jni/../../Classes/GeometricRecognizer.h \
  jni/../../Classes/GeometricRecognizerTypes.h \
- jni/../../Classes/GestureTemplate.h jni/../../Classes/SampleGestures.h
+ jni/../../Classes/GestureTemplate.h jni/../../Classes/SampleGestures.h \
+ jni/../../Classes/WinScene.h jni/../../Classes/LoseScene.h
 
 jni/../../Classes/MenuScene.h:
 
@@ -1382,3 +1383,7 @@ jni/../../Classes/GeometricRecognizerTypes.h:
 jni/../../Classes/GestureTemplate.h:
 
 jni/../../Classes/SampleGestures.h:
+
+jni/../../Classes/WinScene.h:
+
+jni/../../Classes/LoseScene.h:

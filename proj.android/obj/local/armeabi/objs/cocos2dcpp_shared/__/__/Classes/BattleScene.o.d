@@ -458,7 +458,9 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/BattleScene.o: \
  jni/../../Classes/GestureLayer.h jni/../../Classes/GeometricRecognizer.h \
  jni/../../Classes/GeometricRecognizerTypes.h \
  jni/../../Classes/GestureTemplate.h jni/../../Classes/SampleGestures.h \
- jni/../../Classes/WinScene.h jni/../../Classes/LoseScene.h
+ jni/../../Classes/WinScene.h jni/../../Classes/LoseScene.h \
+ D:\Cocos\frameworks/cocos2d-x-3.6/cocos/audio/android/prebuilt-mk/../../include/SimpleAudioEngine.h \
+ D:\Cocos\frameworks/cocos2d-x-3.6/cocos/audio/android/prebuilt-mk/../../include/Export.h
 
 jni/../../Classes/BattleScene.h:
 
@@ -1385,3 +1387,7 @@ jni/../../Classes/SampleGestures.h:
 jni/../../Classes/WinScene.h:
 
 jni/../../Classes/LoseScene.h:
+
+D:\Cocos\frameworks/cocos2d-x-3.6/cocos/audio/android/prebuilt-mk/../../include/SimpleAudioEngine.h:
+
+D:\Cocos\frameworks/cocos2d-x-3.6/cocos/audio/android/prebuilt-mk/../../include/Export.h:

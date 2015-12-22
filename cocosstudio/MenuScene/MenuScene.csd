@@ -60,7 +60,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Button_2" ActionTag="1276371599" CallBackType="Touch" Tag="20" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="300.0000" RightMargin="300.0000" TopMargin="85.0000" BottomMargin="149.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="330" Scale9Height="384" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="Button_2" ActionTag="1276371599" CallBackType="Touch" Tag="20" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="300.0000" RightMargin="300.0000" TopMargin="85.0000" BottomMargin="149.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="330" Scale9Height="384" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="360.0000" Y="406.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="480.0000" Y="352.0000" />
@@ -131,7 +131,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4500" Y="0.4000" />
                     <PreSize X="0.4229" Y="0.5938" />
-                    <FileData Type="Normal" Path="MenuScene/star.png" Plist="" />
+                    <FileData Type="Normal" Path="MenuScene/starBlack.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="star_1_1" ActionTag="447593741" Tag="55" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="277.0000" RightMargin="277.0000" TopMargin="194.0000" BottomMargin="66.0000" ctype="SpriteObjectData">

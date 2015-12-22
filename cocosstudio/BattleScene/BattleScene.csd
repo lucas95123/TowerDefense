@@ -33,7 +33,7 @@
             <ColorVector ScaleY="1.0000" />
             <InnerNodeSize Width="1920" Height="640" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Layer_Pause" Visible="False" ActionTag="1054388123" Tag="52" IconVisible="True" PositionPercentXEnabled="True" PositionPercentYEnabled="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="Layer_Pause" ActionTag="1054388123" Tag="52" IconVisible="True" PositionPercentXEnabled="True" PositionPercentYEnabled="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="960.0000" Y="640.0000" />
             <AnchorPoint />
             <Position />
@@ -53,38 +53,15 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="BattleScene/FunctionLayer.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="CeaserMini_30" ActionTag="1447695287" Tag="783" IconVisible="False" LeftMargin="12.2689" RightMargin="854.7311" TopMargin="541.2504" BottomMargin="11.7496" ctype="SpriteObjectData">
-            <Size X="93.0000" Y="87.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="58.7689" Y="55.2496" />
-            <Scale ScaleX="0.7500" ScaleY="0.7500" />
+          <AbstractNodeData Name="Audio_1" ActionTag="-1167277834" Tag="140" IconVisible="True" RightMargin="960.0000" TopMargin="640.0000" Volume="1.0000" Loop="True" ctype="SimpleAudioObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0612" Y="0.0863" />
-            <PreSize X="0.0969" Y="0.1359" />
-            <FileData Type="Normal" Path="BattleScene/CeaserMini.png" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="TonyMini_31" ActionTag="-733645040" Tag="784" IconVisible="False" LeftMargin="132.7262" RightMargin="734.2738" TopMargin="542.2302" BottomMargin="10.7698" FlipX="True" ctype="SpriteObjectData">
-            <Size X="93.0000" Y="87.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="179.2262" Y="54.2698" />
-            <Scale ScaleX="0.7500" ScaleY="0.7500" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1867" Y="0.0848" />
-            <PreSize X="0.0969" Y="0.1359" />
-            <FileData Type="Normal" Path="BattleScene/TonyMini.png" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="JerryMini_32" ActionTag="905183519" Tag="785" IconVisible="False" LeftMargin="253.6671" RightMargin="613.3329" TopMargin="541.3817" BottomMargin="11.6183" FlipX="True" ctype="SpriteObjectData">
-            <Size X="93.0000" Y="87.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="300.1671" Y="55.1183" />
-            <Scale ScaleX="0.7500" ScaleY="0.7500" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3127" Y="0.0861" />
-            <PreSize X="0.0969" Y="0.1359" />
-            <FileData Type="Normal" Path="BattleScene/JerryMini.png" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="battleBGM.mp3" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

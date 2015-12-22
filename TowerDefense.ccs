@@ -81,7 +81,6 @@
           <Image Name="StartTrans.png" />
           <Image Name="returnTrans.png" />
           <Image Name="SoundOnTrans.png" />
-          <Image Name="Energy_finger.png" />
           <Image Name="lifeEmpty.png" />
           <Image Name="lifeBar.png" />
           <Image Name="magicEmpty.png" />
@@ -105,6 +104,8 @@
           <Image Name="JerryMini.png" />
           <Image Name="TonyMini.png" />
           <Image Name="CeaserMini.png" />
+          <Image Name="cross.png" />
+          <PlistParticleFile Name="judgement.plist" />
         </Folder>
         <Folder Name="EndScene">
           <Image Name="win.png" />
@@ -120,10 +121,17 @@
           <Image Name="dragon.png" />
           <Image Name="dragonOrange.png" />
           <PlistParticleFile Name="FireBall.plist" />
+          <Image Name="btnContinue.png" />
+          <Image Name="btnContinuePressed.png" />
+          <Image Name="swordSingle.png" />
+          <Image Name="Ceaser_cry.png" />
+          <PlistParticleFile Name="Sun.plist" />
+          <Image Name="dragonUnhappy.png" />
         </Folder>
         <PlistParticleFile Name="touchGreen.plist" />
         <PlistParticleFile Name="touchRed.plist" />
         <PlistParticleFile Name="touchBlue.plist" />
+        <Audio Name="battleBGM.mp3" />
       </RootFolder>
     </Group>
   </SolutionFolder>
